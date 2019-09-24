@@ -1,9 +1,6 @@
 defmodule LiveEditable.HTML do
   @behaviour LiveEditable.Base
 
-  import Phoenix.LiveView
-  import Phoenix.HTML
-
   def form_text(label, opts) do
     """
     <form phx-change="#{opts[:on_change]}" phx-submit="#{opts[:on_submit]}">

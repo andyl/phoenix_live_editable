@@ -1,4 +1,6 @@
-defmodule LiveEditable.Bootstrap4 do
+defmodule Phoenix.LiveEditable.Bootstrap4 do
+
+  alias Phoenix.LiveEditable
 
   @behaviour LiveEditable.Base
 

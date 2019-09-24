@@ -1,4 +1,4 @@
-defmodule LiveEditable.Base do
+defmodule Phoenix.LiveEditable.Base do
 
   @callback form_text(String.t, [...]) :: String.t | {:error, String.t}
   @callback form_select(String.t, [...]) :: String.t | {:error, String.t}
@@ -7,7 +7,7 @@ defmodule LiveEditable.Base do
   #
   # @callback form_radio
   # @callback form_calendar
-  # @callback form_textbox
+  # @callback form_textarea
   # ...
   
 end

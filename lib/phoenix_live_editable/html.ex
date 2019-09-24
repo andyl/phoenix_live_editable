@@ -1,7 +1,10 @@
-defmodule LiveEditable.Milligram do
+defmodule Phoenix.LiveEditable.HTML do
+
+  alias Phoenix.LiveEditable
 
   @behaviour LiveEditable.Base
 
+  @impl LiveEditable.Base
   def form_text(label, opts) do
     """
     <form phx-change="#{opts[:on_change]}" phx-submit="#{opts[:on_submit]}">
@@ -12,9 +15,14 @@ defmodule LiveEditable.Milligram do
     """
   end
 
+  @impl LiveEditable.Base
   def form_select(label, opts) do
     Keyword.has_key?(opts, :options) || raise("Needs `:options` option")
-    options = Enum.map(opts[:options], &("<option value='#{elem(&1,0)}'>#{elem(&1,1)}</option>"))
+    options = Enum.map(
+      opts[:options], 
+      &"<option value='#{elem(&1, 0)}'>#{elem(&1, 1)}</option>"
+    )
+
     """
     <form phx-submit="#{opts[:on_submit]}" id="#{opts[:id]}">
       <select name="editable_select" value="#{label}" form="#{opts[:id]}">
@@ -25,5 +33,4 @@ defmodule LiveEditable.Milligram do
     </form>
     """
   end
-
 end

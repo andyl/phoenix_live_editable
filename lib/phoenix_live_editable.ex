@@ -1,4 +1,4 @@
-defmodule LiveEditable do
+defmodule Phoenix.LiveEditable do
   import Phoenix.LiveView
   import Phoenix.HTML
 

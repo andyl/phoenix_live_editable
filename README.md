@@ -1,6 +1,6 @@
-# LiveEditable
+# PhoenixLiveEditable
 
-**TODO: Add description**
+In-place editing for Phoenix Live View
 
 ## Installation
 

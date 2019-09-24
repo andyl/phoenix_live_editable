@@ -2,15 +2,14 @@ defmodule LiveEditable.Bootstrap4 do
 
   @behaviour LiveEditable.Base
 
-  import Phoenix.LiveView
-  import Phoenix.HTML
-
   def form_text(label, opts) do
     """
-    <form phx-change="#{opts[:on_change]}" phx-submit="#{opts[:on_submit]}">
-      <input type="text" name="editable_text" value="#{label}">
-      <button type='submit'><i class='fa fa-check-square'></i></button>
-      <button phx-click='cancel'><i class='fa fa-window-close'></i></button>
+    <form class="form-inline" phx-change="#{opts[:on_change]}" phx-submit="#{opts[:on_submit]}">
+    <div class="form-group mb-2">
+      <input type="text" class="form-control-plaintext" name="editable_text" value="#{label}">
+    </div>
+      <button class="btn btn-primary mb2" type='submit'><i class='fa fa-check-square'></i></button>
+      <button class="btn btn-secondary mb2" phx-click='cancel'><i class='fa fa-window-close'></i></button>
     </form>
     """
   end

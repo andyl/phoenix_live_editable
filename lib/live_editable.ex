@@ -32,7 +32,11 @@ defmodule LiveEditable do
       item when is_binary(item) -> item |> String.upcase()
       _ -> :error
     end
-~
+
+    IO.inspect "---------------------------------------"
+    IO.inspect lbl
+    IO.inspect "---------------------------------------"
+
     case lbl do
       "BOOTSTRAP4" -> LiveEditable.Bootstrap4
       "BOOTSTRAP" -> LiveEditable.Bootstrap4

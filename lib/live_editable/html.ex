@@ -1,5 +1,4 @@
 defmodule LiveEditable.HTML do
-
   @behaviour LiveEditable.Base
 
   import Phoenix.LiveView
@@ -17,7 +16,8 @@ defmodule LiveEditable.HTML do
 
   def form_select(label, opts) do
     Keyword.has_key?(opts, :options) || raise("Needs `:options` option")
-    options = Enum.map(opts[:options], &("<option value='#{elem(&1,0)}'>#{elem(&1,1)}</option>"))
+    options = Enum.map(opts[:options], &"<option value='#{elem(&1, 0)}'>#{elem(&1, 1)}</option>")
+
     """
     <form phx-submit="#{opts[:on_submit]}" id="#{opts[:id]}">
       <select name="editable_select" value="#{label}" form="#{opts[:id]}">
@@ -28,5 +28,4 @@ defmodule LiveEditable.HTML do
     </form>
     """
   end
-
 end

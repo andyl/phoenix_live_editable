@@ -1,6 +1,7 @@
 defmodule LiveEditable.HTML do
   @behaviour LiveEditable.Base
 
+  @impl LiveEditable.Base
   def form_text(label, opts) do
     """
     <form phx-change="#{opts[:on_change]}" phx-submit="#{opts[:on_submit]}">
@@ -11,9 +12,13 @@ defmodule LiveEditable.HTML do
     """
   end
 
+  @impl LiveEditable.Base
   def form_select(label, opts) do
     Keyword.has_key?(opts, :options) || raise("Needs `:options` option")
-    options = Enum.map(opts[:options], &"<option value='#{elem(&1, 0)}'>#{elem(&1, 1)}</option>")
+    options = Enum.map(
+      opts[:options], 
+      &"<option value='#{elem(&1, 0)}'>#{elem(&1, 1)}</option>"
+    )
 
     """
     <form phx-submit="#{opts[:on_submit]}" id="#{opts[:id]}">

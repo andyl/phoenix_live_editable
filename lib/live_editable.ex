@@ -11,13 +11,13 @@ defmodule LiveEditable do
 
     if id == focus do
 
-      type = css_type()
+      module = css_framework_module()
 
       case opts[:type] do
-        "text" -> type.form_text(label, opts)
-        "select" -> type.form_select(label, opts)
-        _ -> type.form_text(label, opts)
-      end
+        "text" -> module.form_text(label, opts)
+        "select" -> module.form_select(label, opts)
+        _ -> module.form_text(label, opts)
+      end 
       |> raw()
     else
       "<span class='editable-click' phx-click='focus' phx-value-focusid='#{id}'>#{label}</span>"
@@ -25,23 +25,18 @@ defmodule LiveEditable do
     end
   end
 
-  defp css_type do
+  defp css_framework_module do
     lbl = case Application.fetch_env(:live_editable, :css_framework) do
-      :error -> :error
-      item when is_atom(item) -> item |> Atom.to_string() |> String.upcase()
-      item when is_binary(item) -> item |> String.upcase()
+      {:ok, el} when is_atom(el) -> el |> Atom.to_string() |> String.upcase()
+      {:ok, el} when is_binary(el) -> el |> String.upcase()
       _ -> :error
     end
-
-    IO.inspect "---------------------------------------"
-    IO.inspect lbl
-    IO.inspect "---------------------------------------"
 
     case lbl do
       "BOOTSTRAP4" -> LiveEditable.Bootstrap4
       "BOOTSTRAP" -> LiveEditable.Bootstrap4
       "MILLIGRAM" -> LiveEditable.Milligram
-      _ -> LiveEditable.HTML
+      _ -> LiveEditable.Bootstrap4
     end
   end
 
@@ -49,7 +44,6 @@ defmodule LiveEditable do
     quote do
       import LiveEditable
 
-      # ----- event handlers -----
       def handle_event("focus", %{"focusid" => focusid}, socket) do
         {:noreply, assign(socket, focus: focusid)}
       end

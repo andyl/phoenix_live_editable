@@ -2,6 +2,8 @@ defmodule Phoenix.LiveEditable do
   import Phoenix.LiveView
   import Phoenix.HTML
 
+  alias Phoenix.LiveEditable
+
   # ----- view helpers -----
   def live_edit(assigns, label, opts) do
     Keyword.has_key?(opts, :id) || raise("Needs `:id` option")
@@ -42,7 +44,7 @@ defmodule Phoenix.LiveEditable do
 
   defmacro __using__(_opts) do
     quote do
-      import LiveEditable
+      import Phoenix.LiveEditable
 
       def handle_event("focus", %{"focusid" => focusid}, socket) do
         {:noreply, assign(socket, focus: focusid)}

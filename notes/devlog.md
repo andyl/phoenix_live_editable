@@ -1,4 +1,4 @@
-# DEVLOG
+# PhoenixLiveEditable Devlog
 
 # 2019 Sep 23 Mon
 
@@ -9,10 +9,18 @@
 - [x] Implement `Milligram` Editable 
 - [x] Create demo site
 
+# 2019 Sep 23 Mon
+
+- [x] Remove HTML demo
+- [x] Add Bootstrap styles to demo site
+
 # TBD
 
 - [ ] Get Validations Working
 - [ ] Add RadioButton Field
+
+- [ ] Host demo site on Heroku or Gigalixir
+- [ ] Add tracker to layouts
 
 - [ ] ExUnit Shared Examples for HTML, Bootstrap4 and Milligram
 - [ ] Create Developer Website (and serve CSS/JS Assets)

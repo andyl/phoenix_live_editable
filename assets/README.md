@@ -6,15 +6,16 @@ using the 'multiple entry points' capability of Webpack.
 
 ## Installing PLE in your Phoenix App
 
-The downstream Phoenix app must:
+Most Phoenix Apps use a single CSS framework.  
 
+To install PLE into your Phoenix App:
 - add PLE to the `mix.exs` dependencies
-- declare your CSS framework in your application config
-- pull the proper JS/CSS asset into your asset pipeline
+- declare your CSS framework in `config/config.exs`
+- ingest the framework-specific JS/CSS assets using Webpack
 
 ## Multi-Framework Applications
 
-For demos, we'll want to use multiple CSS frameworks in one application.
+For demos, we'll use many CSS frameworks in one application.
 
 To do this:
 - Put `Application.set_env` to set the CSS framework for each view

@@ -14,7 +14,13 @@
 - [x] Remove HTML demo
 - [x] Add Bootstrap styles to demo site
 
+# 2020 Jan 21 Tue
+
+- [x] Create approach for Webpack config
+
 # TBD
+
+- [ ] Add function call to set CSS framework
 
 - [ ] Get Validations Working
 - [ ] Add RadioButton Field

@@ -1,7 +1,4 @@
-// @ts-ignore
-// @ts-nocheck
 const path = require('path');
-// const glob = require('glob');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -17,7 +14,6 @@ module.exports = (_env, _options) => ({
   entry: {
     bootstrap4: "./js/bootstrap4.js",
     milligram: "./js/milligram.js"
-    // './js/app.js': glob.sync('./vendor#<{(||)}>#*.js').concat(['./js/app.js'])
   },
   output: {
     filename: "[name].js",

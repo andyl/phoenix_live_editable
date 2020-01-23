@@ -1,4 +1,4 @@
-defmodule PhoenixLiveEditable.Svg do
+defmodule Phoenix.LiveEditable.Svg do
   defmacro inline(file) do
     path = static_path(file)
     case File.read(path) do

@@ -1,6 +1,8 @@
 defmodule Phoenix.LiveEditable.Bootstrap4 do
 
   alias Phoenix.LiveEditable
+  require Phoenix.LiveEditable.Svg 
+  alias Phoenix.LiveEditable.Svg
 
   @behaviour LiveEditable.Base
 
@@ -12,10 +14,10 @@ defmodule Phoenix.LiveEditable.Bootstrap4 do
       <input type="text" class="form-control" name="editable_text" value="#{label}">
     </div>
     <button class="btn btn-primary mb2" style='margin-left: 5px' type='submit'>
-      <i class='fa fa-check-square'></i>
+    #{ Svg.inline("BootstrapOk") |> elem(1) } 
     </button>
     <button class="btn btn-secondary mb2" style='margin-left: 5px' phx-click='cancel'>
-      <i class='fa fa-window-close'></i>
+    #{ Svg.inline("BootstrapCancel") |> elem(1) } 
     </button>
     </form>
     """
@@ -33,10 +35,10 @@ defmodule Phoenix.LiveEditable.Bootstrap4 do
       </select>
     </div>
     <button class="btn btn-primary mb2" style='margin-left: 5px' type='submit'>
-      <i class='fa fa-check-square'></i>
+      #{ Svg.inline("BootstrapOk") } 
     </button>
     <button class="btn btn-secondary mb2" style='margin-left: 5px' phx-click='cancel'>
-      <i class='fa fa-window-close'></i>
+      #{ Svg.inline("BootstrapCancel") } 
     </button>
     </form>
     """

@@ -90,7 +90,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./css/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_bootstrap4_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/bootstrap4.scss */ \"./css/bootstrap4.scss\");\n/* harmony import */ var _css_bootstrap4_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_bootstrap4_scss__WEBPACK_IMPORTED_MODULE_0__);\n\nconsole.log(\"HELLO BOOTSTRAP4\");\n\n//# sourceURL=webpack:///./js/bootstrap4.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_bootstrap4_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/bootstrap4.scss */ \"./css/bootstrap4.scss\");\n/* harmony import */ var _css_bootstrap4_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_bootstrap4_scss__WEBPACK_IMPORTED_MODULE_0__);\n\nconsole.log(\"HELLO FROM BOOTSTRAP4\");\n\n//# sourceURL=webpack:///./js/bootstrap4.js?");
 
 /***/ })
 

@@ -27,6 +27,17 @@ defmodule Phoenix.LiveEditable do
     end
   end
 
+  def set_framework(framework) do
+    fw = framework |> String.upcase()
+    new_fw = case fw do
+      "BOOTSTRAP4" -> fw
+      "BOOTSTRAP" -> "BOOTSTRAP4"
+      "MILLIGRAM" -> fw
+      _ -> raise("Unrecognized framework (#{framework})")
+    end
+    Application.put_env(:live_editable, :css_framework, new_fw)
+  end
+
   defp css_framework_module do
     lbl = case Application.fetch_env(:live_editable, :css_framework) do
       {:ok, el} when is_atom(el) -> el |> Atom.to_string() |> String.upcase()

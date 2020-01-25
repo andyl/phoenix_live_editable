@@ -14,10 +14,10 @@ defmodule Phoenix.LiveEditable.Bootstrap4 do
       <input type="text" class="form-control" name="editable_text" value="#{label}">
     </div>
     <button class="btn btn-primary mb2 btn-ple" style='margin-left: 5px' type='submit'>
-      #{ Svg.inline("BootstrapOk") } 
+      #{ Svg.inline("SquareOk") } 
     </button>
     <button class="btn btn-secondary mb2 btn-ple" style='margin-left: 5px' phx-click='cancel'>
-      #{ Svg.inline("BootstrapCancel") } 
+      #{ Svg.inline("SquareCancel") } 
     </button>
     </form>
     """
@@ -35,10 +35,10 @@ defmodule Phoenix.LiveEditable.Bootstrap4 do
       </select>
     </div>
     <button class="btn btn-primary mb2 btn-ple" style='margin-left: 5px' type='submit'>
-      #{ Svg.inline("BootstrapOk") } 
+      #{ Svg.inline("SquareOk") } 
     </button>
     <button class="btn btn-secondary mb2 btn-ple" style='margin-left: 5px' phx-click='cancel'>
-      #{ Svg.inline("BootstrapCancel") } 
+      #{ Svg.inline("SquareCancel") } 
     </button>
     </form>
     """

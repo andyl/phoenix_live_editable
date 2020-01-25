@@ -13,11 +13,11 @@ defmodule Phoenix.LiveEditable.Bootstrap4 do
     <div class="form-group mb-2">
       <input type="text" class="form-control" name="editable_text" value="#{label}">
     </div>
-    <button class="btn btn-primary mb2" style='margin-left: 5px' type='submit'>
-    #{ Svg.inline("BootstrapOk") } 
+    <button class="btn btn-primary mb2 btn-ple" style='margin-left: 5px' type='submit'>
+      #{ Svg.inline("BootstrapOk") } 
     </button>
-    <button class="btn btn-secondary mb2" style='margin-left: 5px' phx-click='cancel'>
-    #{ Svg.inline("BootstrapCancel") } 
+    <button class="btn btn-secondary mb2 btn-ple" style='margin-left: 5px' phx-click='cancel'>
+      #{ Svg.inline("BootstrapCancel") } 
     </button>
     </form>
     """
@@ -34,10 +34,10 @@ defmodule Phoenix.LiveEditable.Bootstrap4 do
       #{Enum.join(options, "")}
       </select>
     </div>
-    <button class="btn btn-primary mb2" style='margin-left: 5px' type='submit'>
+    <button class="btn btn-primary mb2 btn-ple" style='margin-left: 5px' type='submit'>
       #{ Svg.inline("BootstrapOk") } 
     </button>
-    <button class="btn btn-secondary mb2" style='margin-left: 5px' phx-click='cancel'>
+    <button class="btn btn-secondary mb2 btn-ple" style='margin-left: 5px' phx-click='cancel'>
       #{ Svg.inline("BootstrapCancel") } 
     </button>
     </form>

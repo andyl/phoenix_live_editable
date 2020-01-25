@@ -20,12 +20,10 @@
 
 # TBD
 
-- [ ] Add function call to set CSS framework
-
 - [ ] Get Validations Working
 - [ ] Add RadioButton Field
 
-- [ ] Host demo site on Heroku or Gigalixir
+- [ ] Host demo site 
 - [ ] Add tracker to layouts
 
 - [ ] ExUnit Shared Examples for HTML, Bootstrap4 and Milligram

@@ -4,9 +4,25 @@ $var-color: purple;
   background: $var-color;
 }
 
-.editable-click { cursor: pointer;}
 
 .btn-ple {
   position: relative;
   top: -4px;
 }
+
+.editable-click, 
+a.editable-click, 
+a.editable-click:hover {
+  text-decoration: none;
+  border-bottom: dashed 1px #0088cc;
+  cursor: pointer;
+}
+
+.editable-click.editable-disabled, 
+a.editable-click.editable-disabled, 
+a.editable-click.editable-disabled:hover {
+  color: #585858;  
+  cursor: default;
+  border-bottom: none;
+}
+

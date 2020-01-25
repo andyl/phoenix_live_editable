@@ -158,20 +158,6 @@ IOS-style clear button for text inputs
    font-size: inherit;  /* jqueryui widget font 1.1em too big, overwrite it */
    z-index: 9990; /* should be less than select2 dropdown z-index to close dropdown first when click */
 }
-.editable-click, 
-a.editable-click, 
-a.editable-click:hover {
-    text-decoration: none;
-    border-bottom: dashed 1px #0088cc;
-}
-
-.editable-click.editable-disabled, 
-a.editable-click.editable-disabled, 
-a.editable-click.editable-disabled:hover {
-   color: #585858;  
-   cursor: default;
-   border-bottom: none;
-}
 
 .editable-empty, .editable-empty:hover, .editable-empty:focus{
   font-style: italic; 

@@ -27,29 +27,20 @@ defmodule Phoenix.LiveEditable do
     end
   end
 
-  def set_framework(framework) do
-    fw = framework |> String.upcase()
-    new_fw = case fw do
-      "BOOTSTRAP4" -> fw
-      "BOOTSTRAP" -> "BOOTSTRAP4"
-      "MILLIGRAM" -> fw
-      _ -> raise("Unrecognized framework (#{framework})")
-    end
-    Application.put_env(:live_editable, :css_framework, new_fw)
+  def set_framework(framework_module) do
+    Application.put_env(:phoenix_live_editable, :css_framework, framework_module)
   end
 
   defp css_framework_module do
-    lbl = case Application.fetch_env(:live_editable, :css_framework) do
-      {:ok, el} when is_atom(el) -> el |> Atom.to_string() |> String.upcase()
-      {:ok, el} when is_binary(el) -> el |> String.upcase()
-      _ -> :error
-    end
-
-    case lbl do
-      "BOOTSTRAP4" -> LiveEditable.Bootstrap4
-      "BOOTSTRAP" -> LiveEditable.Bootstrap4
-      "MILLIGRAM" -> LiveEditable.Milligram
-      _ -> LiveEditable.Bootstrap4
+    case Application.fetch_env(:phoenix_live_editable, :css_framework) do
+      {:ok, module} -> 
+        module
+      error ->
+        IO.inspect "+++++++++++++++++++++++++++++++++++++++"
+        IO.inspect "ERROR CSS FRAMEWORK MODULE"
+        IO.inspect error
+        IO.inspect "+++++++++++++++++++++++++++++++++++++++"
+        Phoenix.LiveEditable.Bootstrap4
     end
   end
 

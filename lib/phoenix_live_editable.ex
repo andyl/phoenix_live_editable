@@ -2,7 +2,7 @@ defmodule Phoenix.LiveEditable do
   import Phoenix.LiveView
   import Phoenix.HTML
 
-  alias Phoenix.LiveEditable
+  # alias Phoenix.LiveEditable
 
   # ----- view helpers -----
   def live_edit(assigns, label, opts) do

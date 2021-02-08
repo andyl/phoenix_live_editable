@@ -9,16 +9,14 @@ defmodule Phoenix.LiveEditable.Milligram do
   @impl LiveEditable.Base
   def form_text(label, opts) do
     """
-    <form phx-change="#{opts[:on_change]}" phx-submit="#{opts[:on_submit]}">
-    <fieldset>
+    <form class="ple-mg-form" phx-change="#{opts[:on_change]}" phx-submit="#{opts[:on_submit]}">
     <input class="ple-mg-text" type="text" name="editable_text" value="#{label}">
-    <button class="button" style='margin-left: 5px' type='submit'>
+    <button class="button btn-mg-ple btn-ple-primary" style='margin-left: 5px' type='submit'>
       #{ Svg.inline("CircleOk") } 
     </button>
-    <button class="button" style='margin-left: 5px' phx-click='cancel'>
+    <button class="button btn-mg-ple btn-ple-secondary" style='margin-left: 5px' phx-click='cancel'>
       #{ Svg.inline("CircleCancel") } 
     </button>
-    </fieldset>
     </form>
     """
   end

@@ -1,2 +1,26 @@
 @import './inc/shared.scss';
 
+.btn-mg-ple {
+  position: relative;
+  top: 2px;
+}
+
+.svg-inline {
+  position: relative;
+  top: 5px;
+}
+
+.btn-ple-secondary {
+  background: gray;
+  border: 1px solid gray;
+}
+
+input.ple-mg-text {
+  width: 250px;
+  font-size: 1em;
+}
+
+.ple-mg-form {
+  margin-bottom: 0;
+}
+

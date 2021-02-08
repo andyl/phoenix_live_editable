@@ -18,8 +18,8 @@ defmodule Phoenix.LiveEditable.MixProject do
 
   defp deps do
     [
-      {:phoenix_html, "~> 2.11"},
-      {:phoenix_live_view, "== 0.4.1"}
+      {:phoenix_html, "~> 2.14"},
+      {:phoenix_live_view, "~> 0.15"}
     ]
   end
 end

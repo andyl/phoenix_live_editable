@@ -40,7 +40,7 @@ config :phx_demo_milligram, PhxDemoMilligramWeb.Endpoint,
       "--mode",
       "development",
       "--watch-stdin",
-      cd: Path.expand("../assets", __DIR__)
+      cd: Path.expand("../apps/phx_demo_milligram/assets", __DIR__)
     ]
   ]
 
@@ -67,7 +67,7 @@ config :phx_demo_tailwind, PhxDemoTailwindWeb.Endpoint,
       "--mode",
       "development",
       "--watch-stdin",
-      cd: Path.expand("../assets", __DIR__)
+      cd: Path.expand("../apps/phx_demo_tailwind/assets", __DIR__)
     ]
   ]
 

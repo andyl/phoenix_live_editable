@@ -1,6 +1,8 @@
 defmodule LiveEditableWeb.PageLive do
   use LiveEditableWeb, :live_view
 
+  use Phoenix.LiveEditable
+
   # ----- lifecycle callbacks -----
   @impl true
   def mount(_params, _session, socket) do
@@ -31,6 +33,12 @@ defmodule LiveEditableWeb.PageLive do
          |> put_flash(:error, "No dependencies found matching \"#{query}\"")
          |> assign(results: %{}, query: query)}
     end
+  end
+
+  @impl true
+  def handle_event("update", args, socket) do
+    IO.inspect args, label: "args"
+    {:noreply, socket}
   end
 
   # ----- helpers -----

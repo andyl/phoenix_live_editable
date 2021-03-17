@@ -1,13 +1,19 @@
 <div style='text-align: center; padding-bottom: 20px;'>
-<b>Home</b> | 
-<a href="/milligram">Milligram Demo</a> |
-<a href="/bootstrap4">Bootstrap4 Demo</a>
+  <b>Home</b> | 
+  <a href="/milligram">Milligram Demo</a> |
+  <a href="/bootstrap4">Bootstrap4 Demo</a>
 </div>
+
+<div class="bg-green-400">asdfasdfasdfaslsdf asldkfj asdflsd f</div>
 
 <a href="https://github.com/andyl/phoenix_live_editable" target="_blank">Phoenix Live Editable</a> 
 is an inline-editing utility for 
 <a href="https://github.com/phoenixframework/phoenix_live_view" target="_blank">Phoenix Live View</a> 
 inspired by <a href="http://vitalets.github.io/x-editable/" target="_blank">X Editable</a>.
+
+<div class='bg-red-400'>
+  <%= live_edit(assigns, "HEYHEY", type: "text", id: "name", on_submit: "rename") %>
+</div>
 
 <table style='border-top: 1px solid lightgray; margin-top: 10px;'>
   <tr>
@@ -16,7 +22,7 @@ inspired by <a href="http://vitalets.github.io/x-editable/" target="_blank">X Ed
     </td>
     <td colspan=2>
       <code>
-      <%%= live_edit(assigns, "MyText", id: "textfield", type: "text", on_submit: "save" %>
+        <%= live_edit(assigns, "MyText", id: "textfield", type: "text", on_submit: "save") %>
       </code>
     </td>
   </tr>
@@ -26,8 +32,8 @@ inspired by <a href="http://vitalets.github.io/x-editable/" target="_blank">X Ed
     </td>
     <td colspan=2>
       <code>
-      def handle_event("save", value, socket) do
-      end
+        def handle_event("save", value, socket) do
+        end
       </code>
     </td>
   </tr>

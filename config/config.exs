@@ -41,4 +41,6 @@ config :logger, :console,
 
 config :phoenix, :json_library, Jason
 
+config :phoenix_live_editable, css_framework: Phoenix.LiveEditable.Milligram
+
 import_config "#{Mix.env()}.exs"

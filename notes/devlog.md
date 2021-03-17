@@ -8,6 +8,14 @@ Overview:
 - Separate Phoenix demo apps for each CSS Framework
 - Each Phoenix app listens on it's own port
 
+Multiple Ports - Pros:
+- it works
+- PhoenixLiveReload works in development
+
+Multiple Ports - Cons:
+- awkward to host on VPS
+- impossible to host on Heroku or Gigalixer
+
 Multiple Phoenix Apps - Alternatives:
 - using the 'forward' statement in the routes file: couldn't get websockets working
 - using `jesseshieh/master_proxy` - couldn't get it working
@@ -16,9 +24,13 @@ Multiple Phoenix Apps - Alternatives:
 
 ## TODO
 
+- [ ] Add link functions to LiveEditable
+- [ ] Add config info to umbrella parent
+- [ ] Add dependencies to subapps
 - [ ] Add Tailwind to live_editable_web (plus JIT compiler)
 - [ ] Add Tailwind to phx_demo_tailwind_web (plus JIT compiler)
 - [ ] Use TailwindUI in live_editable_web
 - [ ] Move the LiveEditable logic from the master branch
 - [ ] Build out the demo pages
+- [ ] Test on a 3rd party app...
 

@@ -1,48 +1,63 @@
-<section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix Live Editable" %></h1>
-  <p class="bg-red-300">Peace of mind from prototype to production</p>
+<div style='text-align: center; padding-bottom: 20px;'>
+<b>Home</b> | 
+<a href="/milligram">Milligram Demo</a> |
+<a href="/bootstrap4">Bootstrap4 Demo</a>
+</div>
 
-  <form phx-change="suggest" phx-submit="search">
-    <input type="text" name="q" value="<%= @query %>" placeholder="Live dependency search" list="results" autocomplete="off"/>
-    <datalist id="results">
-      <%= for {app, _vsn} <- @results do %>
-        <option value="<%= app %>"><%= app %></option>
-      <% end %>
-    </datalist>
-    <button type="submit" phx-disable-with="Searching...">Go to Hexdocs</button>
-  </form>
-</section>
+<a href="https://github.com/andyl/phoenix_live_editable" target="_blank">Phoenix Live Editable</a> 
+is an inline-editing utility for 
+<a href="https://github.com/phoenixframework/phoenix_live_view" target="_blank">Phoenix Live View</a> 
+inspired by <a href="http://vitalets.github.io/x-editable/" target="_blank">X Editable</a>.
 
-<section class="row">
-  <article class="column">
-    <h2>Resources</h2>
-    <ul>
-      <li>
-        <a target="_blank" href="<%= Phoenix.LiveEditable.Demo.Helpers.demolink(@url, :milligram) %>">Milligram Demo</a>
-      </li>
-      <li>
-        <a target="_blank" href="<%= Phoenix.LiveEditable.Demo.Helpers.demolink(@url, :tailwind) %>">Tailwind Demo</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix/blob/v1.5/CHANGELOG.md">v1.5 Changelog</a>
-      </li>
-    </ul>
-  </article>
-  <article class="column">
-    <h2>Help</h2>
-    <ul>
-      <li>
-        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
-      </li>
-      <li>
-        <a href="https://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on Freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
-      </li>
-      <li>
-        <a href="https://elixir-slackin.herokuapp.com/">Elixir on Slack</a>
-      </li>
-    </ul>
-  </article>
-</section>
+<table style='border-top: 1px solid lightgray; margin-top: 10px;'>
+  <tr>
+    <td>
+      Add an EEX tag
+    </td>
+    <td colspan=2>
+      <code>
+      <%%= live_edit(assigns, "MyText", id: "textfield", type: "text", on_submit: "save" %>
+      </code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Add a LiveView Handler
+    </td>
+    <td colspan=2>
+      <code>
+      def handle_event("save", value, socket) do
+      end
+      </code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Done!
+    </td>
+    <td>
+      EDIT THIS FIELD
+    </td>
+    <td>
+      RESULT: EDIT THIS FIELD
+    </td>
+  </tr>
+</table>
+
+Live Editable is pre-alpha. Pull requests welcome!  Here's the current status:
+
+<table style='border-top: 1px solid lightgray; margin-top: 20px;'>
+
+  <thead>
+    <tr><th>CSS Framework</th><th>text</th><th>select</th><th>radio</th><th>textarea</th><th>calendar</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><a href="/milligram">Milligram</a></td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
+    <tr><td><a href="/bootstrap4">Bootstrap4</a></td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
+    <tr><td>Bulma</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
+    <tr><td>Material</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
+    <tr><td>Tailwind</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
+    <tr><td>UiKit</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
+  </tbody>
+
+</table>

@@ -38,7 +38,6 @@ defmodule Phoenix.LiveEditable.Demo.Helpers do
     - :tailwind
   """
   def demolink(url, subsite, path \\ "/") do
-    IO.inspect url, label: "url"
     uri = URI.parse(url)
     "#{uri.scheme}://#{uri.host}:#{port_for(subsite)}#{path}"
   end

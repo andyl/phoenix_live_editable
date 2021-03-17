@@ -50,7 +50,8 @@ Multiple Phoenix Apps - Alternatives:
 ## 2021 Mar 17 Wed
 
 - [x] Update the README page
-- [ ] Move the LiveEditable logic from the master branch
+- [x] Move the LiveEditable logic from the master branch
+- [x] Get LiveEditable working in demo page
 
 ## TODO
 
@@ -66,6 +67,7 @@ Multiple Phoenix Apps - Alternatives:
 - [ ] Host demo site 
 - [ ] Add tracker to layouts
 
+- [ ] Get modals working
 - [ ] ExUnit Shared Examples for HTML, Bootstrap4 and Milligram
 - [ ] Create Developer Website (and serve CSS/JS Assets)
 - [ ] Create Demo Application (Swap Between CSS Frameworks)

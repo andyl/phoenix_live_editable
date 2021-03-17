@@ -19,23 +19,36 @@ defmodule Phoenix.LiveEditable.Demo.Helpers do
 
   The `demolink` function requires two elements:
 
-  Firstly, the Server URL need to be captured in each LiveView, using the
+  Firstly, the current environment needs to be captured using `config.exs`:
+
+    config :live_editable_web,
+      env: Mix.env()
+
+  Secondly, the Server URL need to be captured in each LiveView, using the
   `handle_params` callback.
 
     def handle_params(_params, url, socket) do
       {:noreply, assign(socket, :url, url)}
     end
 
-  Secondly, the current environment needs to be captured using `config.exs`:
+  To call the function from within a LEEX block:
 
-    config :live_editable_web,
-      env: Mix.env()
+      <a href="<%= Phoenix.LiveEditable.Demo.Helpers.demolink(@url, :milligram) %>">
+        MILLIGRAM DEMO
+      </a>
+
+  This produces:
+
+      <a href="http://localhost:4001/">
+        MILLIGRAM DEMO
+      </a>
 
   Valid `subsite` options include:
     - :home
     - :milligram
     - :bootstrap
     - :tailwind
+
   """
   def demolink(url, subsite, path \\ "/") do
     uri = URI.parse(url)

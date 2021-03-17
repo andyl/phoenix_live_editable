@@ -1,5 +1,5 @@
-defmodule LiveEditableWeb.PageLive do
-  use LiveEditableWeb, :live_view
+defmodule PhxDemoMilligramWeb.TestLive do
+  use PhxDemoMilligramWeb, :live_view
   use Phoenix.LiveEditable
 
   alias Phoenix.LiveEditable.Demo.Helpers
@@ -15,7 +15,7 @@ defmodule LiveEditableWeb.PageLive do
     {:noreply, assign(socket, :url, url)}
   end
 
-  # ----- event handlers -----
+  # -----
 
   @impl true
   def handle_event("suggest", %{"q" => query}, socket) do
@@ -36,16 +36,8 @@ defmodule LiveEditableWeb.PageLive do
     end
   end
 
-  @impl true
-  def handle_event("update", args, socket) do
-    IO.inspect args, label: "args"
-    {:noreply, socket}
-  end
-
-  # ----- helpers -----
-
   defp search(query) do
-    if not LiveEditableWeb.Endpoint.config(:code_reloader) do
+    if not PhxDemoMilligramWeb.Endpoint.config(:code_reloader) do
       raise "action disabled when not in development"
     end
 

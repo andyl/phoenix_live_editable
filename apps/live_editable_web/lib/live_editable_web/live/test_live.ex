@@ -1,4 +1,4 @@
-defmodule LiveEditableWeb.PageLive do
+defmodule LiveEditableWeb.TestLive do
   use LiveEditableWeb, :live_view
   use Phoenix.LiveEditable
 

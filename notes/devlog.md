@@ -1,5 +1,23 @@
 # Phoenix Live Editable - DevLog
 
+# 2019 Sep 23 Mon
+
+- [x] Initial Checkin
+- [x] Create `Editable` Behavior
+- [x] Implement `HTML` Editable 
+- [x] Implement `Bootstrap4` Editable 
+- [x] Implement `Milligram` Editable 
+- [x] Create demo site
+
+# 2019 Sep 23 Mon
+
+- [x] Remove HTML demo
+- [x] Add Bootstrap styles to demo site
+
+# 2020 Jan 21 Tue
+
+- [x] Create approach for Webpack config
+
 ## 2021 Mar 16 Tue
 
 Overview:
@@ -29,11 +47,31 @@ Multiple Phoenix Apps - Alternatives:
 - [x] Add Tailwind to live_editable_web (plus JIT compiler)
 - [x] Add Tailwind to phx_demo_tailwind_web (plus JIT compiler and forms support)
 
+## 2021 Mar 17 Wed
+
+- [x] Update the README page
+- [ ] Move the LiveEditable logic from the master branch
+
 ## TODO
 
-- [ ] Move the LiveEditable logic from the master branch
 - [ ] Build out the demo pages
 - [ ] Test on a 3rd party app...
 - [ ] Test in production
-- [ ] Update the README page
+
+# TBD
+
+- [ ] Get Validations Working
+- [ ] Add RadioButton Field
+
+- [ ] Host demo site 
+- [ ] Add tracker to layouts
+
+- [ ] ExUnit Shared Examples for HTML, Bootstrap4 and Milligram
+- [ ] Create Developer Website (and serve CSS/JS Assets)
+- [ ] Create Demo Application (Swap Between CSS Frameworks)
+- [ ] Change to PhoenixLiveEditable
+- [ ] Create 'Coverage' Chart (red/yellow/green)
+- [ ] ExUnit Unit Specs with LV test helpers
+- [ ] Hound Integration Specs on test pages
+
 

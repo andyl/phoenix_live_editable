@@ -1,5 +1,5 @@
 <section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
+  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix Live Editable" %></h1>
   <p>Peace of mind from prototype to production</p>
 
   <form phx-change="suggest" phx-submit="search">
@@ -18,10 +18,10 @@
     <h2>Resources</h2>
     <ul>
       <li>
-        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
+        <a target="_blank" href="<%= Phoenix.LiveEditable.Demo.Helpers.demolink(@url, :milligram) %>">Milligram Demo</a>
       </li>
       <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
+        <a target="_blank" href="<%= Phoenix.LiveEditable.Demo.Helpers.demolink(@url, :tailwind) %>">Tailwind Demo</a>
       </li>
       <li>
         <a href="https://github.com/phoenixframework/phoenix/blob/v1.5/CHANGELOG.md">v1.5 Changelog</a>

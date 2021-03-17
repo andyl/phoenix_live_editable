@@ -7,7 +7,6 @@
 # General application configuration
 use Mix.Config
 
-# Configures the endpoint
 config :phx_demo_tailwind, PhxDemoTailwindWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "JEOaYOnSgoTz1+r0yMPV/7VVWqJNe2HECZIKNy0bALwTZvtf/xDJzUWXNgTP2BJR",

@@ -1,20 +1,13 @@
-# This file is responsible for configuring your umbrella
-# and **all applications** and their dependencies with the
-# help of Mix.Config.
-#
-# Note that all applications in your umbrella share the
-# same configuration and dependencies, which is why they
-# all use the same configuration file. If you want different
-# configurations or dependencies per app, it is best to
-# move said applications out of the umbrella.
 use Mix.Config
-
-
 
 config :live_editable_web,
   generators: [context_app: :live_editable]
 
-# Configures the endpoint
+config :live_editable_web,
+  env: Mix.env()
+
+# ----- LIVE_EDITABLE_WEB
+
 config :live_editable_web, LiveEditableWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "SP0isPfuXxBGmXklQ0CZi5x98/rAUWTNjhc4OgV3O5QBtJpu61dQu6Vmffh1YZDP",
@@ -22,14 +15,30 @@ config :live_editable_web, LiveEditableWeb.Endpoint,
   pubsub_server: LiveEditable.PubSub,
   live_view: [signing_salt: "QsC1kc3Y"]
 
-# Configures Elixir's Logger
+# ----- PHX_DEMO_MILLIGRAM
+
+config :phx_demo_milligram, PhxDemoMilligramWeb.Endpoint,
+  url: [host: "localhost"],
+  secret_key_base: "bzu5s+45Yzl+rl59gfF+ej+vdcHj4pLGfTvdIwW1X06ZR00cIVbo9teXpdIhuhWn",
+  render_errors: [view: PhxDemoMilligramWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: PhxDemoMilligram.PubSub,
+  live_view: [signing_salt: "nxJkew8n"]
+
+# ----- PHX_DEMO_TAILWIND
+
+config :phx_demo_tailwind, PhxDemoTailwindWeb.Endpoint,
+  url: [host: "localhost"],
+  secret_key_base: "JEOaYOnSgoTz1+r0yMPV/7VVWqJNe2HECZIKNy0bALwTZvtf/xDJzUWXNgTP2BJR",
+  render_errors: [view: PhxDemoTailwindWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: PhxDemoTailwind.PubSub,
+  live_view: [signing_salt: "ZjpUwCFP"]
+
+# ----- MISC
+
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
-# Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
-# Import environment specific config. This must remain at the bottom
-# of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"

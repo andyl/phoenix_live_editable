@@ -3,7 +3,7 @@ use Mix.Config
 # ----- LIVE_EDITABLE_WEB
 
 config :live_editable_web, LiveEditableWeb.Endpoint,
-  http: [port: 4000],
+  http: [port: 4100],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
@@ -24,6 +24,33 @@ config :live_editable_web, LiveEditableWeb.Endpoint,
       ~r"priv/gettext/.*(po)$",
       ~r"lib/live_editable_web/(live|views)/.*(ex)$",
       ~r"lib/live_editable_web/templates/.*(eex)$"
+    ]
+  ]
+
+# ----- PHX_DEMO_BASE
+
+config :phx_demo_base, PhxDemoBaseWeb.Endpoint,
+  http: [port: 4000],
+  debug_errors: true,
+  code_reloader: true,
+  check_origin: false,
+  watchers: [
+    node: [
+      "node_modules/webpack/bin/webpack.js",
+      "--mode",
+      "development",
+      "--watch-stdin",
+      cd: Path.expand("../apps/phx_demo_base/assets", __DIR__)
+    ]
+  ]
+
+config :phx_demo_base, PhxDemoBaseWeb.Endpoint,
+  live_reload: [
+    patterns: [
+      ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
+      ~r"priv/gettext/.*(po)$",
+      ~r"lib/phx_demo_base_web/(live|views)/.*(ex)$",
+      ~r"lib/phx_demo_base_web/templates/.*(eex)$"
     ]
   ]
 

@@ -1,5 +1,5 @@
-defmodule LiveEditableWeb.PageLive do
-  use LiveEditableWeb, :live_view
+defmodule PhxDemoBaseWeb.PageLive do
+  use PhxDemoBaseWeb, :live_view
   use Phoenix.LiveEditable
 
   alias Phoenix.LiveEditable.Demo.Helpers
@@ -56,4 +56,5 @@ defmodule LiveEditableWeb.PageLive do
         into: %{},
         do: {app, vsn}
   end
+
 end

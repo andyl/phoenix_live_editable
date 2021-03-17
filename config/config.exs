@@ -15,6 +15,15 @@ config :live_editable_web, LiveEditableWeb.Endpoint,
   pubsub_server: LiveEditable.PubSub,
   live_view: [signing_salt: "QsC1kc3Y"]
 
+# ----- PHX_DEMO_BASE
+
+config :phx_demo_base, PhxDemoBaseWeb.Endpoint,
+  url: [host: "localhost"],
+  secret_key_base: "4GI1s5NnxDzI+Le2lVANn7DEDuC0KYYIOrBlbzMdEkuW0GoO92Hs8bUDEcZa20mM",
+  render_errors: [view: PhxDemoBaseWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: PhxDemoBase.PubSub,
+  live_view: [signing_salt: "rRioLeCG"]
+
 # ----- PHX_DEMO_MILLIGRAM
 
 config :phx_demo_milligram, PhxDemoMilligramWeb.Endpoint,

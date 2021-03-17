@@ -27,12 +27,13 @@ Multiple Phoenix Apps - Alternatives:
 - [x] Add dependencies to subapps
 - [x] Run end-to-end
 - [x] Add Tailwind to live_editable_web (plus JIT compiler)
+- [x] Add Tailwind to phx_demo_tailwind_web (plus JIT compiler and forms support)
 
 ## TODO
 
-- [ ] Add Tailwind to phx_demo_tailwind_web (plus JIT compiler and forms support)
 - [ ] Move the LiveEditable logic from the master branch
 - [ ] Build out the demo pages
 - [ ] Test on a 3rd party app...
+- [ ] Test in production
 - [ ] Update the README page
 

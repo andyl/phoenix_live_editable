@@ -41,7 +41,7 @@ defmodule Phoenix.LiveEditable do
         IO.inspect "ERROR CSS FRAMEWORK MODULE"
         IO.inspect error
         IO.inspect "+++++++++++++++++++++++++++++++++++++++"
-        Phoenix.LiveEditable.Bootstrap4
+        Phoenix.LiveEditable.Bootstrap5
     end
   end
 

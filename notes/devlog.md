@@ -63,6 +63,8 @@ Multiple Phoenix Apps - Alternatives:
 
 # TBD
 
+- [ ] Redo config to support multi-frameworks
+
 - [ ] Host demo site (PhoenixLiveEditable.com)
 
 - [ ] Get Validations Working

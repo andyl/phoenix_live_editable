@@ -1,4 +1,4 @@
-defmodule Phoenix.LiveEditable.Bootstrap4 do
+defmodule Phoenix.LiveEditable.Bootstrap5 do
 
   alias Phoenix.LiveEditable
   require Phoenix.LiveEditable.Svg 
@@ -10,7 +10,7 @@ defmodule Phoenix.LiveEditable.Bootstrap4 do
   def form_text(label, opts) do
     """
     <form class="form-inline" phx-change="#{opts[:on_change]}" phx-submit="#{opts[:on_submit]}">
-    <div class="form-group mb-2">
+    <div class="mb-2 form-group">
       <input type="text" class="form-control" name="editable_text" value="#{label}">
     </div>
     <button class="btn btn-primary mb2 btn-ple" style='margin-left: 5px' type='submit'>

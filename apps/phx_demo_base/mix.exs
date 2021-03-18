@@ -48,7 +48,7 @@ defmodule PhxDemoBase.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"}, 
-      {:live_editable, in_umbrella: true}
+      {:phoenix_live_editable, in_umbrella: true}
     ]
   end
 

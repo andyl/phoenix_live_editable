@@ -78,7 +78,7 @@ defmodule Phoenix.LiveEditable.Svg do
   end
 
   defp static_path(file_name) do
-    path = "#{__DIR__}/../../assets/static/svg"
+    path = "#{__DIR__}/../../../assets/static/svg"
     [path, "#{file_name}.svg"] |> Path.join() |> Path.expand 
   end
 end

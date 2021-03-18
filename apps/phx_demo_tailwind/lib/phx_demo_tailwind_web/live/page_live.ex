@@ -1,7 +1,7 @@
 defmodule PhxDemoTailwindWeb.PageLive do
   use PhxDemoTailwindWeb, :live_view
 
-  alias Phoenix.LiveEditable.Demo.Helpers
+  alias Phx.Demo.Helpers
 
   # ----- lifecycle callbacks -----
 

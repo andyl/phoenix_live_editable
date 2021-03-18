@@ -2,7 +2,7 @@ defmodule PhxDemoMilligramWeb.TestLive do
   use PhxDemoMilligramWeb, :live_view
   use Phoenix.LiveEditable
 
-  alias Phoenix.LiveEditable.Demo.Helpers
+  alias Phx.Demo.Helpers
 
   # ----- lifecycle callbacks -----
   @impl true

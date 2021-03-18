@@ -21,7 +21,7 @@
           </td>
           <td colspan=2>
             <code>
-              <%= live_edit(assigns, "MyText", id: "textfield", type: "text", on_submit: "save") %>
+              <%= "<%= live_edit(assigns, @my_text, id: 'txt1', type: 'text', on_submit: 'save') %" <> ">" %> 
             </code>
           </td>
         </tr>
@@ -31,14 +31,14 @@
           </td>
           <td colspan=2>
             <code>
-              def handle_event("save", value, socket) do
+              def handle_event("save", value, socket) do 
               end
             </code>
           </td>
         </tr>
         <tr>
           <td>
-            Done!
+            Try it!
           </td>
           <td>
             <%= live_edit(assigns, "CLICK ME TO EDIT", type: "text", id: "name", on_submit: "update") %>

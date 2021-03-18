@@ -2,30 +2,30 @@ use Mix.Config
 
 # ----- LIVE_EDITABLE_WEB
 
-config :live_editable_web, LiveEditableWeb.Endpoint,
-  http: [port: 4100],
-  debug_errors: true,
-  code_reloader: true,
-  check_origin: false,
-  watchers: [
-    node: [
-      "node_modules/webpack/bin/webpack.js",
-      "--mode",
-      "development",
-      "--watch-stdin",
-      cd: Path.expand("../apps/live_editable_web/assets", __DIR__)
-    ]
-  ]
-
-config :live_editable_web, LiveEditableWeb.Endpoint,
-  live_reload: [
-    patterns: [
-      ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
-      ~r"priv/gettext/.*(po)$",
-      ~r"lib/live_editable_web/(live|views)/.*(ex)$",
-      ~r"lib/live_editable_web/templates/.*(eex)$"
-    ]
-  ]
+# config :live_editable_web, LiveEditableWeb.Endpoint,
+#   http: [port: 4100],
+#   debug_errors: true,
+#   code_reloader: true,
+#   check_origin: false,
+#   watchers: [
+#     node: [
+#       "node_modules/webpack/bin/webpack.js",
+#       "--mode",
+#       "development",
+#       "--watch-stdin",
+#       cd: Path.expand("../apps/live_editable_web/assets", __DIR__)
+#     ]
+#   ]
+#
+# config :live_editable_web, LiveEditableWeb.Endpoint,
+#   live_reload: [
+#     patterns: [
+#       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
+#       ~r"priv/gettext/.*(po)$",
+#       ~r"lib/live_editable_web/(live|views)/.*(ex)$",
+#       ~r"lib/live_editable_web/templates/.*(eex)$"
+#     ]
+#   ]
 
 # ----- PHX_DEMO_BASE
 

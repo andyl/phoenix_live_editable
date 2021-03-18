@@ -1,19 +1,19 @@
 use Mix.Config
 
-config :live_editable_web,
-  generators: [context_app: :live_editable]
+# config :live_editable_web,
+#   generators: [context_app: :live_editable]
 
-config :live_editable_web,
+config :live_editable,
   env: Mix.env()
 
 # ----- LIVE_EDITABLE_WEB
 
-config :live_editable_web, LiveEditableWeb.Endpoint,
-  url: [host: "localhost"],
-  secret_key_base: "SP0isPfuXxBGmXklQ0CZi5x98/rAUWTNjhc4OgV3O5QBtJpu61dQu6Vmffh1YZDP",
-  render_errors: [view: LiveEditableWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: LiveEditable.PubSub,
-  live_view: [signing_salt: "QsC1kc3Y"]
+# config :live_editable_web, LiveEditableWeb.Endpoint,
+#   url: [host: "localhost"],
+#   secret_key_base: "SP0isPfuXxBGmXklQ0CZi5x98/rAUWTNjhc4OgV3O5QBtJpu61dQu6Vmffh1YZDP",
+#   render_errors: [view: LiveEditableWeb.ErrorView, accepts: ~w(html json), layout: false],
+#   pubsub_server: LiveEditable.PubSub,
+#   live_view: [signing_salt: "QsC1kc3Y"]
 
 # ----- PHX_DEMO_BASE
 
@@ -50,6 +50,6 @@ config :logger, :console,
 
 config :phoenix, :json_library, Jason
 
-config :phoenix_live_editable, css_framework: Phoenix.LiveEditable.Milligram
+config :live_editable, css_framework: Phoenix.LiveEditable.Milligram
 
 import_config "#{Mix.env()}.exs"

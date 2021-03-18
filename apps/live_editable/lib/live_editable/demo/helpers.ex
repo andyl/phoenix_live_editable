@@ -12,7 +12,7 @@ defmodule Phoenix.LiveEditable.Demo.Helpers do
 
   | Webapp                 | Dev Port | Prod Port |
   |------------------------|----------|-----------|
-  | LiveEditableWeb (home) | 4000     | 3800      |
+  | PhxDemoBaseWeb         | 4000     | 3800      |
   | PhxDemoMilligramWeb    | 4001     | 3801      |
   | PhxDemoBootstrapWeb    | 4002     | 3802      |
   | PhxDemoTailwindWeb     | 4003     | 3803      |
@@ -57,7 +57,7 @@ defmodule Phoenix.LiveEditable.Demo.Helpers do
 
   defp port_for(subsite) do
     base_port =
-      case Application.get_env(:live_editable_web, :env) do
+      case Application.get_env(:live_editable, :env) do
         :dev -> 4000
         :test -> 3900
         :prod -> 3800

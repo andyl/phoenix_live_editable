@@ -1,25 +1,26 @@
-defmodule Phoenix.LiveEditable.MixProject do
+defmodule LiveEditable.Umbrella.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :phoenix_live_editable,
-      version: "0.0.1",
-      elixir: "~> 1.9",
+      apps_path: "apps",
+      version: "0.1.0",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
-    ]
-  end
-
-  def application do
-    [
+      deps: deps(),
+      xref: [exclude: [Phoenix.HTML, Phoenix.LiveEditable]],
+      aliases: aliases()
     ]
   end
 
   defp deps do
     [
-      {:phoenix_html, "~> 2.14"},
-      {:phoenix_live_view, "~> 0.15"}
+    ]
+  end
+
+  defp aliases do
+    [
+      # run `mix setup` in all child apps
+      setup: ["cmd mix setup"]
     ]
   end
 end

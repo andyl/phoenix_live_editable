@@ -1,19 +1,10 @@
 # PhxDemoBootstrap5
 
-To start your Phoenix server:
+This website is a demo site for Bootstrap5.
 
-  * Install dependencies with `mix deps.get`
-  * Install Node.js dependencies with `npm install` inside the `assets` directory
-  * Start Phoenix endpoint with `mix phx.server`
+It uses Bootstrap5 for styling.
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+This site uses [Bootstrap5 configuration instructions][1] written by [Fullstack Phoenix][2].
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+[1]: https://fullstackphoenix.com/tutorials/bootstrap-5-and-phoenix-liveview
+[2]: https://fullstackphoenix.com/

@@ -1,11 +1,10 @@
 <div style='text-align: center;'>
-  <h1 class="p-5">Phoenix Live Editable</h1>
-  <div class="p-5">
-    <b>Home</b> | 
-    <a href="<%= Helpers.demolink(@url, :bootstrap5) %>">Bootstrap5 Demo</a> |
-    <a href="<%= Helpers.demolink(@url, :milligram) %>">Milligram Demo</a> |
-    <a href="<%= Helpers.demolink(@url, :tailwind) %>">Tailwind Demo</a> 
+  <h1>Phoenix Live Editable</h1>
+
+  <div style="padding: 20px;">
+    <%= raw Helpers.navlinks(@url) %>
   </div>
+
   <div>
     <a href="https://github.com/andyl/phoenix_live_editable" target="_blank">Phoenix Live Editable</a> 
     is an inline-editing utility for 
@@ -61,9 +60,9 @@
       <tr><th>CSS Framework</th><th>text</th><th>select</th><th>radio</th><th>textarea</th><th>calendar</th></tr>
     </thead>
     <tbody>
-      <tr><td><a href="/milligram">Milligram</a></td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
-      <tr><td><a href="/tailwind">Tailwind</a></td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
-      <tr><td><a href="/bootstrap4">Bootstrap4</a></td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
+      <tr><td><%= raw Helpers.demolink(@url, :bootstrap5) %></td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
+      <tr><td><%= raw Helpers.demolink(@url, :milligram) %></td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
+      <tr><td><%= raw Helpers.demolink(@url, :tailwind) %></td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
       <tr><td>Bulma</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
       <tr><td>Material</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
       <tr><td>UiKit</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>

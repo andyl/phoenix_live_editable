@@ -1,10 +1,21 @@
 defmodule PhxDemoTailwindWeb.PageLive do
   use PhxDemoTailwindWeb, :live_view
 
+  alias Phoenix.LiveEditable.Demo.Helpers
+
+  # ----- lifecycle callbacks -----
+
   @impl true
   def mount(_params, _session, socket) do
     {:ok, assign(socket, query: "", results: %{})}
   end
+
+  @impl true
+  def handle_params(_params, url, socket) do
+    {:noreply, assign(socket, :url, url)}
+  end
+
+  # ----- event handlers -----
 
   @impl true
   def handle_event("suggest", %{"q" => query}, socket) do

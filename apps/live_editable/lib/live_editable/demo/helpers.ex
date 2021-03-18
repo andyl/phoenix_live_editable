@@ -50,9 +50,40 @@ defmodule Phoenix.LiveEditable.Demo.Helpers do
     - :tailwind
 
   """
-  def demolink(url, subsite, path \\ "/") do
+  def demolink(url, subsite, label \\ "") do
     uri = URI.parse(url)
-    "#{uri.scheme}://#{uri.host}:#{port_for(subsite)}#{path}"
+    tgt_port = port_for(subsite)
+
+    alt_label = case subsite do
+      :base -> ""
+      _ -> label
+    end
+
+    if uri.port == tgt_port do
+      "<b>" <> label_for(subsite) <> alt_label <> "</b>"
+    else
+      path = "#{uri.scheme}://#{uri.host}:#{port_for(subsite)}/"
+      text = label_for(subsite) <> alt_label
+      "<a href='#{path}'>#{text}</a>"
+    end
+  end
+
+  @doc """
+  Generate nav-links for all sites.
+  """
+  def navlinks(url) do
+    [:base, :bootstrap5, :milligram, :tailwind]
+    |> Enum.map(&demolink(url, &1, " Demo"))
+    |> Enum.join(" | ")
+  end
+
+  defp label_for(subsite) do
+    case subsite do
+      :base -> "Home"
+      :bootstrap5 -> "Bootstrap5"
+      :milligram -> "Milligram"
+      :tailwind -> "Tailwind"
+    end
   end
 
   defp port_for(subsite) do
@@ -66,12 +97,11 @@ defmodule Phoenix.LiveEditable.Demo.Helpers do
     sub_port =
       case subsite do
         :base -> 0
-        :bootstrap5-> 1
+        :bootstrap5 -> 1
         :milligram -> 2
         :tailwind -> 3
       end
 
     base_port + sub_port
   end
-  
 end

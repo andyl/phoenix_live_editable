@@ -2,6 +2,13 @@
   <h1><%= gettext "Welcome to %{name}!", name: "Tailwind Demo" %></h1>
   <p class="bg-green-400">Peace of mind from Prototype to Production</p>
 
+
+
+  <div style="padding: 20px;">
+    <%= raw Helpers.navlinks(@url) %>
+  </div>
+
+
   <form phx-change="suggest" phx-submit="search">
     <input type="text" name="q" value="<%= @query %>" placeholder="Live dependency search" list="results" autocomplete="off"/>
     <datalist id="results">

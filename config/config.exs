@@ -1,19 +1,7 @@
 use Mix.Config
 
-# config :live_editable_web,
-#   generators: [context_app: :live_editable]
-
 config :live_editable,
   env: Mix.env()
-
-# ----- LIVE_EDITABLE_WEB
-
-# config :live_editable_web, LiveEditableWeb.Endpoint,
-#   url: [host: "localhost"],
-#   secret_key_base: "SP0isPfuXxBGmXklQ0CZi5x98/rAUWTNjhc4OgV3O5QBtJpu61dQu6Vmffh1YZDP",
-#   render_errors: [view: LiveEditableWeb.ErrorView, accepts: ~w(html json), layout: false],
-#   pubsub_server: LiveEditable.PubSub,
-#   live_view: [signing_salt: "QsC1kc3Y"]
 
 # ----- PHX_DEMO_BASE
 
@@ -23,6 +11,15 @@ config :phx_demo_base, PhxDemoBaseWeb.Endpoint,
   render_errors: [view: PhxDemoBaseWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: PhxDemoBase.PubSub,
   live_view: [signing_salt: "rRioLeCG"]
+
+# ----- PHX_DEMO_MILLIGRAM
+
+config :phx_demo_bootstrap5, PhxDemoBootstrap5Web.Endpoint,
+  url: [host: "localhost"],
+  secret_key_base: "oYz2uutPwI7bJV8WYG0w4W+7sOTywaRYlqzs97u7guF503Qx6VgPuaWEDLUJVepv",
+  render_errors: [view: PhxDemoBootstrap5Web.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: PhxDemoBootstrap5.PubSub,
+  live_view: [signing_salt: "rbmvdw8n"]
 
 # ----- PHX_DEMO_MILLIGRAM
 

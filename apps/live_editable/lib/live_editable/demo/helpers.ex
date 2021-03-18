@@ -10,12 +10,12 @@ defmodule Phoenix.LiveEditable.Demo.Helpers do
 
   Note: each Demo Webapp listens on it's own port:
 
-  | Webapp                 | Dev Port | Prod Port |
-  |------------------------|----------|-----------|
-  | PhxDemoBaseWeb         | 4000     | 3800      |
-  | PhxDemoMilligramWeb    | 4001     | 3801      |
-  | PhxDemoBootstrapWeb    | 4002     | 3802      |
-  | PhxDemoTailwindWeb     | 4003     | 3803      |
+  | Webapp               | Dev Port | Prod Port |
+  |----------------------|----------|-----------|
+  | PhxDemoBaseWeb       | 4000     | 3800      |
+  | PhxDemoBootstrap5Web | 4001     | 3801      |
+  | PhxDemoMilligramWeb  | 4002     | 3802      |
+  | PhxDemoTailwindWeb   | 4003     | 3803      |
 
   The `demolink` function requires two elements:
 
@@ -44,9 +44,9 @@ defmodule Phoenix.LiveEditable.Demo.Helpers do
       </a>
 
   Valid `subsite` options include:
-    - :home
+    - :base
+    - :bootstrap5
     - :milligram
-    - :bootstrap
     - :tailwind
 
   """
@@ -65,9 +65,9 @@ defmodule Phoenix.LiveEditable.Demo.Helpers do
 
     sub_port =
       case subsite do
-        :home -> 0
-        :milligram -> 1
-        :bootstrap -> 2
+        :base -> 0
+        :bootstrap5-> 1
+        :milligram -> 2
         :tailwind -> 3
       end
 

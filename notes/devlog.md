@@ -52,28 +52,24 @@ Multiple Phoenix Apps - Alternatives:
 - [x] Update the README page
 - [x] Move the LiveEditable logic from the master branch
 - [x] Get LiveEditable working in demo page
+- [x] Build out the working demo pages
 
 ## TODO
 
-- [ ] Build out the demo pages
-- [ ] Test on a 3rd party app...
+- [ ] Test on a 3rd party app
+- [ ] Cleanup demo apps
 - [ ] Test in production
+- [ ] Merge to master
 
 # TBD
 
-- [ ] Get Validations Working
-- [ ] Add RadioButton Field
+- [ ] Host demo site (PhoenixLiveEditable.com)
 
-- [ ] Host demo site 
-- [ ] Add tracker to layouts
+- [ ] Get Validations Working
+- [ ] Add RadioButton, DatePickers, etc.
 
 - [ ] Get modals working
 - [ ] ExUnit Shared Examples for HTML, Bootstrap4 and Milligram
-- [ ] Create Developer Website (and serve CSS/JS Assets)
-- [ ] Create Demo Application (Swap Between CSS Frameworks)
-- [ ] Change to PhoenixLiveEditable
 - [ ] Create 'Coverage' Chart (red/yellow/green)
 - [ ] ExUnit Unit Specs with LV test helpers
-- [ ] Hound Integration Specs on test pages
-
 

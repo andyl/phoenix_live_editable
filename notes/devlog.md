@@ -54,16 +54,21 @@ Multiple Phoenix Apps - Alternatives:
 - [x] Get LiveEditable working in demo page
 - [x] Build out the working demo pages
 
+## 2021 Mar 18 Thu
+
+- [x] Merge to master
+- [x] Install in a 3rd party app
+- [ ] Round trip editing in 3rd party app
+
 ## TODO
 
-- [ ] Test on a 3rd party app
 - [ ] Cleanup demo apps
+- [ ] Redo config to support multi-frameworks
 - [ ] Test in production
-- [ ] Merge to master
 
 # TBD
 
-- [ ] Redo config to support multi-frameworks
+- [ ] Test with local Hex repository (push sub-app)
 
 - [ ] Host demo site (PhoenixLiveEditable.com)
 

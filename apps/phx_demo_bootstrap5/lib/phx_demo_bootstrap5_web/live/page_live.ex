@@ -1,8 +1,7 @@
 defmodule PhxDemoBootstrap5Web.PageLive do
   use PhxDemoBootstrap5Web, :live_view
 
-  alias Phoenix.LiveEditable.Demo.Helpers
-
+  alias Phx.Demo.Helpers
 
   # ----- lifecycle callbacks -----
 

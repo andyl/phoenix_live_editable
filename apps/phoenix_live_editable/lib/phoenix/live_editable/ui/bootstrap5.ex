@@ -1,12 +1,13 @@
-defmodule Phoenix.LiveEditable.Bootstrap5 do
+defmodule Phoenix.LiveEditable.Ui.Bootstrap5 do
 
-  alias Phoenix.LiveEditable
+  alias Phoenix.LiveEditable.Ui
+
   require Phoenix.LiveEditable.Svg 
   alias Phoenix.LiveEditable.Svg
 
-  @behaviour LiveEditable.Base
+  @behaviour Ui.Base
 
-  @impl LiveEditable.Base
+  @impl Ui.Base
   def form_text(label, opts) do
     """
     <form class="form-inline" phx-change="#{opts[:on_change]}" phx-submit="#{opts[:on_submit]}">
@@ -23,7 +24,7 @@ defmodule Phoenix.LiveEditable.Bootstrap5 do
     """
   end
 
-  @impl LiveEditable.Base
+  @impl Ui.Base
   def form_select(label, opts) do
     Keyword.has_key?(opts, :options) || raise("Needs `:options` option")
     options = Enum.map(opts[:options], &("<option value='#{elem(&1,0)}'>#{elem(&1,1)}</option>"))

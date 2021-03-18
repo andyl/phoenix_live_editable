@@ -1,4 +1,4 @@
-defmodule Phoenix.LiveEditable.Demo.Helpers do
+defmodule Phx.Demo.Helpers do
   @moduledoc """
   View helpers for Demo Apps
 
@@ -21,7 +21,7 @@ defmodule Phoenix.LiveEditable.Demo.Helpers do
 
   Firstly, the current environment needs to be captured using `config.exs`:
 
-    config :live_editable_web,
+    config :phoenix_live_editable,
       env: Mix.env()
 
   Secondly, the Server URL need to be captured in each LiveView, using the
@@ -33,7 +33,7 @@ defmodule Phoenix.LiveEditable.Demo.Helpers do
 
   To call the function from within a LEEX block:
 
-      <a href="<%= Phoenix.LiveEditable.Demo.Helpers.demolink(@url, :milligram) %>">
+      <a href="<%= Phx.Demo.Helpers.demolink(@url, :milligram) %>">
         MILLIGRAM DEMO
       </a>
 
@@ -88,7 +88,7 @@ defmodule Phoenix.LiveEditable.Demo.Helpers do
 
   defp port_for(subsite) do
     base_port =
-      case Application.get_env(:live_editable, :env) do
+      case Application.get_env(:phoenix_live_editable, :env) do
         :dev -> 4000
         :test -> 3900
         :prod -> 3800

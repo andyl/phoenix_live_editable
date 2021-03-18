@@ -2,7 +2,7 @@ defmodule PhxDemoBaseWeb.PageLive do
   use PhxDemoBaseWeb, :live_view
   use Phoenix.LiveEditable
 
-  alias Phoenix.LiveEditable.Demo.Helpers
+  alias Phx.Demo.Helpers
 
   # ----- lifecycle callbacks -----
 

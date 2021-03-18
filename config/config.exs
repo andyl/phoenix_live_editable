@@ -1,6 +1,6 @@
 use Mix.Config
 
-config :live_editable,
+config :phoenix_live_editable,
   env: Mix.env()
 
 # ----- PHX_DEMO_BASE
@@ -47,6 +47,6 @@ config :logger, :console,
 
 config :phoenix, :json_library, Jason
 
-config :live_editable, css_framework: Phoenix.LiveEditable.Milligram
+config :phoenix_live_editable, css_framework: Phoenix.LiveEditable.Ui.Milligram
 
 import_config "#{Mix.env()}.exs"

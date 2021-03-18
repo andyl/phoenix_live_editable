@@ -35,7 +35,7 @@ dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:live_editable, github: 'andyl/phoenix_live_editable'}
+    {:phoenix_live_editable, github: 'andyl/phoenix_live_editable'}
   ]
 end
 ```

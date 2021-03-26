@@ -4,6 +4,7 @@ defmodule PhxDemoBootstrap5Web.PageLive do
   use Phoenix.LiveEditable
 
   alias Phx.Demo.Helpers
+  alias PhxDemoBootstrap5Web.PageLive.PageComponent 
 
   # ----- lifecycle callbacks -----
 

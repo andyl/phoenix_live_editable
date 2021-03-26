@@ -6,13 +6,15 @@ defmodule Phoenix.LiveEditable do
 
   # ----- view helpers -----
 
+  
   def live_edit(assigns, label, opts) do
     Keyword.has_key?(opts, :id) || raise("Needs `:id` option")
     Keyword.has_key?(opts, :type) || raise("Needs `:type` option ('text' | 'select')")
-    id = opts[:id]
+    optid = opts[:id]
     focus = assigns[:focus]
+    target = if opts[:target], do: "phx-target='#{opts[:target]}'", else: ""
 
-    if id == focus do
+    if optid == focus do
 
       module = css_framework_module()
 
@@ -23,7 +25,7 @@ defmodule Phoenix.LiveEditable do
       end 
       |> raw()
     else
-      "<span class='editable-click' phx-click='focus' phx-value-focusid='#{id}'>#{label}</span>"
+      "<span class='editable-click' phx-click='focus' phx-value-focusid='#{optid}' #{target}>#{label}</span>"
       |> raw()
     end
   end

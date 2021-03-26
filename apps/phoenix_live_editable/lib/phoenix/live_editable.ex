@@ -5,9 +5,9 @@ defmodule Phoenix.LiveEditable do
   # alias Phoenix.LiveEditable
 
   # ----- view helpers -----
-
   
   def live_edit(assigns, label, opts) do
+    IO.inspect opts, label: "LiveEdit OPTS"
     Keyword.has_key?(opts, :id) || raise("Needs `:id` option")
     Keyword.has_key?(opts, :type) || raise("Needs `:type` option ('text' | 'select')")
     optid = opts[:id]

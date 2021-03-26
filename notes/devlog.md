@@ -58,9 +58,11 @@ Multiple Phoenix Apps - Alternatives:
 
 - [x] Merge to master
 - [x] Install in a 3rd party app
-- [ ] Round trip editing in 3rd party app
 
 ## TODO
+
+- [ ] Test pages in Bootstrap5
+- [ ] Round trip editing in 3rd party app
 
 - [ ] Cleanup demo apps
 - [ ] Redo config to support multi-frameworks

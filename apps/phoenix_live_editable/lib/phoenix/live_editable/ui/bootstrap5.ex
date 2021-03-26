@@ -1,5 +1,9 @@
 defmodule Phoenix.LiveEditable.Ui.Bootstrap5 do
 
+  @moduledoc """
+  TBD
+  """
+
   alias Phoenix.LiveEditable.Ui
 
   require Phoenix.LiveEditable.Svg 
@@ -7,6 +11,9 @@ defmodule Phoenix.LiveEditable.Ui.Bootstrap5 do
 
   @behaviour Ui.Base
 
+  @doc """
+  <%= live_edit(assigns, @register.name, type: "text", id: "name", on_submit: "rename") %>
+  """
   @impl Ui.Base
   def form_text(label, opts) do
     """
@@ -24,6 +31,10 @@ defmodule Phoenix.LiveEditable.Ui.Bootstrap5 do
     """
   end
 
+  @doc """
+  Options is a list of tuples {<id>, <label>}
+  <%= live_edit(assigns, @folder.name, type: "select", options: @folders, id: "folder", on_submit: "refolder") %>
+  """
   @impl Ui.Base
   def form_select(label, opts) do
     Keyword.has_key?(opts, :options) || raise("Needs `:options` option")

@@ -4,8 +4,19 @@ defmodule PhxDemoBootstrap5Web.PageLive.PageComponent do
   """
 
   use Phoenix.LiveComponent
-  # use Phoenix.LiveEditable
+  use Phoenix.LiveEditable
 
+  # ----- lifecycle callbacks -----
+
+  @impl true
+  def update(session, socket) do
+    opts = %{
+      textdata: session[:textdata] || "MYDATA"
+    }
+    {:ok, assign(socket, opts)}
+  end
+
+  @impl true
   def render(assigns) do
     ~L"""
     <table class='table table-sm'>
@@ -27,10 +38,10 @@ defmodule PhxDemoBootstrap5Web.PageLive.PageComponent do
           input
         </td>
         <td>
-          <%# live_edit(assigns, @text_data, type: "text", target: @myself, on_submit: "update_text", id: "cedit1") %>
+          <%= live_edit(assigns, @textdata, type: "text", target: @myself, on_submit: "update_ctext", id: "cedit1") %>
         </td>
         <td>
-          <%# @text_data %>
+          <%= @textdata %>
         </td>
       </tr>
       <tr>
@@ -49,34 +60,10 @@ defmodule PhxDemoBootstrap5Web.PageLive.PageComponent do
     """
   end
   
-  # ----- view helpers -----
-
-  # def folder_btn(uistate, myself) do
-  #   label = "#{plus_circle_svg("up-3 h-5 inline text-blue-500")} Folder<br/>"
-  #   if uistate.mode != "add_folder" do
-  #     "<a phx-click='add_folder' class='bluelink' phx-target='#{myself}' href='#'>#{label}</a>"
-  #   else
-  #     ""
-  #   end |> raw()
-  # end
-  #
-  # def feed_btn(uistate, myself) do
-  #   label = "#{plus_circle_svg("up-3 h-5 inline text-blue-500")} Feed<br/>"
-  #   if uistate.mode != "add_feed" do
-  #     "<a phx-click='add_feed' class='bluelink' phx-target='#{myself}' href='#'>#{label}</a>"
-  #   else
-  #     ""
-  #   end |> raw()
-  # end
-
   # ----- event handlers -----
 
-~  # def handle_event("update_text", %{"editable_text" => new_value}, socket) do
-  #   {:noreply, assign(socket, text_data: new_value)}
-  # end
-  #
-  # def handle_event("update_select", %{"editable_select" => new_value}, socket) do
-  #   {:noreply, assign(socket, select_data: new_value)}
-  # end
+  def handle_event("update_ctext", %{"editable_text" => new_value}, socket) do
+    {:noreply, assign(socket, textdata: new_value, focus: "asdf")}
+  end
 
 end

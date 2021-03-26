@@ -47,6 +47,7 @@ config :logger, :console,
 
 config :phoenix, :json_library, Jason
 
-config :phoenix_live_editable, css_framework: Phoenix.LiveEditable.Ui.Milligram
+# TODO: make this config app-specific
+config :phoenix_live_editable, css_framework: Phoenix.LiveEditable.Ui.Bootstrap5
 
 import_config "#{Mix.env()}.exs"

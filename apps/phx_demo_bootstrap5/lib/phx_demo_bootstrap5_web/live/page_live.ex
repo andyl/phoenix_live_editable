@@ -1,6 +1,6 @@
 defmodule PhxDemoBootstrap5Web.PageLive do
-  use PhxDemoBootstrap5Web, :live_view
 
+  use PhxDemoBootstrap5Web, :live_view
   use Phoenix.LiveEditable
 
   alias Phx.Demo.Helpers
@@ -28,6 +28,12 @@ defmodule PhxDemoBootstrap5Web.PageLive do
   end
 
   # ----- event handlers -----
+
+  # @impl true
+  # def handle_event("update_ctext", %{"editable_text" => new_value}, socket) do
+  #   IO.inspect new_value, label: "NEW_VALUE"
+  #   {:noreply, assign(socket, text_data: new_value)}
+  # end
 
   @impl true
   def handle_event("update_text", %{"editable_text" => new_value}, socket) do

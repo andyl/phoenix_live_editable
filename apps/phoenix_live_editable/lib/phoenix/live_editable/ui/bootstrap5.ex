@@ -16,6 +16,7 @@ defmodule Phoenix.LiveEditable.Ui.Bootstrap5 do
   """
   @impl Ui.Base
   def form_text(label, opts) do
+    IO.inspect opts, label: "ZZZZZZZZZ"
     target = if opts[:target], do: "phx-target='#{opts[:target]}'", else: ""
     change = "phx-change='#{opts[:on_change]}'"
     submit = "phx-submit='#{opts[:on_submit]}'"

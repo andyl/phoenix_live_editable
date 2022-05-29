@@ -36,7 +36,7 @@ Multiple Ports - Cons:
 
 Multiple Phoenix Apps - Alternatives:
 - using the 'forward' statement in the routes file: couldn't get websockets working
-- using `jesseshieh/master_proxy` - couldn't get it working
+- using `jesseshieh/master-proxy` - couldn't get it working
 - prefer to run all Phoenix apps on a single port
 - but for now we'll use multiple ports...
 
@@ -44,8 +44,8 @@ Multiple Phoenix Apps - Alternatives:
 - [x] Add config info to umbrella parent
 - [x] Add dependencies to subapps
 - [x] Run end-to-end
-- [x] Add Tailwind to live_editable_web (plus JIT compiler)
-- [x] Add Tailwind to phx_demo_tailwind_web (plus JIT compiler and forms support)
+- [x] Add Tailwind to live-editable-web (plus JIT compiler)
+- [x] Add Tailwind to phx-demo-tailwind-web (plus JIT compiler and forms support)
 
 ## 2021 Mar 17 Wed
 
@@ -54,24 +54,36 @@ Multiple Phoenix Apps - Alternatives:
 - [x] Get LiveEditable working in demo page
 - [x] Build out the working demo pages
 
+## 2022 May 28 Sat
+
+Improved tech:
+- LV: function components, slots, JS Commands
+- Phx Asset: esbuild, tailwind, dartsass
+- Phx Release: mix release / docker 
+- Fly.io: multi-port containers
+
+Mix Package Publishing and Umbrellas: 
+- can publish mix package from umbrella subapp
+- run `mix hex.publish` from subapp root...
+
 ## TODO
 
-- [ ] Test on a 3rd party app
-- [ ] Cleanup demo apps
-- [ ] Test in production
-- [ ] Merge to master
+- [ ] Rebuild demo apps from scratch 
 
 # TBD
 
-- [ ] Redo config to support multi-frameworks
+- [ ] Get running locally 
+- [ ] Get running on fly.io 
 
-- [ ] Host demo site (PhoenixLiveEditable.com)
+- [ ] Get modals working
+
+- [ ] Write tests 
+
+- [ ] ExUnit Shared Examples for HTML, Bootstrap4 and Milligram
 
 - [ ] Get Validations Working
 - [ ] Add RadioButton, DatePickers, etc.
 
-- [ ] Get modals working
-- [ ] ExUnit Shared Examples for HTML, Bootstrap4 and Milligram
 - [ ] Create 'Coverage' Chart (red/yellow/green)
 - [ ] ExUnit Unit Specs with LV test helpers
 

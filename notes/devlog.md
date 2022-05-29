@@ -74,14 +74,13 @@ Mix Package Publishing and Umbrellas:
 ## NextSteps
 
 - [x] Rebuild demo apps from scratch 
+- [x] Fix link helpers 
+- [x] Setup milligram home page 
+- [x] Fix base home page 
+- [x] Add tailwind3 config 
+- [x] Setup tailwind3 home page
 
-- [ ] Fix link helpers 
-
-- [ ] Setup milligram home page 
-- [ ] Add tailwind3 config 
-- [ ] Setup tailwind3 home page
-
-- [ ] Fix base home page 
+- [ ] Get live-edit working on base home page
 
 # TBD
 

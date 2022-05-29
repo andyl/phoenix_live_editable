@@ -50,7 +50,8 @@ config :ple_demo_tailwind3, PleDemoTailwind3Web.Endpoint,
   code_reloader: true,
   check_origin: false,
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:ple_demo_tailwind3, ~w(--sourcemap=inline --watch)]}
+    esbuild: {Esbuild, :install_and_run, [:ple_demo_tailwind3, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:ple_demo_tailwind3, ~w(--watch)]}
   ]
 
 config :ple_demo_tailwind3, PleDemoTailwind3Web.Endpoint,
@@ -61,29 +62,6 @@ config :ple_demo_tailwind3, PleDemoTailwind3Web.Endpoint,
       ~r"lib/ple_demo_tailwind3_web/(live|views)/.*(ex)$",
       ~r"lib/ple_demo_tailwind3_web/templates/.*(eex)$"
     ]
-  ]
-
-# ----- ESBUILD
-
-config :esbuild,
-  version: "0.14.29",
-  ple_demo_base: [
-    args:
-      ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
-    cd: Path.expand("../apps/ple_demo_base/assets", __DIR__),
-    env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
-  ],
-  ple_demo_milligram: [
-    args:
-      ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
-    cd: Path.expand("../apps/ple_demo_milligram/assets", __DIR__),
-    env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
-  ],
-  ple_demo_tailwind3: [
-    args:
-      ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
-    cd: Path.expand("../apps/ple_demo_tailwind3/assets", __DIR__),
-    env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
   ]
 
 # ----- MISC

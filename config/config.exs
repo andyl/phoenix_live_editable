@@ -30,6 +30,42 @@ config :ple_demo_tailwind3, PleDemoTailwind3Web.Endpoint,
   pubsub_server: PleDemoTailwind3.PubSub,
   live_view: [signing_salt: "ZjpUwCFP"]
 
+# ----- ESBUILD
+
+config :esbuild,
+  version: "0.14.29",
+  ple_demo_base: [
+    args:
+      ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
+    cd: Path.expand("../apps/ple_demo_base/assets", __DIR__),
+    env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
+  ],
+  ple_demo_milligram: [
+    args:
+      ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
+    cd: Path.expand("../apps/ple_demo_milligram/assets", __DIR__),
+    env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
+  ],
+  ple_demo_tailwind3: [
+    args:
+      ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
+    cd: Path.expand("../apps/ple_demo_tailwind3/assets", __DIR__),
+    env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
+  ]
+
+# ----- TAILWIND
+
+config :tailwind,
+  version: "3.0.24",
+  ple_demo_tailwind3: [
+    args: ~w(
+      --config=tailwind.config.js
+      --input=css/app.css
+      --output=../priv/static/assets/app.css
+    ),
+    cd: Path.expand("../apps/ple_demo_tailwind3/assets", __DIR__)
+  ]
+
 # ----- MISC
 
 config :logger, :console,

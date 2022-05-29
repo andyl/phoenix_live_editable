@@ -3,9 +3,9 @@
 In-place editing for Phoenix Live View.
 
 LiveEditable provides in-line helpers that you can drop into your LiveView
-(LEEX) templates.
+(HEEX) templates.
 
-Example LEEX tag:
+Example HEEX tag:
 
     <%= live_editable(assigns, "MyText", id: "textfield", type: "text", on_submit: "save" %>
 
@@ -16,16 +16,30 @@ You'll need to add a handler to your LiveView:
     end
 
 LiveEditable is good for admin interfaces and applications where off-the-shelf
-inline editing is desirable.  It supports multiple CSS Frameworks (Bootstrap,
+inline editing is desirable.  It supports multiple CSS Frameworks (Tailwind,
 Milligram, etc.) and field types (Text, Select, etc.) and is designed to be
 customized and extended.  LiveEditable is inspired by [X-Editable][xe].
 
-There is a [ple_demo][pd] repo on GitHub, which has links to a live example.
+This repo is an umbrella project with Phoenix demo apps for each supported CSS
+framework.
 
 LiveEditable is pre-alpha - not yet ready for production use.
 
 [xe]: http://vitalets.github.io/x-editable/
 [pd]: http://github.com/andyl/ple_demo
+
+## Demonstration 
+
+Visit TBD to see a live application. (UNDER CONSTRUCTION)
+
+Follow these steps to run the LiveEditable demo apps locally:
+
+    $ git clone https://github.com/andyl/phoenix_live_editable 
+    $ cd phoenix_live_editable 
+    $ mix deps.get
+    $ mix phx.server 
+
+Now open a browser and visit `http://localhost:4000`
 
 ## Installation
 
@@ -35,7 +49,7 @@ dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:phoenix_live_editable, github: 'andyl/phoenix_live_editable'}
+    {:phoenix_live_editable, github: 'andyl/phoenix_live_editable/apps/phoenix_live_editable'}
   ]
 end
 ```
@@ -45,21 +59,13 @@ After that:
     $ mix deps.get && mix deps.compile
 
 Next add LiveEditable configuartion to your `config/config.exs`:
-    
+
     config :phoenix_live_editable, css_framework: <YOUR_CSS_FRAMEWORK_MODULE>
 
 Valid Framework Modules include:
 
     - Phoenix.LiveEditable.Milligram
     - Phoenix.LiveEditable.Tailwind
-
-Incorporate LiveEditable javascript into your app:
-
-    INSTRUCTIONS TBD
-
-Incorporate LiveEditable CSS into your app:
-
-    INSTRUCTIONS TBD
 
 Now you can use LiveEditable in your LiveViews and LiveComponents:
 

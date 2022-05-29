@@ -17,11 +17,6 @@ defmodule PleDemoBaseWeb.Router do
   scope "/", PleDemoBaseWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/", PageLive, :index
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", PleDemoBaseWeb do
-  #   pipe_through :api
-  # end
 end

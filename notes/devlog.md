@@ -73,7 +73,15 @@ Mix Package Publishing and Umbrellas:
 
 ## NextSteps
 
-- [ ] Rebuild demo apps from scratch 
+- [x] Rebuild demo apps from scratch 
+
+- [ ] Fix link helpers 
+
+- [ ] Setup milligram home page 
+- [ ] Add tailwind3 config 
+- [ ] Setup tailwind3 home page
+
+- [ ] Fix base home page 
 
 # TBD
 

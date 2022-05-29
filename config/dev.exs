@@ -1,111 +1,89 @@
-use Mix.Config
+import Config
 
-# ----- PHX_DEMO_BASE
+# ----- PLE_DEMO_BASE
 
-config :phx_demo_base, PhxDemoBaseWeb.Endpoint,
+config :ple_demo_base, PleDemoBaseWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
   watchers: [
-    node: [
-      "node_modules/webpack/bin/webpack.js",
-      "--mode",
-      "development",
-      "--watch-stdin",
-      cd: Path.expand("../apps/phx_demo_base/assets", __DIR__)
-    ]
+    esbuild: {Esbuild, :install_and_run, [:ple_demo_base, ~w(--sourcemap=inline --watch)]}
   ]
 
-config :phx_demo_base, PhxDemoBaseWeb.Endpoint,
+config :ple_demo_base, PleDemoBaseWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/phx_demo_base_web/(live|views)/.*(ex)$",
-      ~r"lib/phx_demo_base_web/templates/.*(eex)$"
+      ~r"lib/ple_demo_base_web/(live|views)/.*(ex)$",
+      ~r"lib/ple_demo_base_web/templates/.*(eex)$"
     ]
   ]
 
-# ----- PHX_DEMO_BOOTSTRAP5
+# ----- PLE_DEMO_MILLIGRAM
 
-config :phx_demo_bootstrap5, PhxDemoBootstrap5Web.Endpoint,
+config :ple_demo_milligram, PleDemoMilligramWeb.Endpoint,
   http: [port: 4001],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
   watchers: [
-    node: [
-      "node_modules/webpack/bin/webpack.js",
-      "--mode",
-      "development",
-      "--watch-stdin",
-      cd: Path.expand("../apps/phx_demo_bootstrap5/assets", __DIR__)
-    ]
+    esbuild: {Esbuild, :install_and_run, [:ple_demo_milligram, ~w(--sourcemap=inline --watch)]}
   ]
 
-config :phx_demo_bootstrap5, PhxDemoBootstrap5Web.Endpoint,
+config :ple_demo_milligram, PleDemoMilligramWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/phx_demo_bootstrap5_web/(live|views)/.*(ex)$",
-      ~r"lib/phx_demo_bootstrap5_web/templates/.*(eex)$"
+      ~r"lib/ple_demo_milligram_web/(live|views)/.*(ex)$",
+      ~r"lib/ple_demo_milligram_web/templates/.*(eex)$"
     ]
   ]
 
-# ----- PHX_DEMO_MILLIGRAM
+# ----- PLE_DEMO_TAILWIND3
 
-config :phx_demo_milligram, PhxDemoMilligramWeb.Endpoint,
+config :ple_demo_tailwind3, PleDemoTailwind3Web.Endpoint,
   http: [port: 4002],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
   watchers: [
-    node: [
-      "node_modules/webpack/bin/webpack.js",
-      "--mode",
-      "development",
-      "--watch-stdin",
-      cd: Path.expand("../apps/phx_demo_milligram/assets", __DIR__)
-    ]
+    esbuild: {Esbuild, :install_and_run, [:ple_demo_tailwind3, ~w(--sourcemap=inline --watch)]}
   ]
 
-config :phx_demo_milligram, PhxDemoMilligramWeb.Endpoint,
+config :ple_demo_tailwind3, PleDemoTailwind3Web.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/phx_demo_milligram_web/(live|views)/.*(ex)$",
-      ~r"lib/phx_demo_milligram_web/templates/.*(eex)$"
+      ~r"lib/ple_demo_tailwind3_web/(live|views)/.*(ex)$",
+      ~r"lib/ple_demo_tailwind3_web/templates/.*(eex)$"
     ]
   ]
 
-# ----- PHX_DEMO_TAILWIND
+# ----- ESBUILD
 
-config :phx_demo_tailwind, PhxDemoTailwindWeb.Endpoint,
-  http: [port: 4003],
-  debug_errors: true,
-  code_reloader: true,
-  check_origin: false,
-  watchers: [
-    node: [
-      "node_modules/webpack/bin/webpack.js",
-      "--mode",
-      "development",
-      "--watch-stdin",
-      cd: Path.expand("../apps/phx_demo_tailwind/assets", __DIR__)
-    ]
-  ]
-
-config :phx_demo_tailwind, PhxDemoTailwindWeb.Endpoint,
-  live_reload: [
-    patterns: [
-      ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
-      ~r"priv/gettext/.*(po)$",
-      ~r"lib/phx_demo_tailwind_web/(live|views)/.*(ex)$",
-      ~r"lib/phx_demo_tailwind_web/templates/.*(eex)$"
-    ]
+config :esbuild,
+  version: "0.14.29",
+  ple_demo_base: [
+    args:
+      ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
+    cd: Path.expand("../apps/ple_demo_base/assets", __DIR__),
+    env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
+  ],
+  ple_demo_milligram: [
+    args:
+      ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
+    cd: Path.expand("../apps/ple_demo_milligram/assets", __DIR__),
+    env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
+  ],
+  ple_demo_tailwind3: [
+    args:
+      ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
+    cd: Path.expand("../apps/ple_demo_tailwind3/assets", __DIR__),
+    env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
   ]
 
 # ----- MISC

@@ -1,42 +1,33 @@
-use Mix.Config
+import Config
 
 config :phoenix_live_editable,
   env: Mix.env()
 
-# ----- PHX_DEMO_BASE
+# ----- PLE_DEMO_BASE
 
-config :phx_demo_base, PhxDemoBaseWeb.Endpoint,
+config :ple_demo_base, PleDemoBaseWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "4GI1s5NnxDzI+Le2lVANn7DEDuC0KYYIOrBlbzMdEkuW0GoO92Hs8bUDEcZa20mM",
-  render_errors: [view: PhxDemoBaseWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: PhxDemoBase.PubSub,
+  render_errors: [view: PleDemoBaseWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: PleDemoBase.PubSub,
   live_view: [signing_salt: "rRioLeCG"]
 
-# ----- PHX_DEMO_MILLIGRAM
+# ----- PLE_DEMO_MILLIGRAM
 
-config :phx_demo_bootstrap5, PhxDemoBootstrap5Web.Endpoint,
-  url: [host: "localhost"],
-  secret_key_base: "oYz2uutPwI7bJV8WYG0w4W+7sOTywaRYlqzs97u7guF503Qx6VgPuaWEDLUJVepv",
-  render_errors: [view: PhxDemoBootstrap5Web.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: PhxDemoBootstrap5.PubSub,
-  live_view: [signing_salt: "rbmvdw8n"]
-
-# ----- PHX_DEMO_MILLIGRAM
-
-config :phx_demo_milligram, PhxDemoMilligramWeb.Endpoint,
+config :ple_demo_milligram, PleDemoMilligramWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "bzu5s+45Yzl+rl59gfF+ej+vdcHj4pLGfTvdIwW1X06ZR00cIVbo9teXpdIhuhWn",
-  render_errors: [view: PhxDemoMilligramWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: PhxDemoMilligram.PubSub,
+  render_errors: [view: PleDemoMilligramWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: PleDemoMilligram.PubSub,
   live_view: [signing_salt: "nxJkew8n"]
 
-# ----- PHX_DEMO_TAILWIND
+# ----- PLE_DEMO_TAILWIND3
 
-config :phx_demo_tailwind, PhxDemoTailwindWeb.Endpoint,
+config :ple_demo_tailwind3, PleDemoTailwind3Web.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "JEOaYOnSgoTz1+r0yMPV/7VVWqJNe2HECZIKNy0bALwTZvtf/xDJzUWXNgTP2BJR",
-  render_errors: [view: PhxDemoTailwindWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: PhxDemoTailwind.PubSub,
+  render_errors: [view: PleDemoTailwind3Web.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: PleDemoTailwind3.PubSub,
   live_view: [signing_salt: "ZjpUwCFP"]
 
 # ----- MISC
@@ -48,6 +39,6 @@ config :logger, :console,
 config :phoenix, :json_library, Jason
 
 # TODO: make this config app-specific
-config :phoenix_live_editable, css_framework: Phoenix.LiveEditable.Ui.Bootstrap5
+# config :phoenix_live_editable, css_framework: Phoenix.LiveEditable.Ui.Bootstrap5
 
 import_config "#{Mix.env()}.exs"

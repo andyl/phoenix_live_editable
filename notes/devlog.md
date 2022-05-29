@@ -76,6 +76,23 @@ Mix Package Publishing and Umbrellas:
 - [ ] Get running on fly.io 
 
 - [ ] Get modals working
+## 2021 Mar 18 Thu
+
+- [x] Merge to master
+- [x] Install in a 3rd party app
+
+## TODO
+
+- [ ] Test pages in Bootstrap5
+- [ ] Round trip editing in 3rd party app
+
+- [ ] Cleanup demo apps
+- [ ] Redo config to support multi-frameworks
+- [ ] Test in production
+
+# TBD
+
+- [ ] Test with local Hex repository (push sub-app)
 
 - [ ] Write tests 
 

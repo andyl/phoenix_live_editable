@@ -8,6 +8,7 @@ defmodule Phoenix.LiveEditable.Ui.Tailwind do
 
   @impl Ui.Base
   def form_text(label, opts) do
+    IO.puts "TAILWINDDDD"
     """
     <form class="ple-mg-form" phx-change="#{opts[:on_change]}" phx-submit="#{opts[:on_submit]}">
     <input class="ple-mg-text" type="text" name="editable_text" value="#{label}">

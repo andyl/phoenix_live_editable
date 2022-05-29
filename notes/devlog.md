@@ -71,8 +71,6 @@ Mix Package Publishing and Umbrellas:
 - can publish mix package from umbrella subapp
 - run `mix hex.publish` from subapp root...
 
-## NextSteps
-
 - [x] Rebuild demo apps from scratch 
 - [x] Fix link helpers 
 - [x] Setup milligram home page 
@@ -81,9 +79,18 @@ Mix Package Publishing and Umbrellas:
 - [x] Setup tailwind3 home page
 - [x] Get running locally 
 
-# TBD
+## NextSteps
 
-- [ ] Get running on fly.io 
+- [ ] Generate static assets for production 
+- [ ] Run locally in production (8080, 8081, 8082)
+- [ ] Generate release 
+- [ ] Run locally in release 
+- [ ] Generate docker file 
+- [ ] Run locally in docker file 
+- [ ] Run in burrito app
+- [ ] Run on fly.io 
+
+# TBD
 
 - [ ] Get live-edit working on base home page
 

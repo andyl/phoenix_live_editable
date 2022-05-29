@@ -2,7 +2,7 @@ defmodule Phx.Demo.Helpers do
   @moduledoc """
   View helpers for Demo Apps
 
-  The view helper `demolink` is intended for use by all Webapps.
+  The view helper `demolink` is intended for use by all demo Webapps.
   """
 
   @doc """
@@ -10,12 +10,11 @@ defmodule Phx.Demo.Helpers do
 
   Note: each Demo Webapp listens on it's own port:
 
-  | Webapp               | Dev Port | Prod Port |
-  |----------------------|----------|-----------|
-  | PhxDemoBaseWeb       | 4000     | 3800      |
-  | PhxDemoBootstrap5Web | 4001     | 3801      |
-  | PhxDemoMilligramWeb  | 4002     | 3802      |
-  | PhxDemoTailwindWeb   | 4003     | 3803      |
+  | Webapp              | Dev Port | Prod Port |
+  |---------------------|----------|-----------|
+  | PhxDemoBaseWeb      | 4000     | 3800      |
+  | PhxDemoMilligramWeb | 4001     | 3801      |
+  | PhxDemoTailwind3Web | 4002     | 3802      |
 
   The `demolink` function requires two elements:
 
@@ -31,7 +30,7 @@ defmodule Phx.Demo.Helpers do
       {:noreply, assign(socket, :url, url)}
     end
 
-  To call the function from within a LEEX block:
+  To call the function from within a HEEX block:
 
       <a href="<%= Phx.Demo.Helpers.demolink(@url, :milligram) %>">
         MILLIGRAM DEMO
@@ -43,11 +42,10 @@ defmodule Phx.Demo.Helpers do
         MILLIGRAM DEMO
       </a>
 
-  Valid `subsite` options include:
+  Valid `url` options include:
     - :base
-    - :bootstrap5
     - :milligram
-    - :tailwind
+    - :tailwind3
 
   """
   def demolink(url, subsite, label \\ "") do
@@ -72,17 +70,17 @@ defmodule Phx.Demo.Helpers do
   Generate nav-links for all sites.
   """
   def navlinks(url) do
-    [:base, :bootstrap5, :milligram, :tailwind]
+    [:base, :milligram, :tailwind3]
     |> Enum.map(&demolink(url, &1, " Demo"))
-    |> Enum.join(" | ")
+    |> Enum.join("                           | ")
   end
 
   defp label_for(subsite) do
     case subsite do
       :base -> "Home"
-      :bootstrap5 -> "Bootstrap5"
       :milligram -> "Milligram"
-      :tailwind -> "Tailwind"
+      :tailwind3 -> "Tailwind3"
+      :bootstrap5 -> "Bootstrap5"
     end
   end
 
@@ -97,9 +95,9 @@ defmodule Phx.Demo.Helpers do
     sub_port =
       case subsite do
         :base -> 0
-        :bootstrap5 -> 1
-        :milligram -> 2
-        :tailwind -> 3
+        :milligram -> 1
+        :tailwind3 -> 2
+        :bootstrap5 -> 3
       end
 
     base_port + sub_port

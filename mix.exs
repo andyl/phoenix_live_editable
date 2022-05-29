@@ -8,12 +8,27 @@ defmodule LiveEditable.Umbrella.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       xref: [exclude: [Phoenix.HTML, Phoenix.LiveEditable]],
-      aliases: aliases()
+      aliases: aliases(),
+      releases: releases()
     ]
   end
 
   defp deps do
     [
+    ]
+  end
+
+  defp releases do
+    [
+      demo: [
+        include_executable_for: [:unix],
+        applications: [
+          phoenix_live_editable: :permanent,
+          ple_demo_base: :permanent,
+          ple_demo_milligram: :permanent,
+          ple_demo_tailwind3: :permanent,
+        ]
+      ]
     ]
   end
 

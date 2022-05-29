@@ -87,19 +87,25 @@ Mix Package Publishing and Umbrellas:
 - [x] Add runtime.exs 
 - [x] Hardcode secret-key-base
 - [x] Add `assets.deploy` mix task 
+- [x] Generate release 
+- [x] Run locally in release 
 
 ## NextSteps
 
-- [ ] Generate release 
-- [ ] Run locally in release 
-- [ ] Generate docker file 
-- [ ] Run locally in docker file 
-- [ ] Run in burrito app
+- [ ] Generate docker file for demo app 
+- [ ] Modify docker file for PLE 
+- [ ] Run locally in docker 
+- [ ] Publish docker container 
+
+- [ ] make ple-util (ets datastore, helpers)
+
 - [ ] Run on fly.io 
 
 # TBD
 
 - [ ] Get live-edit working on base home page
+
+- [ ] Run in burrito app
 
 - [ ] Get modals working
 

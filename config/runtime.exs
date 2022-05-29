@@ -43,6 +43,11 @@ if config_env() == :prod do
     ],
     secret_key_base: secret_key_base
 
+  # ----- RELEASE CONFIG
+  config :ple_demo_base, PleDemoBaseWeb.Endpoint, server: true
+  config :ple_demo_milligram, PleDemoMilligramWeb.Endpoint, server: true
+  config :ple_demo_tailwind3, PleDemoTailwind3Web.Endpoint, server: true
+
   # ## Using releases
   #
   # If you are doing OTP releases, you need to instruct Phoenix

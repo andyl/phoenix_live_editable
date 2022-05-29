@@ -1,0 +1,72 @@
+<div style='text-align: center;'>
+  <h1>Phoenix Live Editable</h1>
+
+  <div style="padding: 20px;">
+    <%= raw Helpers.navlinks(@url) %>
+  </div>
+
+  <div>
+    <a href="https://github.com/andyl/phoenix_live_editable" target="_blank">Phoenix Live Editable</a> 
+    is an inline-editing utility for 
+    <a href="https://github.com/phoenixframework/phoenix_live_view" target="_blank">Phoenix Live View</a> 
+    inspired by <a href="http://vitalets.github.io/x-editable/" target="_blank">X-editable</a>.
+  </div>
+
+  <div class="p-10 overflow-hidden rounded-t-xl bg-gradient-to-r from-emerald-50 to-teal-100">
+    <table class="bg-red-200 table-auto">
+      <tbody>
+        <tr>
+          <td>
+            Add an EEX tag
+          </td>
+          <td colspan=2>
+            <code>
+              <%= "<%= live_edit(assigns, @my_text, id: 'txt1', type: 'text', on_submit: 'save') %" <> ">" %> 
+            </code>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Add a LiveView Handler
+          </td>
+          <td colspan=2>
+            <code>
+              def handle_event("save", value, socket) do 
+              end
+            </code>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Try it!
+          </td>
+          <td>
+            <%= live_edit(assigns, "CLICK ME TO EDIT", type: "text", id: "name", on_submit: "update") %>
+          </td>
+          <td>
+            RESULT: CLICK ME TO EDIT
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  Live Editable is pre-alpha. Pull requests welcome!  Here's the current status:
+
+  <div class="p-10">
+  <table class='table-auto'>
+
+    <thead>
+      <tr><th>CSS Framework</th><th>text</th><th>select</th><th>radio</th><th>textarea</th><th>calendar</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><%= raw Helpers.demolink(@url, :milligram) %></td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
+      <tr><td><%= raw Helpers.demolink(@url, :tailwind3) %></td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
+      <tr><td>Bootstrap5</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
+      <tr><td>Bulma</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
+    </tbody>
+
+  </table>
+  </div>
+
+</div>

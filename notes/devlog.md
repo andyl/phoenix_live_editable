@@ -71,20 +71,33 @@ Mix Package Publishing and Umbrellas:
 - can publish mix package from umbrella subapp
 - run `mix hex.publish` from subapp root...
 
+- [x] Rebuild demo apps from scratch 
+- [x] Fix link helpers 
+- [x] Setup milligram home page 
+- [x] Fix base home page 
+- [x] Add tailwind3 config 
+- [x] Setup tailwind3 home page
+- [x] Get running locally 
+
 ## NextSteps
 
-- [ ] Rebuild demo apps from scratch 
+- [ ] Generate static assets for production 
+- [ ] Run locally in production (8080, 8081, 8082)
+- [ ] Generate release 
+- [ ] Run locally in release 
+- [ ] Generate docker file 
+- [ ] Run locally in docker file 
+- [ ] Run in burrito app
+- [ ] Run on fly.io 
 
 # TBD
 
-- [ ] Get running locally 
-- [ ] Get running on fly.io 
+- [ ] Get live-edit working on base home page
 
 - [ ] Get modals working
 
-- [ ] Test with local Hex repository (push sub-app)
-
 - [ ] Write tests 
+- [ ] Add CI 
 
 - [ ] ExUnit Shared Examples for HTML, Bootstrap4 and Milligram
 
@@ -93,4 +106,14 @@ Mix Package Publishing and Umbrellas:
 
 - [ ] Create 'Coverage' Chart (red/yellow/green)
 - [ ] ExUnit Unit Specs with LV test helpers
+
+- [ ] Test with local Hex repository (push sub-app)
+
+- [ ] Test in standalone app using path dependency 
+- [ ] Test in standalone app using GitHub dependency 
+- [ ] Test in standalone app using hex dependency 
+
+- [ ] Find one or two mentors 
+
+- [ ] Push PhoenixLiveEditable package to hex.pm 
 

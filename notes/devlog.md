@@ -79,10 +79,17 @@ Mix Package Publishing and Umbrellas:
 - [x] Setup tailwind3 home page
 - [x] Get running locally 
 
+## 2022 May 29 Sun
+
+- [x] Generate static assets for production 
+- [x] Run locally in production (8080, 8081, 8082)
+- [x] Generate valid links for `dev` and `prod`
+- [x] Add runtime.exs 
+- [x] Hardcode secret-key-base
+- [x] Add `assets.deploy` mix task 
+
 ## NextSteps
 
-- [ ] Generate static assets for production 
-- [ ] Run locally in production (8080, 8081, 8082)
 - [ ] Generate release 
 - [ ] Run locally in release 
 - [ ] Generate docker file 
@@ -98,6 +105,8 @@ Mix Package Publishing and Umbrellas:
 
 - [ ] Write tests 
 - [ ] Add CI 
+- [ ] Add hit counter for production
+- [ ] Datastore organized by IP address
 
 - [ ] ExUnit Shared Examples for HTML, Bootstrap4 and Milligram
 

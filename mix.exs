@@ -20,7 +20,13 @@ defmodule LiveEditable.Umbrella.MixProject do
   defp aliases do
     [
       # run `mix setup` in all child apps
-      setup: ["cmd mix setup"]
+      setup: ["cmd mix setup"],
+      "assets.deploy": [
+        "esbuild ple_demo_base --minify",
+        "esbuild ple_demo_milligram --minify",
+        "esbuild ple_demo_tailwind3 --minify",
+        "phx.digest"
+      ]
     ]
   end
 end

@@ -10,8 +10,8 @@ processes = []
   builder = "heroku/buildpacks:20"
   buildpacks = ["https://cnb-shim.herokuapp.com/v1/hashnuke/elixir"]
 
-[env]
-  PORT = "8080"
+# [env]
+#   PORT = "8080"
 
 [experimental]
   allowed_public_ports = []
@@ -29,14 +29,27 @@ processes = []
     soft_limit = 20
     type = "connections"
 
+  # phoenix app: ple_demo_base
   [[services.ports]]
-    force_https = true
+    force_https = false
     handlers = ["http"]
-    port = 80
+    port = 8080
 
+  # phoenix app: ple_demo_milligram 
   [[services.ports]]
-    handlers = ["tls", "http"]
-    port = 443
+    force_https = false
+    handlers = ["http"]
+    port = 8081
+
+  # phoenix app: ple_demo_tailwind3
+  [[services.ports]]
+    force_https = false
+    handlers = ["http"]
+    port = 8082
+
+  # [[services.ports]]
+  #   handlers = ["tls", "http"]
+  #   port = 443
 
   [[services.tcp_checks]]
     grace_period = "1s"

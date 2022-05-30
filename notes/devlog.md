@@ -79,25 +79,45 @@ Mix Package Publishing and Umbrellas:
 - [x] Setup tailwind3 home page
 - [x] Get running locally 
 
+## 2022 May 29 Sun
+
+- [x] Generate static assets for production 
+- [x] Run locally in production (8080, 8081, 8082)
+- [x] Generate valid links for `dev` and `prod`
+- [x] Add runtime.exs 
+- [x] Hardcode secret-key-base
+- [x] Add `assets.deploy` mix task 
+- [x] Generate release 
+- [x] Run locally in release 
+- [x] Generate docker file for demo app 
+
+## 2022 May 30 Mon
+
+- [x] Modify docker file for PLE 
+- [x] Run locally in docker 
+- [x] Document running demos using docker 
+- [x] Publish docker image 
+
 ## NextSteps
 
-- [ ] Generate static assets for production 
-- [ ] Run locally in production (8080, 8081, 8082)
-- [ ] Generate release 
-- [ ] Run locally in release 
-- [ ] Generate docker file 
-- [ ] Run locally in docker file 
-- [ ] Run in burrito app
 - [ ] Run on fly.io 
+
+- [ ] make ple-util (ets datastore, helpers)
 
 # TBD
 
 - [ ] Get live-edit working on base home page
 
+- [ ] Run in burrito app
+
 - [ ] Get modals working
+
+- [ ] Design monitoring strategy 
 
 - [ ] Write tests 
 - [ ] Add CI 
+- [ ] Add hit counter for production
+- [ ] Datastore organized by IP address
 
 - [ ] ExUnit Shared Examples for HTML, Bootstrap4 and Milligram
 

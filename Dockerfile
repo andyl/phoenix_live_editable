@@ -37,10 +37,10 @@ ENV MIX_ENV="prod"
 
 # install mix dependencies
 COPY mix.exs mix.lock ./
-COPY apps/phoenix_live_editable/mix.exs ./apps/phoenix_live_editable
-COPY apps/ple_demo_base/mix.exs ./apps/ple_demo_base 
-COPY apps/ple_demo_milligram/mix.exs ./apps/ple_demo_milligram 
-COPY apps/ple_demo_tailwind3/mix.exs ./apps/ple_demo_tailwind3 
+COPY apps/phoenix_live_editable/mix.exs ./apps/phoenix_live_editable/mix.exs
+COPY apps/ple_demo_base/mix.exs ./apps/ple_demo_base/mix.exs
+COPY apps/ple_demo_milligram/mix.exs ./apps/ple_demo_milligram/mix.exs
+COPY apps/ple_demo_tailwind3/mix.exs ./apps/ple_demo_tailwind3/mix.exs 
 RUN mix deps.get --only $MIX_ENV
 RUN mkdir config
 
@@ -50,11 +50,19 @@ RUN mkdir config
 COPY config/config.exs config/${MIX_ENV}.exs config/
 RUN mix deps.compile
 
-COPY priv priv
+COPY apps/ple_demo_base/priv ./apps/ple_demo_base
+COPY apps/ple_demo_milligram/priv ./apps/ple_demo_milligram
+COPY apps/ple_demo_tailwind3/priv ./apps/ple_demo_tailwind3
 
-COPY lib lib
+COPY apps/phoenix_live_editable/lib ./apps/phoenix_live_editable/lib
+COPY apps/ple_demo_base/lib ./apps/ple_demo_base/lib
+COPY apps/ple_demo_milligram/lib ./apps/ple_demo_milligram/lib
+COPY apps/ple_demo_tailwind3/lib ./apps/ple_demo_tailwind3/lib 
 
-COPY assets assets
+COPY apps/phoenix_live_editable/assets ./apps/phoenix_live_editable/assets
+COPY apps/ple_demo_base/assets ./apps/ple_demo_base/assets
+COPY apps/ple_demo_milligram/assets ./apps/ple_demo_milligram/assets
+COPY apps/ple_demo_tailwind3/assets ./apps/ple_demo_tailwind3/assets 
 
 # compile assets
 RUN mix assets.deploy
@@ -65,8 +73,12 @@ RUN mix compile
 # Changes to config/runtime.exs don't require recompiling the code
 COPY config/runtime.exs config/
 
-COPY rel rel
+# COPY rel rel
 RUN mix release
+
+EXPOSE 8080
+EXPOSE 8081
+EXPOSE 8082
 
 # start a new build stage so that the final image will only contain
 # the compiled release and other runtime necessities
@@ -89,8 +101,8 @@ RUN chown nobody /app
 ENV MIX_ENV="prod"
 
 # Only copy the final release from the build stage
-COPY --from=builder --chown=nobody:root /app/_build/${MIX_ENV}/rel/phoenix_live_editable ./
+COPY --from=builder --chown=nobody:root /app/_build/${MIX_ENV}/rel/demo ./
 
 USER nobody
 
-CMD ["/app/bin/server"]
+CMD ["/app/bin/demo", "start"]

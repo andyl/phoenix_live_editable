@@ -89,13 +89,15 @@ Mix Package Publishing and Umbrellas:
 - [x] Add `assets.deploy` mix task 
 - [x] Generate release 
 - [x] Run locally in release 
+- [x] Generate docker file for demo app 
 
 ## NextSteps
 
-- [ ] Generate docker file for demo app 
 - [ ] Modify docker file for PLE 
 - [ ] Run locally in docker 
 - [ ] Publish docker container 
+- [ ] Document running demos using docker 
+- [ ] Design monitoring strategy 
 
 - [ ] make ple-util (ets datastore, helpers)
 

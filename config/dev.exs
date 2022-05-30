@@ -3,7 +3,7 @@ import Config
 # ----- PLE_DEMO_BASE
 
 config :ple_demo_base, PleDemoBaseWeb.Endpoint,
-  http: [port: 4000],
+  http: [port: 4040],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
@@ -24,7 +24,7 @@ config :ple_demo_base, PleDemoBaseWeb.Endpoint,
 # ----- PLE_DEMO_MILLIGRAM
 
 config :ple_demo_milligram, PleDemoMilligramWeb.Endpoint,
-  http: [port: 4001],
+  http: [port: 4041],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
@@ -45,7 +45,7 @@ config :ple_demo_milligram, PleDemoMilligramWeb.Endpoint,
 # ----- PLE_DEMO_TAILWIND3
 
 config :ple_demo_tailwind3, PleDemoTailwind3Web.Endpoint,
-  http: [port: 4002],
+  http: [port: 4042],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,

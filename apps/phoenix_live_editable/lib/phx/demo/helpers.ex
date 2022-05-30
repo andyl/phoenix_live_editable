@@ -12,9 +12,9 @@ defmodule Phx.Demo.Helpers do
 
   | Webapp              | Dev Port | Prod Port |
   |---------------------|----------|-----------|
-  | PhxDemoBaseWeb      | 4000     | 3800      |
-  | PhxDemoMilligramWeb | 4001     | 3801      |
-  | PhxDemoTailwind3Web | 4002     | 3802      |
+  | PhxDemoBaseWeb      | 4040     | 8080      |
+  | PhxDemoMilligramWeb | 4041     | 8081      |
+  | PhxDemoTailwind3Web | 4042     | 8082      |
 
   The `demolink` function requires two elements:
 
@@ -87,9 +87,9 @@ defmodule Phx.Demo.Helpers do
   defp port_for(subsite) do
     base_port =
       case Application.get_env(:phoenix_live_editable, :env) do
-        :dev -> 4000
-        :test -> 3900
-        :prod -> 3800
+        :dev -> 4040
+        :test -> 6060
+        :prod -> 8080
       end
 
     sub_port =

@@ -1,4 +1,4 @@
-# fly.toml file generated for phoenix-live-editable on 2022-05-28T20:55:23-07:00
+# fly.toml file generated for phoenix-live-editable on 2022-05-30T11:43:48-07:00
 
 app = "phoenix-live-editable"
 
@@ -6,53 +6,49 @@ kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
 
-[build]
-  builder = "heroku/buildpacks:20"
-  buildpacks = ["https://cnb-shim.herokuapp.com/v1/hashnuke/elixir"]
-
-# [env]
-#   PORT = "8080"
+[env]
 
 [experimental]
-  allowed_public_ports = []
-  auto_rollback = true
+allowed_public_ports = []
+auto_rollback = true
+
+[services.concurrency]
+hard_limit = 25
+soft_limit = 20
+type = "connections"
+
+[[services.tcp_checks]]
+grace_period = "1s"
+interval = "15s"
+restart_limit = 0
+timeout = "2s"
+
+[[services.ports]]
+handlers = ["tls", "http"]
+port = 443
 
 [[services]]
-  http_checks = []
-  internal_port = 8080
-  processes = ["app"]
-  protocol = "tcp"
-  script_checks = []
+http_checks = []
+internal_port = 8080
+processes = ["app"]
+protocol = "tcp"
+script_checks = []
 
-  [services.concurrency]
-    hard_limit = 25
-    soft_limit = 20
-    type = "connections"
+[[services.ports]]
+force_https = true
+handlers = ["http"]
+port = 80
 
-  # phoenix app: ple_demo_base
-  [[services.ports]]
-    force_https = false
-    handlers = ["http"]
-    port = 8080
+[[services]]
+internal_port = 8081
+protocol = "tcp"
 
-  # phoenix app: ple_demo_milligram 
-  [[services.ports]]
-    force_https = false
-    handlers = ["http"]
-    port = 8081
+[[services.ports]]
+port = 8081
 
-  # phoenix app: ple_demo_tailwind3
-  [[services.ports]]
-    force_https = false
-    handlers = ["http"]
-    port = 8082
+[[services]]
+internal_port = 8082
+protocol = "tcp"
 
-  # [[services.ports]]
-  #   handlers = ["tls", "http"]
-  #   port = 443
-
-  [[services.tcp_checks]]
-    grace_period = "1s"
-    interval = "15s"
-    restart_limit = 0
-    timeout = "2s"
+[[services.ports]]
+port = 8082

@@ -96,10 +96,9 @@ Mix Package Publishing and Umbrellas:
 - [x] Modify docker file for PLE 
 - [x] Run locally in docker 
 - [x] Document running demos using docker 
+- [x] Publish docker image 
 
 ## NextSteps
-
-- [ ] Publish docker image 
 
 - [ ] Run on fly.io 
 

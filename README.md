@@ -25,13 +25,13 @@ See the [live demo][ld] to learn more!
 LiveEditable is pre-alpha - not yet ready for production use.
 
 [xe]: http://vitalets.github.io/x-editable
-[ld]: http://phoenix_live_editable.fly.io 
+[ld]: http://phoenix-live-editable.fly.dev
 
 ## Demonstration 
 
 IN YOUR BROWSER: 
 
-Visit TBD to see the live demo application. (UNDER CONSTRUCTION)
+Visit the [live demo][ld]. 
 
 USING DOCKER ON YOUR DESKTOP: 
 

@@ -91,17 +91,19 @@ Mix Package Publishing and Umbrellas:
 - [x] Run locally in release 
 - [x] Generate docker file for demo app 
 
+## 2022 May 30 Mon
+
+- [x] Modify docker file for PLE 
+- [x] Run locally in docker 
+- [x] Document running demos using docker 
+
 ## NextSteps
 
-- [ ] Modify docker file for PLE 
-- [ ] Run locally in docker 
-- [ ] Publish docker container 
-- [ ] Document running demos using docker 
-- [ ] Design monitoring strategy 
-
-- [ ] make ple-util (ets datastore, helpers)
+- [ ] Publish docker image 
 
 - [ ] Run on fly.io 
+
+- [ ] make ple-util (ets datastore, helpers)
 
 # TBD
 
@@ -110,6 +112,8 @@ Mix Package Publishing and Umbrellas:
 - [ ] Run in burrito app
 
 - [ ] Get modals working
+
+- [ ] Design monitoring strategy 
 
 - [ ] Write tests 
 - [ ] Add CI 

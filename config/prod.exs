@@ -8,21 +8,21 @@ import Config
 
 config :ple_demo_base, PleDemoBaseWeb.Endpoint,
   url: [host: "example.com", port: 8080],
-  check_origin: ["//*", "//localhost"],
+  check_origin: false,
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 # ----- PLE_DEMO_MILLIGRAM
 
 config :ple_demo_milligram, PleDemoMilligramWeb.Endpoint,
   url: [host: "example.com", port: 8081],
-  check_origin: ["//*", "//localhost"],
+  check_origin: false,
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 # ----- PLE_DEMO_MILLIGRAM
 
 config :ple_demo_tailwind3, PleDemoTailwind3Web.Endpoint,
   url: [host: "example.com", port: 8082],
-  check_origin: ["//*", "//localhost"],
+  check_origin: false,
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 # ## SSL Support

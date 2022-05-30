@@ -20,31 +20,52 @@ inline editing is desirable.  It supports multiple CSS Frameworks (Tailwind,
 Milligram, etc.) and field types (Text, Select, etc.) and is designed to be
 customized and extended.  LiveEditable is inspired by [X-Editable][xe].
 
-This repo is an umbrella project with Phoenix demo apps for each supported CSS
-framework.
+See the [live demo][ld] to learn more!
 
 LiveEditable is pre-alpha - not yet ready for production use.
 
-[xe]: http://vitalets.github.io/x-editable/
-[pd]: http://github.com/andyl/ple_demo
+[xe]: http://vitalets.github.io/x-editable
+[ld]: http://phoenix_live_editable.fly.io 
 
 ## Demonstration 
 
-Visit TBD to see a live application. (UNDER CONSTRUCTION)
+IN YOUR BROWSER: 
 
-Follow these steps to run the LiveEditable demo apps locally:
+Visit TBD to see the live demo application. (UNDER CONSTRUCTION)
+
+USING DOCKER ON YOUR DESKTOP: 
+
+    $ docker run -p 8080:8080 -p 8081:8081 -p 8082:8082 andyldk/phoenix_live_editable
+
+Now open a browser and visit `http://localhost:8080`
+
+CLONING THE SOURCE TO YOUR DESKTOP: 
 
     $ git clone https://github.com/andyl/phoenix_live_editable 
     $ cd phoenix_live_editable 
     $ mix deps.get
     $ mix phx.server 
 
-Now open a browser and visit `http://localhost:4000`
+Now open a browser and visit `http://localhost:4040`
+
+## Code Organization 
+
+The [LiveEditable Repo][gh] is an umbrella project.  Subapps include:
+
+| phoenix_live_editable | the LiveView components                           |
+| ple_demo_base         | phoenix app with a landing page                   |
+| ple_demo_milligram    | phoenix app with LiveEditable using Milligram CSS |
+| ple_demo_tailwind3    | phoenix app with LiveEditable using Tailwind3 CSS |
+| ple_util              | utility modules to support the demo apps          |
+
+The LiveEditable package on hex.pm contains only the phoenix_live_editable subapp.
+
+[gh]: https://github.com/andyl/phoenix_live_editable
 
 ## Installation
 
-LiveEditable can be installed by adding `live_editable` to your list of
-dependencies in `mix.exs`:
+PhoenixLiveEditable can be installed in your own LV application by adding
+`phoenix_live_editable` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -65,7 +86,7 @@ Next add LiveEditable configuartion to your `config/config.exs`:
 Valid Framework Modules include:
 
     - Phoenix.LiveEditable.Milligram
-    - Phoenix.LiveEditable.Tailwind
+    - Phoenix.LiveEditable.Tailwind3 
 
 Now you can use LiveEditable in your LiveViews and LiveComponents:
 

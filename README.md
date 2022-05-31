@@ -46,15 +46,15 @@ Now open a browser and visit `http://localhost:4040`
 
 ## Code Organization 
 
-The [LiveEditable Repo][gh] is an umbrella project.  Subapps include:
+The [LiveEditable Repo][gh] is an umbrella project.  
 
+| Subapp                | Description                                       |
 |-----------------------|---------------------------------------------------|
 | phoenix_live_editable | the LiveView components                           |
 | ple_demo_base         | phoenix app with a landing page                   |
 | ple_demo_milligram    | phoenix app with LiveEditable using Milligram CSS |
 | ple_demo_tailwind3    | phoenix app with LiveEditable using Tailwind3 CSS |
 | ple_util              | utility modules to support the demo apps          |
-|-----------------------|---------------------------------------------------|
 
 The LiveEditable package on hex.pm contains only the phoenix_live_editable subapp.
 

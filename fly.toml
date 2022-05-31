@@ -1,4 +1,7 @@
-# fly.toml file generated for phoenix-live-editable on 2022-05-30T16:03:09-07:00
+# fly.toml file generated for phoenix-live-editable on 2022-05-31T07:03:04-07:00
+# 
+# See the forum thread for background re: Multiple Ports on Fly.io...
+# https://community.fly.io/t/how-to-use-multiple-ports/5406
 
 app = "phoenix-live-editable"
 
@@ -33,8 +36,44 @@ processes = []
     handlers = ["tls", "http"]
     port = 443
 
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 8080
+
   [[services.tcp_checks]]
     grace_period = "1s"
     interval = "15s"
     restart_limit = 0
     timeout = "2s"
+
+[[services]]
+  http_checks = []
+  internal_port = 8081
+  processes = ["app"]
+  protocol = "tcp"
+  script_checks = []
+
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 8081
+
+[[services]]
+  http_checks = []
+  internal_port = 8082
+  processes = ["app"]
+  protocol = "tcp"
+  script_checks = []
+
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 8082

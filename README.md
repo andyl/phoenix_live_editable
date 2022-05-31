@@ -1,24 +1,25 @@
 # Phoenix.LiveEditable 
 
-LiveView Components for in-place editing. LiveEditable provides in-line helpers
-that you can drop into your LiveView (HEEX) templates.
+LiveView Components for in-place editing. 
+
+LiveEditable provides helpers for your LiveView/HEEX templates.
 
 Example HEEX tag:
 
     <%= live_editable(assigns, "MyText", id: "textfield", type: "text", on_submit: "save" %>
 
-You'll need to add a handler to your LiveView:
+Add a handler to your LiveView:
 
     def handle_event("save", value, socket) end
        ... do something ...
     end
 
-See the [online demo][ld].
+See the [online demo][ld] for running examples.
 
-LiveEditable is for admin interfaces and applications where basic inline
-editing is desirable.  It supports multiple CSS Frameworks (Tailwind,
-Milligram, etc.) and field types (Text, Select, etc.).  LiveEditable is
-inspired by [Vitaliy Potapov's][vp] [X-Editable][xe]. 
+LiveEditable is for admin interfaces and apps that want basic inline editing.
+It supports many CSS frameworks (Tailwind, Milligram, etc.) and field types
+(Text, Select, etc.).  LiveEditable is inspired by [Vitaliy Potapov's][vp]
+[X-Editable][xe]. 
 
 LiveEditable is pre-alpha - not ready for production use.
 
@@ -51,15 +52,16 @@ Now open a browser and visit `http://localhost:4040`
 
 The [LiveEditable Repo][gh] is an umbrella project.  
 
-| Subapp                | Description                                       |
-|-----------------------|---------------------------------------------------|
-| phoenix_live_editable | the LiveView components                           |
-| ple_demo_base         | phoenix app with a landing page                   |
-| ple_demo_milligram    | phoenix app with LiveEditable using Milligram CSS |
-| ple_demo_tailwind3    | phoenix app with LiveEditable using Tailwind3 CSS |
-| ple_util              | utility modules to support the demo apps          |
+| Subapp                | Description                                   |
+|-----------------------|-----------------------------------------------|
+| phoenix_live_editable | LiveView components                           |
+| ple_demo_base         | phoenix app with a landing page               |
+| ple_demo_milligram    | phoenix app with LiveEditable using Milligram |
+| ple_demo_tailwind3    | phoenix app with LiveEditable using Tailwind3 |
+| ple_util              | utility modules to support the demo apps      |
 
-The LiveEditable package on hex.pm contains only the phoenix_live_editable subapp.
+The LiveEditable package on hex.pm contains only the phoenix_live_editable
+subapp.
 
 [gh]: https://github.com/andyl/phoenix_live_editable
 

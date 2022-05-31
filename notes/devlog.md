@@ -99,19 +99,32 @@ Mix Package Publishing and Umbrellas:
 - [x] Publish docker image 
 - [x] Test deploy on fly.io 
 
+## 2022 May 31 Tue
+
+- [x] Deploy on phoenix-live-editable.fly.io 
+- [x] Menu bold on 80, 8080 and 4040 
+
 ## NextSteps
 
-- [ ] Deploy on Digital Ocean 
+- [ ] Make ple-util (ets datastore, HEEX helpers)
 
-- [ ] make ple-util (ets datastore, helpers)
+- [ ] Deploy on Linode VPS
 
 # TBD
 
 - [ ] Get live-edit working on base home page
 
-- [ ] Run in burrito app
+- [ ] Test with local Hex repository (push sub-app)
+
+- [ ] Test in standalone app using path dependency 
+- [ ] Test in standalone app using GitHub dependency 
+
+- [ ] Push PhoenixLiveEditable package to hex.pm 
+- [ ] Test in standalone app using hex dependency 
 
 - [ ] Get modals working
+
+- [ ] Integrate plausible.io 
 
 - [ ] Design monitoring strategy 
 
@@ -128,13 +141,6 @@ Mix Package Publishing and Umbrellas:
 - [ ] Create 'Coverage' Chart (red/yellow/green)
 - [ ] ExUnit Unit Specs with LV test helpers
 
-- [ ] Test with local Hex repository (push sub-app)
-
-- [ ] Test in standalone app using path dependency 
-- [ ] Test in standalone app using GitHub dependency 
-- [ ] Test in standalone app using hex dependency 
-
 - [ ] Find one or two mentors 
 
-- [ ] Push PhoenixLiveEditable package to hex.pm 
 

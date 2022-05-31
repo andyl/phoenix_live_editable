@@ -1,15 +1,20 @@
 <div style='text-align: center;'>
   <h1>Phoenix Live Editable</h1>
 
-  <div style="padding: 20px;">
-    <%= raw Helpers.navlinks(@url) %>
-  </div>
-
   <div>
-    <a href="https://github.com/andyl/phoenix_live_editable" target="_blank">Phoenix Live Editable</a> 
-    is an inline-editing utility for 
+    Simple editing components for 
     <a href="https://github.com/phoenixframework/phoenix_live_view" target="_blank">Phoenix Live View</a> 
     inspired by <a href="http://vitalets.github.io/x-editable/" target="_blank">X-editable</a>.
+  </div>
+
+  <div style="padding: 10px;">
+    <small>
+    <a href="https://github.com/andyl/phoenix_live_editable" target="_blank">Source</a>
+    </small>
+  </div>
+
+  <div style="padding-bottom: 10px;">
+    <%= raw Helpers.navlinks(@url) %> 
   </div>
 
   <div class="p-10 overflow-hidden rounded-t-xl bg-gradient-to-r from-emerald-50 to-teal-100">
@@ -17,7 +22,7 @@
       <tbody>
         <tr>
           <td>
-            Add an EEX tag
+            Add a HEEX tag
           </td>
           <td colspan=2>
             <code>
@@ -57,11 +62,11 @@
   <table class='table-auto'>
 
     <thead>
-      <tr><th>CSS Framework</th><th>text</th><th>select</th><th>radio</th><th>textarea</th><th>calendar</th></tr>
+      <tr><th>Framework</th><th>text</th><th>select</th><th>radio</th><th>textarea</th><th>calendar</th></tr>
     </thead>
     <tbody>
-      <tr><td><%= raw Helpers.demolink(@url, :milligram) %></td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
-      <tr><td><%= raw Helpers.demolink(@url, :tailwind3) %></td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
+      <tr><td><%= raw Helpers.demolink(@url, :milligram, " Demo") %></td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
+      <tr><td><%= raw Helpers.demolink(@url, :tailwind3, " Demo") %></td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
       <tr><td>Bootstrap5</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
       <tr><td>Bulma</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>
     </tbody>

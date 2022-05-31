@@ -57,7 +57,12 @@ defmodule Phx.Demo.Helpers do
       _ -> label
     end
 
-    if uri.port == tgt_port do
+    src_port = case uri.port do
+      80 -> 8080
+      alt -> alt
+    end
+
+    if src_port == tgt_port do
       "<b>" <> label_for(subsite) <> alt_label <> "</b>"
     else
       path = "#{uri.scheme}://#{uri.host}:#{port_for(subsite)}/"

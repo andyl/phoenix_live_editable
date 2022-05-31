@@ -1,10 +1,7 @@
 # fly.toml file generated for phoenix-live-editable on 2022-05-31T07:03:04-07:00
 # 
-# 2022 May 31 Tue 
-# - supposed to be live on phoenix-live-editable.fly.dev
-# - this configuration does not work 
-# - fly seems to only listen on ports 80 and 443
-# - it's running on a VPS at http://173.255.255.44:8080
+# See the forum thread for background re: Multiple Ports on Fly.io...
+# https://community.fly.io/t/how-to-use-multiple-ports/5406
 
 app = "phoenix-live-editable"
 

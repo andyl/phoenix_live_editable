@@ -40,7 +40,7 @@ processes = []
     port = 443
 
   [[services.ports]]
-    handlers = ["http"]
+    handlers = ["tls", "http"]
     port = 8080
 
   [[services.tcp_checks]]
@@ -49,25 +49,34 @@ processes = []
     restart_limit = 0
     timeout = "2s"
 
-# [[services]]
-#   http_checks = []
-#   internal_port = 8081
-#   processes = ["app"]
-#   protocol = "tcp"
-#   script_checks = []
-#
-#   [[services.ports]]
-#     handlers = ["http"]
-#     port = 8081
-#
-# [[services]]
-#   http_checks = []
-#   internal_port = 8082
-#   processes = ["app"]
-#   protocol = "tcp"
-#   script_checks = []
-#
-#   [[services.ports]]
-#     handlers = ["http"]
-#     port = 8082
-#
+[[services]]
+  http_checks = []
+  internal_port = 8081
+  processes = ["app"]
+  protocol = "tcp"
+  script_checks = []
+
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 8081
+
+[[services]]
+  http_checks = []
+  internal_port = 8082
+  processes = ["app"]
+  protocol = "tcp"
+  script_checks = []
+
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 8082

@@ -97,10 +97,11 @@ Mix Package Publishing and Umbrellas:
 - [x] Run locally in docker 
 - [x] Document running demos using docker 
 - [x] Publish docker image 
+- [x] Test deploy on fly.io 
 
 ## NextSteps
 
-- [ ] Run on fly.io 
+- [ ] Deploy on Digital Ocean 
 
 - [ ] make ple-util (ets datastore, helpers)
 

@@ -1,9 +1,7 @@
 # Phoenix.LiveEditable 
 
-In-place editing for Phoenix Live View.
-
-LiveEditable provides in-line helpers that you can drop into your LiveView
-(HEEX) templates.
+In-place editing for Phoenix Live View. LiveEditable provides in-line helpers
+that you can drop into your LiveView (HEEX) templates.
 
 Example HEEX tag:
 
@@ -15,14 +13,12 @@ You'll need to add a handler to your LiveView:
        ... do something ...
     end
 
-LiveEditable is good for admin interfaces and applications where off-the-shelf
-inline editing is desirable.  It supports multiple CSS Frameworks (Tailwind,
-Milligram, etc.) and field types (Text, Select, etc.) and is designed to be
-customized and extended.  LiveEditable is inspired by [X-Editable][xe].
+LiveEditable is for admin interfaces and applications where basic inline
+editing is desirable.  It supports multiple CSS Frameworks (Tailwind,
+Milligram, etc.) and field types (Text, Select, etc.).  LiveEditable is
+inspired by [X-Editable][xe]. Try the [online examples][ld]!
 
-See the [live demo][ld] to learn more!
-
-LiveEditable is pre-alpha - not yet ready for production use.
+LiveEditable is pre-alpha - not ready for production use.
 
 [xe]: http://vitalets.github.io/x-editable
 [ld]: http://173.255.255.44:8080
@@ -31,7 +27,7 @@ LiveEditable is pre-alpha - not yet ready for production use.
 
 IN YOUR BROWSER: 
 
-Visit the [live demo][ld]. 
+Try the [online examples][ld]. 
 
 USING DOCKER ON YOUR DESKTOP: 
 

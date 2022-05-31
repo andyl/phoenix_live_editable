@@ -25,7 +25,7 @@ See the [live demo][ld] to learn more!
 LiveEditable is pre-alpha - not yet ready for production use.
 
 [xe]: http://vitalets.github.io/x-editable
-[ld]: http://phoenix-live-editable.fly.dev
+[ld]: http://173.255.255.44:8080
 
 ## Demonstration 
 
@@ -35,7 +35,7 @@ Visit the [live demo][ld].
 
 USING DOCKER ON YOUR DESKTOP: 
 
-    $ docker run -p 8080:8080 -p 8081:8081 -p 8082:8082 andyldk/phoenix_live_editable
+    $ docker run -p 8080-8082:8080-8082 andyldk/phoenix_live_editable
 
 Now open a browser and visit `http://localhost:8080`
 

@@ -4,22 +4,25 @@ defmodule Phoenix.LiveEditable.MixProject do
   def project do
     [
       app: :phoenix_live_editable,
-      version: "0.1.0",
+      version: "0.0.1",
       build_path: "../../_build",
       config_path: "../../config/config.exs",
       deps_path: "../../deps",
       lockfile: "../../mix.lock",
-      elixir: "~> 1.7",
+      elixir: "~> 1.13",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
+      source_url: "https://github.com/andyl/phoenix_live_editable",
+      homepage_url: "https://phoenix-live-editable.fly.dev",
+      name: "Phoenix.LiveEditable",
+      description: "Simple LiveView components for inline editing",
       aliases: aliases(),
-      deps: deps()
+      package: package(),
+      deps: deps(),
+      docs: docs()
     ]
   end
 
-  # Configuration for the OTP application.
-  #
-  # Type `mix help compile.app` for more information.
   def application do
     [
       mod: {Phoenix.LiveEditable.Application, []},
@@ -27,24 +30,44 @@ defmodule Phoenix.LiveEditable.MixProject do
     ]
   end
 
-  # Specifies which paths to compile per environment.
   defp elixirc_paths(:test), do: ["lib", "test/support"]
   defp elixirc_paths(_), do: ["lib"]
 
-  # Specifies your project dependencies.
-  #
-  # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:ex_doc, "~> 0.28", only: :dev, runtime: false},
       {:phoenix_pubsub, "~> 2.1"},
       {:phoenix_html, "~> 3.2"},
       {:phoenix_live_view, "~> 0.17"}
     ]
   end
 
-  # Aliases are shortcuts or tasks specific to the current project.
-  #
-  # See the documentation for `Mix` for more info on aliases.
+  defp docs do
+    [
+      main: "Phoenix.LiveEditable",
+      extra_section: "GUIDES",
+      extras: extras()
+    ]
+  end
+
+  defp extras do
+    [
+      "README.md",
+      "guides/installation.md",
+      "guides/extending.md"
+    ]
+  end
+
+  defp package do
+    [
+      maintainers: ["Andy Leak"],
+      licenses: ["MIT"],
+      links: %{
+        "GitHub" => "https://github.com/andyl/phoenix_live_editable"
+      }
+    ]
+  end
+
   defp aliases do
     [
       setup: ["deps.get"]

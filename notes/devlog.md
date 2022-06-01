@@ -103,17 +103,20 @@ Mix Package Publishing and Umbrellas:
 
 - [x] Deploy on phoenix-live-editable.fly.io 
 - [x] Menu bold on 80, 443, 8080 and 4040 
+- [x] Generate docs for `phoenix_live_editable`
+- [x] Test in standalone app using path dependency 
+- [x] Test in standalone app using GitHub dependency 
 
 ## NextSteps
 
-- [ ] Get live-edit working on base home page
+- [ ] Get live-edit working on base demo
+- [ ] Get live-edit working on milligram demo
+- [ ] Get live-edit working on tailwind demo
+
+- [ ] LiveEditable config scoped to Phoenix App
 
 # TBD
 
-- [ ] Test in standalone app using path dependency 
-- [ ] Test in standalone app using GitHub dependency 
-
-- [ ] Test with local Hex repository (push sub-app)
 - [ ] Push PhoenixLiveEditable package to hex.pm 
 - [ ] Test in standalone app using hex dependency 
 
@@ -130,8 +133,8 @@ Mix Package Publishing and Umbrellas:
 - [ ] Add changelog 
 - [ ] Write tests 
 - [ ] Add CI 
-- [ ] Auto-update docker upon push-to-master
-- [ ] Auto-update fly.io upon push-to-master
+- [ ] Auto-update docker on push-to-master
+- [ ] Auto-update fly.io on push-to-master
 
 - [ ] ExUnit Shared Examples for Milligram and Tailwind
 

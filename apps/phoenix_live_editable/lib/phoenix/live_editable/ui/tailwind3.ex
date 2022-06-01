@@ -1,7 +1,7 @@
-defmodule Phoenix.LiveEditable.Ui.Tailwind do
+defmodule Phoenix.LiveEditable.Ui.Tailwind3 do
 
   alias Phoenix.LiveEditable.Ui
-  require Phoenix.LiveEditable.Svg 
+  require Phoenix.LiveEditable.Svg
   alias Phoenix.LiveEditable.Svg
 
   @behaviour Ui.Base
@@ -13,10 +13,10 @@ defmodule Phoenix.LiveEditable.Ui.Tailwind do
     <form class="ple-mg-form" phx-change="#{opts[:on_change]}" phx-submit="#{opts[:on_submit]}">
     <input class="ple-mg-text" type="text" name="editable_text" value="#{label}">
     <button class="button btn-mg-ple btn-ple-primary" style='margin-left: 5px' type='submit'>
-      #{ Svg.inline("CircleOk") } 
+      #{ Svg.inline("CircleOk") }
     </button>
     <button class="button btn-mg-ple btn-ple-secondary" style='margin-left: 5px' phx-click='cancel'>
-      #{ Svg.inline("CircleCancel") } 
+      #{ Svg.inline("CircleCancel") }
     </button>
     </form>
     """
@@ -34,10 +34,10 @@ defmodule Phoenix.LiveEditable.Ui.Tailwind do
       </select>
     </div>
     <button class="btn btn-primary mb2 btn-ple" style='margin-left: 5px' type='submit'>
-      #{ Svg.inline("SquareOk") } 
+      #{ Svg.inline("SquareOk") }
     </button>
     <button class="btn btn-secondary mb2 btn-ple" style='margin-left: 5px' phx-click='cancel'>
-      #{ Svg.inline("SquareCancel") } 
+      #{ Svg.inline("SquareCancel") }
     </button>
     </form>
     """

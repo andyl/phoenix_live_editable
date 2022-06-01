@@ -5,9 +5,9 @@ defmodule Phoenix.LiveEditable do
   # alias Phoenix.LiveEditable
 
   # ----- view helpers -----
-  
+
   def live_edit(assigns, label, opts) do
-    IO.inspect opts, label: "LiveEdit OPTS"
+    # IO.inspect opts, label: "LiveEdit OPTS"
     Keyword.has_key?(opts, :id) || raise("Needs `:id` option")
     Keyword.has_key?(opts, :type) || raise("Needs `:type` option ('text' | 'select')")
     optid = opts[:id]
@@ -22,7 +22,7 @@ defmodule Phoenix.LiveEditable do
         "text" -> module.form_text(label, opts)
         "select" -> module.form_select(label, opts)
         _ -> module.form_text(label, opts)
-      end 
+      end
       |> raw()
     else
       "<span class='editable-click' phx-click='focus' phx-value-focusid='#{optid}' #{target}>#{label}</span>"
@@ -36,14 +36,14 @@ defmodule Phoenix.LiveEditable do
 
   defp css_framework_module do
     case Application.fetch_env(:phoenix_live_editable, :css_framework) do
-      {:ok, module} -> 
+      {:ok, module} ->
         module
       error ->
         IO.inspect "+++++++++++++++++++++++++++++++++++++++"
         IO.inspect "ERROR CSS FRAMEWORK MODULE"
         IO.inspect error
         IO.inspect "+++++++++++++++++++++++++++++++++++++++"
-        Phoenix.LiveEditable.Bootstrap5
+        Phoenix.LiveEditable.Ui.Milligram
     end
   end
 

@@ -102,38 +102,38 @@ Mix Package Publishing and Umbrellas:
 ## 2022 May 31 Tue
 
 - [x] Deploy on phoenix-live-editable.fly.io 
-- [x] Menu bold on 80, 8080 and 4040 
+- [x] Menu bold on 80, 443, 8080 and 4040 
 
 ## NextSteps
 
-- [ ] Make ple-util (ets datastore, HEEX helpers)
-
-- [ ] Deploy on Linode VPS
-
-# TBD
-
 - [ ] Get live-edit working on base home page
 
-- [ ] Test with local Hex repository (push sub-app)
+# TBD
 
 - [ ] Test in standalone app using path dependency 
 - [ ] Test in standalone app using GitHub dependency 
 
+- [ ] Test with local Hex repository (push sub-app)
 - [ ] Push PhoenixLiveEditable package to hex.pm 
 - [ ] Test in standalone app using hex dependency 
 
-- [ ] Get modals working
-
-- [ ] Integrate plausible.io 
-
-- [ ] Design monitoring strategy 
-
-- [ ] Write tests 
-- [ ] Add CI 
-- [ ] Add hit counter for production
+- [ ] Make ple-util (ets datastore, HEEX helpers)
 - [ ] Datastore organized by IP address
 
-- [ ] ExUnit Shared Examples for HTML, Bootstrap4 and Milligram
+- [ ] Get modals working
+
+- [ ] Deploy on Linode VPS
+
+- [ ] Design monitoring strategy 
+- [ ] Integrate plausible.io 
+
+- [ ] Add changelog 
+- [ ] Write tests 
+- [ ] Add CI 
+- [ ] Auto-update docker upon push-to-master
+- [ ] Auto-update fly.io upon push-to-master
+
+- [ ] ExUnit Shared Examples for Milligram and Tailwind
 
 - [ ] Get Validations Working
 - [ ] Add RadioButton, DatePickers, etc.
@@ -142,5 +142,8 @@ Mix Package Publishing and Umbrellas:
 - [ ] ExUnit Unit Specs with LV test helpers
 
 - [ ] Find one or two mentors 
+
+- [ ] Add Bootstrap5
+- [ ] Add Bulma
 
 

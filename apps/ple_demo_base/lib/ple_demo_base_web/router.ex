@@ -17,6 +17,8 @@ defmodule PleDemoBaseWeb.Router do
   scope "/", PleDemoBaseWeb do
     pipe_through :browser
 
-    live "/", PageLive, :index
+    live "/", PageLive
+    live "/test1", Test1Live
+    live "/test2", Test2Live
   end
 end

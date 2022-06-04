@@ -1,3 +1,5 @@
-# LiveEditable
+# Phoenix.LiveEditable Readme
 
-**TODO: Add description**
+LiveView components for inline editing.
+
+

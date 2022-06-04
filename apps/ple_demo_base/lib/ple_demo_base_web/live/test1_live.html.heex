@@ -1,0 +1,11 @@
+<div>
+
+  <h1>Phx Live Editable</h1>
+  <p><b>Test1</b></p>
+
+  FOCUSID: <%= @focusid %><br/>
+  <%= for {lcl_id, data} <- @data do %>
+    | <%= lcl_id %>: <.live_component module={Phoenix.LiveEditable} focusid={@focusid} type="text" id={lcl_id} submit="save" data={data}/> <br/>
+  <% end %>
+
+</div>

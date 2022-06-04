@@ -70,10 +70,32 @@ subapp.
 PhoenixLiveEditable can be installed in your own LV application by adding
 `phoenix_live_editable` to your list of dependencies in `mix.exs`:
 
+Using the path option: 
 ```elixir
 def deps do
   [
-    {:phoenix_live_editable, github: 'andyl/phoenix_live_editable/apps/phoenix_live_editable'}
+    {:phoenix_live_editable, 
+      path: "~/src_root/phoenix_live_editable/apps/phoenix_live_editable"}
+  ]
+end
+```
+
+Using the github option: 
+```elixir
+def deps do
+  [
+    {:phoenix_live_editable, 
+      github: "andyl/phoenix_live_editable",
+      subdir: "apps/phoenix_live_editable"}
+  ]
+end
+```
+
+Using the hex option (UNDER CONSTRUCTION): 
+```elixir
+def deps do
+  [
+    {:phoenix_live_editable, "~> 0.0.1"}
   ]
 end
 ```
@@ -88,8 +110,8 @@ Next add LiveEditable configuartion to your `config/config.exs`:
 
 Valid Framework Modules include:
 
-    - Phoenix.LiveEditable.Milligram
-    - Phoenix.LiveEditable.Tailwind3 
+    - Phoenix.LiveEditable.Ui.Milligram
+    - Phoenix.LiveEditable.Ui.Tailwind3 
 
 Now you can use LiveEditable in your LiveViews and LiveComponents:
 

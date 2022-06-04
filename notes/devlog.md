@@ -102,38 +102,53 @@ Mix Package Publishing and Umbrellas:
 ## 2022 May 31 Tue
 
 - [x] Deploy on phoenix-live-editable.fly.io 
-- [x] Menu bold on 80, 8080 and 4040 
+- [x] Menu bold on 80, 443, 8080 and 4040 
+- [x] Generate docs for `phoenix_live_editable`
+- [x] Test in standalone app using path dependency 
+- [x] Test in standalone app using GitHub dependency 
+
+## 2022 Jun 01 Wed
+
+- [x] Design live-editable component
+
+## 2022 Jun 02 Thu
+
+- [x] Get live-editable working on base demo
+- [x] Get live-editable working on milligram demo
+- [x] Migrate to render functions for interface modules
+
+## 2022 Jun 03 Fri
+
+- [x] Fix milligram rendering 
+- [x] Working milligram submit
 
 ## NextSteps
-
-- [ ] Make ple-util (ets datastore, HEEX helpers)
-
-- [ ] Deploy on Linode VPS
-
-# TBD
-
-- [ ] Get live-edit working on base home page
-
-- [ ] Test with local Hex repository (push sub-app)
-
-- [ ] Test in standalone app using path dependency 
-- [ ] Test in standalone app using GitHub dependency 
 
 - [ ] Push PhoenixLiveEditable package to hex.pm 
 - [ ] Test in standalone app using hex dependency 
 
-- [ ] Get modals working
+- [ ] LiveEditable config scoped to Phoenix App
+- [ ] Get live-editable working on tailwind demo
 
-- [ ] Integrate plausible.io 
+# TBD
 
-- [ ] Design monitoring strategy 
-
-- [ ] Write tests 
-- [ ] Add CI 
-- [ ] Add hit counter for production
+- [ ] Make ple-util (ets datastore, HEEX helpers)
 - [ ] Datastore organized by IP address
 
-- [ ] ExUnit Shared Examples for HTML, Bootstrap4 and Milligram
+- [ ] Get modals working
+
+- [ ] Deploy on Linode VPS
+
+- [ ] Design monitoring strategy 
+- [ ] Integrate plausible.io 
+
+- [ ] Add changelog 
+- [ ] Write tests 
+- [ ] Add CI 
+- [ ] Auto-update docker on push-to-master
+- [ ] Auto-update fly.io on push-to-master
+
+- [ ] ExUnit Shared Examples for Milligram and Tailwind
 
 - [ ] Get Validations Working
 - [ ] Add RadioButton, DatePickers, etc.
@@ -143,4 +158,6 @@ Mix Package Publishing and Umbrellas:
 
 - [ ] Find one or two mentors 
 
+- [ ] Add Bootstrap5
+- [ ] Add Bulma
 

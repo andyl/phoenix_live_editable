@@ -121,19 +121,22 @@ Mix Package Publishing and Umbrellas:
 
 - [x] Fix milligram rendering 
 - [x] Working milligram submit
+- [x] Push PhoenixLiveEditable package to hex.pm 
+- [x] Test in standalone app using hex dependency 
 
 ## NextSteps
 
-- [ ] Push PhoenixLiveEditable package to hex.pm 
-- [ ] Test in standalone app using hex dependency 
+- [ ] Make ple-util (HEEX helpers)
 
 - [ ] LiveEditable config scoped to Phoenix App
 - [ ] Get live-editable working on tailwind demo
 
 # TBD
 
-- [ ] Make ple-util (ets datastore, HEEX helpers)
+- [ ] Update ple-util (ETS datastore) 
 - [ ] Datastore organized by IP address
+
+- [ ] Add type=select
 
 - [ ] Get modals working
 

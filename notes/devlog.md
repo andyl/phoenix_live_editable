@@ -123,10 +123,9 @@ Mix Package Publishing and Umbrellas:
 - [x] Working milligram submit
 - [x] Push PhoenixLiveEditable package to hex.pm 
 - [x] Test in standalone app using hex dependency 
+- [x] Make ple-util (HEEX helpers)
 
 ## NextSteps
-
-- [ ] Make ple-util (HEEX helpers)
 
 - [ ] LiveEditable config scoped to Phoenix App
 - [ ] Get live-editable working on tailwind demo

@@ -39,6 +39,7 @@ defmodule PleDemoBase.MixProject do
   defp deps do
     [
       {:phoenix_live_editable, in_umbrella: true},
+      {:ple_util, in_umbrella: true},
       {:phoenix, "~> 1.6.9"},
       {:phoenix_html, "~> 3.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},

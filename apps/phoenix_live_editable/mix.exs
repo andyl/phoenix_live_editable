@@ -53,7 +53,8 @@ defmodule Phoenix.LiveEditable.MixProject do
   defp extras do
     [
       "README.md",
-      "guides/installation.md",
+      "guides/installing.md",
+      "guides/using.md",
       "guides/extending.md"
     ]
   end

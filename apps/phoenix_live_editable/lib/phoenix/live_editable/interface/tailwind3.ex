@@ -1,13 +1,13 @@
-defmodule Phoenix.LiveEditable.Ui.Tailwind3 do
+defmodule Phoenix.LiveEditable.Interface.Tailwind3 do
 
-  alias Phoenix.LiveEditable.Ui
+  alias Phoenix.LiveEditable.Interface
   require Phoenix.LiveEditable.Svg
   alias Phoenix.LiveEditable.Svg
 
-  @behaviour Ui.Base
+  @behaviour Interface.Base
 
-  @impl Ui.Base
-  def form_text(label, opts) do
+  @impl Interface.Base
+  def text_focus(label, opts) do
     IO.puts "TAILWINDDDD"
     """
     <form class="ple-mg-form" phx-change="#{opts[:on_change]}" phx-submit="#{opts[:on_submit]}">
@@ -22,8 +22,21 @@ defmodule Phoenix.LiveEditable.Ui.Tailwind3 do
     """
   end
 
-  @impl Ui.Base
-  def form_select(label, opts) do
+  @doc """
+  <%= live_edit(assigns, @register.name, type: "text", id: "name", on_submit: "rename") %>
+  """
+  @impl Interface.Base
+  def text_anchor(label, _opts) do
+    # target = if opts[:target], do: "phx-target='#{opts[:target]}'", else: ""
+    # change = "phx-change='#{opts[:on_change]}'"
+    # submit = "phx-submit='#{opts[:on_submit]}'"
+    """
+    <span><#{ label }</span>
+    """
+  end
+
+  @impl Interface.Base
+  def select_focus(label, opts) do
     Keyword.has_key?(opts, :options) || raise("Needs `:options` option")
     options = Enum.map(opts[:options], &("<option value='#{elem(&1,0)}'>#{elem(&1,1)}</option>"))
     """
@@ -40,6 +53,16 @@ defmodule Phoenix.LiveEditable.Ui.Tailwind3 do
       #{ Svg.inline("SquareCancel") }
     </button>
     </form>
+    """
+  end
+
+  @impl Interface.Base
+  def select_anchor(label, _opts) do
+    # target = if opts[:target], do: "phx-target='#{opts[:target]}'", else: ""
+    # change = "phx-change='#{opts[:on_change]}'"
+    # submit = "phx-submit='#{opts[:on_submit]}'"
+    """
+    <span><#{ label }</span>
     """
   end
 end

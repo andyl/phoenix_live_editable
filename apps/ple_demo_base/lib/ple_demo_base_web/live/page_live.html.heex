@@ -7,7 +7,7 @@
     inspired by <a href="http://vitalets.github.io/x-editable/" target="_blank">X-editable</a>.
   </div>
 
-  <div style="padding: 10px;">
+  <div style="padding: 15px;">
     <small>
     <a href="https://github.com/andyl/phoenix_live_editable" target="_blank">Source</a>
     </small>
@@ -18,15 +18,15 @@
   </div>
 
   <div class="p-10 overflow-hidden rounded-t-xl bg-gradient-to-r from-emerald-50 to-teal-100">
-    <table class="bg-red-200 table-auto">
+    <table class="table-auto">
       <tbody>
         <tr>
-          <td>
+          <td width="100px">
             Add a HEEX tag
           </td>
-          <td colspan=2>
+          <td>
             <code>
-              <%= "<%= live_edit(assigns, @my_text, id: 'txt1', type: 'text', on_submit: 'save') %" <> ">" %> 
+              <%= "<.live_editable id: 'txt1', type: 'text', data: 'Click me to edit', on_submit: 'save')" %>
             </code>
           </td>
         </tr>
@@ -34,22 +34,26 @@
           <td>
             Add a LiveView Handler
           </td>
-          <td colspan=2>
+          <td>
             <code>
               def handle_event("save", value, socket) do 
               end
             </code>
           </td>
         </tr>
+      </tbody>
+    </table>
+    <table>
+      <tbody>
         <tr>
-          <td>
+          <td width="100px">
             Try it!
           </td>
           <td>
-            <%= live_edit(assigns, "CLICK ME TO EDIT", type: "text", id: "name", on_submit: "update") %>
+            <.live_component module={Phoenix.LiveEditable} focusid={@focusid} type="text" id={@id} submit="save" data={@data}/> <br/>
           </td>
           <td>
-            RESULT: CLICK ME TO EDIT
+            RESULT: <%= @data %>
           </td>
         </tr>
       </tbody>

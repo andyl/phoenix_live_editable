@@ -1,4 +1,4 @@
-# Phoenix.LiveEditable Extension 
+# Extending Phoenix.LiveEditable 
 
 CONTENT TBD
 

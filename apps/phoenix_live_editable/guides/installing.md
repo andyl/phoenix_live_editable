@@ -1,4 +1,4 @@
-# Phoenix.LiveEditable Installation
+# Installing Phoenix.LiveEditable 
 
 CONTENT TBD 
 

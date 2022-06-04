@@ -1,22 +1,21 @@
-defmodule Phoenix.LiveEditable.Ui.Bootstrap5 do
+defmodule Phoenix.LiveEditable.Interface.Bootstrap5 do
 
   @moduledoc """
   TBD
   """
 
-  alias Phoenix.LiveEditable.Ui
+  alias Phoenix.LiveEditable.Interface
 
-  require Phoenix.LiveEditable.Svg 
+  require Phoenix.LiveEditable.Svg
   alias Phoenix.LiveEditable.Svg
 
-  @behaviour Ui.Base
+  @behaviour Interface.Base
 
   @doc """
   <%= live_edit(assigns, @register.name, type: "text", id: "name", on_submit: "rename") %>
   """
-  @impl Ui.Base
-  def form_text(label, opts) do
-    IO.inspect opts, label: "ZZZZZZZZZ"
+  @impl Interface.Base
+  def text_focus(label, opts) do
     target = if opts[:target], do: "phx-target='#{opts[:target]}'", else: ""
     change = "phx-change='#{opts[:on_change]}'"
     submit = "phx-submit='#{opts[:on_submit]}'"
@@ -26,12 +25,25 @@ defmodule Phoenix.LiveEditable.Ui.Bootstrap5 do
       <input type="text" class="form-control" name="editable_text" value="#{label}">
     </div>
     <button class="btn btn-primary mb2 btn-ple" style='margin-left: 5px' type='submit'>
-      #{ Svg.inline("SquareOk") } 
+      #{ Svg.inline("SquareOk") }
     </button>
     <button class="btn btn-secondary mb2 btn-ple" style='margin-left: 5px' phx-click='cancel'>
-      #{ Svg.inline("SquareCancel") } 
+      #{ Svg.inline("SquareCancel") }
     </button>
     </form>
+    """
+  end
+
+  @doc """
+  <%= live_edit(assigns, @register.name, type: "text", id: "name", on_submit: "rename") %>
+  """
+  @impl Interface.Base
+  def text_anchor(label, _opts) do
+    # target = if opts[:target], do: "phx-target='#{opts[:target]}'", else: ""
+    # change = "phx-change='#{opts[:on_change]}'"
+    # submit = "phx-submit='#{opts[:on_submit]}'"
+    """
+    <span><#{ label }</span>
     """
   end
 
@@ -39,8 +51,8 @@ defmodule Phoenix.LiveEditable.Ui.Bootstrap5 do
   Options is a list of tuples {<id>, <label>}
   <%= live_edit(assigns, @folder.name, type: "select", options: @folders, id: "folder", on_submit: "refolder") %>
   """
-  @impl Ui.Base
-  def form_select(label, opts) do
+  @impl Interface.Base
+  def select_focus(label, opts) do
     Keyword.has_key?(opts, :options) || raise("Needs `:options` option")
     options = Enum.map(opts[:options], &("<option value='#{elem(&1,0)}'>#{elem(&1,1)}</option>"))
     target = if opts[:target], do: "phx-target='#{opts[:target]}'", else: ""
@@ -53,12 +65,23 @@ defmodule Phoenix.LiveEditable.Ui.Bootstrap5 do
       </select>
     </div>
     <button class="btn btn-primary mb2 btn-ple" style='margin-left: 5px' type='submit'>
-      #{ Svg.inline("SquareOk") } 
+      #{ Svg.inline("SquareOk") }
     </button>
     <button class="btn btn-secondary mb2 btn-ple" style='margin-left: 5px' phx-click='cancel'>
-      #{ Svg.inline("SquareCancel") } 
+      #{ Svg.inline("SquareCancel") }
     </button>
     </form>
     """
   end
+
+  @impl Interface.Base
+  def select_anchor(label, _opts) do
+    # target = if opts[:target], do: "phx-target='#{opts[:target]}'", else: ""
+    # change = "phx-change='#{opts[:on_change]}'"
+    # submit = "phx-submit='#{opts[:on_submit]}'"
+    """
+    <span><#{ label }</span>
+    """
+  end
+
 end

@@ -107,18 +107,30 @@ Mix Package Publishing and Umbrellas:
 - [x] Test in standalone app using path dependency 
 - [x] Test in standalone app using GitHub dependency 
 
+## 2022 Jun 01 Wed
+
+- [x] Design live-editable component
+
+## 2022 Jun 02 Thu
+
+- [x] Get live-editable working on base demo
+- [x] Get live-editable working on milligram demo
+- [x] Migrate to render functions for interface modules
+
+## 2022 Jun 03 Fri
+
+- [x] Fix milligram rendering 
+- [x] Working milligram submit
+
 ## NextSteps
-
-- [ ] Get live-edit working on base demo
-- [ ] Get live-edit working on milligram demo
-- [ ] Get live-edit working on tailwind demo
-
-- [ ] LiveEditable config scoped to Phoenix App
-
-# TBD
 
 - [ ] Push PhoenixLiveEditable package to hex.pm 
 - [ ] Test in standalone app using hex dependency 
+
+- [ ] LiveEditable config scoped to Phoenix App
+- [ ] Get live-editable working on tailwind demo
+
+# TBD
 
 - [ ] Make ple-util (ets datastore, HEEX helpers)
 - [ ] Datastore organized by IP address
@@ -148,5 +160,4 @@ Mix Package Publishing and Umbrellas:
 
 - [ ] Add Bootstrap5
 - [ ] Add Bulma
-
 

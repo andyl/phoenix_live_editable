@@ -1,0 +1,10 @@
+<div>
+
+  <h1>Phx Live Editable</h1>
+  <p><b>Test4</b></p>
+
+  <%= for {cid, data} <- @data do %>
+    | <%= cid %>: <.live_component module={Component4} interface={@interface} type="text" id={cid} submit="save" data={data}/> <br/>
+  <% end %>
+
+</div>

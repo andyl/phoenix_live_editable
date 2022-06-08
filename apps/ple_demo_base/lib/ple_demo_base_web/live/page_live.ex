@@ -7,7 +7,13 @@ defmodule PleDemoBaseWeb.PageLive do
   # ----- lifecycle callbacks -----
 
   def mount(_params, _session, socket) do
-    {:ok, assign(socket, id: "IdOne", data: "CLICK ME TO EDIT")}
+    newsocket =
+      socket
+      |> assign(:id, "IdOne")
+      |> assign(:data, "CLICK ME TO EDIT")
+      |> assign(:focusid, "--NONE--")
+
+    {:ok, newsocket}
   end
 
   def handle_params(_params, url, socket) do

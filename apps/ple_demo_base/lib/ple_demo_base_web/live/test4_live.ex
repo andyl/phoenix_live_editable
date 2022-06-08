@@ -1,7 +1,9 @@
-defmodule PleDemoBaseWeb.Test1Live do
+defmodule PleDemoBaseWeb.Test4Live do
 
   use PleDemoBaseWeb, :live_view
   use Phoenix.LiveEditable
+
+  alias PleDemoBaseWeb.Components.Component4
 
   # ----- lifecycle callbacks -----
 

@@ -5,8 +5,8 @@ config :phoenix_live_editable,
 
 # ----- Phoenix.LiveEditable
 
-# TODO: make this config app-specific
-config :phoenix_live_editable, css_framework: Phoenix.LiveEditable.Interface.Milligram
+# # TODO: make this config app-specific
+# config :phoenix_live_editable, css_framework: Phoenix.LiveEditable.Interface.Milligram
 
 # ----- PLE_DEMO_BASE
 
@@ -16,7 +16,7 @@ config :ple_demo_base, PleDemoBaseWeb.Endpoint,
   render_errors: [view: PleDemoBaseWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: PleDemoBase.PubSub,
   live_view: [signing_salt: "rRioLeCG"],
-  live_editable: [css_framework: Phoenix.LiveEditable.Interface.Milligram]
+  live_editable: [interface: Phoenix.LiveEditable.Interface.Milligram]
 
 # ----- PLE_DEMO_MILLIGRAM
 
@@ -26,7 +26,7 @@ config :ple_demo_milligram, PleDemoMilligramWeb.Endpoint,
   render_errors: [view: PleDemoMilligramWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: PleDemoMilligram.PubSub,
   live_view: [signing_salt: "nxJkew8n"],
-  live_editable: [css_framework: Phoenix.LiveEditable.Interface.Milligram]
+  live_editable: [interface: Phoenix.LiveEditable.Interface.Milligram]
 
 # ----- PLE_DEMO_TAILWIND3
 
@@ -36,7 +36,7 @@ config :ple_demo_tailwind3, PleDemoTailwind3Web.Endpoint,
   render_errors: [view: PleDemoTailwind3Web.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: PleDemoTailwind3.PubSub,
   live_view: [signing_salt: "ZjpUwCFP"],
-  live_editable: [css_framework: Phoenix.LiveEditable.Interface.Tailwind3]
+  live_editable: [interface: Phoenix.LiveEditable.Interface.Tailwind3]
 
 # ----- ESBUILD
 

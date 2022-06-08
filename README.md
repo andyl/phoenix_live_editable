@@ -50,18 +50,20 @@ Now open a browser and visit `http://localhost:4040`
 
 ## Code Organization 
 
-The [LiveEditable Repo][gh] is an umbrella project.  
+The [LiveEditable Repo][gh] is an umbrella project.  This was done to make it
+easier to demo and test the LiveEditable components against a variety of CSS
+frameworks.  
 
-| Subapp                | Description                                   |
-|-----------------------|-----------------------------------------------|
-| phoenix_live_editable | LiveView components                           |
-| ple_demo_base         | phoenix app with a landing page               |
-| ple_demo_milligram    | phoenix app with LiveEditable using Milligram |
-| ple_demo_tailwind3    | phoenix app with LiveEditable using Tailwind3 |
-| ple_util              | utility modules to support the demo apps      |
+| Umbrella Subapp         | Description                                   |
+|-------------------------|-----------------------------------------------|
+| `phoenix_live_editable` | LiveEditable components                       |
+| `ple_demo_base`         | phoenix app with a landing page               |
+| `ple_demo_milligram`    | phoenix app with LiveEditable using Milligram |
+| `ple_demo_tailwind3`    | phoenix app with LiveEditable using Tailwind3 |
+| `ple_util`              | utility modules to support the demo apps      |
 
-The LiveEditable package on hex.pm contains only the phoenix_live_editable
-subapp.
+Note that the LiveEditable package on hex.pm contains only the
+`phoenix_live_editable` subapp, not the demo apps.
 
 [gh]: https://github.com/andyl/phoenix_live_editable
 
@@ -91,7 +93,7 @@ def deps do
 end
 ```
 
-Using the hex option (UNDER CONSTRUCTION): 
+Using the hex option: 
 ```elixir
 def deps do
   [
@@ -106,12 +108,14 @@ After that:
 
 Next add LiveEditable configuartion to your `config/config.exs`:
 
-    config :phoenix_live_editable, css_framework: <YOUR_CSS_FRAMEWORK_MODULE>
+    config :<your_phoenix_app>, <your endpoint>, [
+      live_editable: [interface: <YOUR_CSS_FRAMEWORK_MODULE>]
+    ]
 
 Valid Framework Modules include:
 
-    - Phoenix.LiveEditable.Ui.Milligram
-    - Phoenix.LiveEditable.Ui.Tailwind3 
+    - Phoenix.LiveEditable.Interface.Milligram
+    - Phoenix.LiveEditable.Interface.Tailwind3 
 
 Now you can use LiveEditable in your LiveViews and LiveComponents:
 

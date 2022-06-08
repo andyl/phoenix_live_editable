@@ -50,7 +50,7 @@
             Try it!
           </td>
           <td>
-            <.live_component module={Phoenix.LiveEditable} focusid={@focusid} type="text" id={@id} submit="save" data={@data}/> <br/>
+            <.live_component module={Phoenix.LiveEditable} interface={@interface} focusid={@focusid} type="text" id={@id} submit="save" data={@data}/> <br/>
           </td>
           <td>
             RESULT: <%= @data %>

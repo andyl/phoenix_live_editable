@@ -5,7 +5,7 @@
 
   FOCUSID: <%= @focusid %><br/>
   <%= for {lcl_id, data} <- @data do %>
-    | <%= lcl_id %>: <.live_component module={Phoenix.LiveEditable} focusid={@focusid} type="text" id={lcl_id} submit="save" data={data}/> <br/>
+    | <%= lcl_id %>: <.live_component module={Phoenix.LiveEditable} interface={@interface} focusid={@focusid} type="text" id={lcl_id} submit="save" data={data}/> <br/>
   <% end %>
 
 </div>

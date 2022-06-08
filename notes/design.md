@@ -20,8 +20,7 @@ Reference:
 
 ## Simplification 
 
-- [x] Remove "@focusid" from LiveView mount function (using `on_mount`)
-- [ ] Remove "@interface" from LiveView (using data in `on_mount` socket)
+- [ ] Remove need for interface, focusid
 - [ ] Remove "@focusid" from component params (using pubsub)
 
 ## Page Coordination

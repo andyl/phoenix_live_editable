@@ -124,10 +124,18 @@ Mix Package Publishing and Umbrellas:
 - [x] Push PhoenixLiveEditable package to hex.pm 
 - [x] Test in standalone app using hex dependency 
 - [x] Make ple-util (HEEX helpers)
+- [x] Remove "@focusid" from LiveView mount function (using `on_mount`)
+- [x] Remove "@interface" from LiveView (using data in `on_mount` socket)
+
+## 2022 Jun 04 Sat
+
+- [x] LiveEditable config scoped to Phoenix App
+- [x] Update documentation 
 
 ## NextSteps
 
-- [ ] LiveEditable config scoped to Phoenix App
+- [ ] Add edit example to milligram page 
+
 - [ ] Get live-editable working on tailwind demo
 
 # TBD
@@ -138,8 +146,6 @@ Mix Package Publishing and Umbrellas:
 - [ ] Add type=select
 
 - [ ] Get modals working
-
-- [ ] Deploy on Linode VPS
 
 - [ ] Design monitoring strategy 
 - [ ] Integrate plausible.io 

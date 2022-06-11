@@ -1,4 +1,4 @@
-defmodule Phoenix.LvEditableHooks do
+defmodule Phoenix.OldLiveEditableHooks do
 
   import Phoenix.LiveView
 

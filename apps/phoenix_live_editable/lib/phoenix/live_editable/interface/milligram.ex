@@ -7,18 +7,16 @@ defmodule Phoenix.LiveEditable.Interface.Milligram do
 
   use Phoenix.Component
 
-  def render(%{type: "text", mode: "anchor"} = assigns) do
-    tgt = if assigns[:scope] == "component", do: assigns[:myself], else: nil
+  def render(%{ple_type: "text"} = assigns) do
+    IO.inspect(assigns, label: "MILRENDER")
     ~H"""
-    <span style="cursor: pointer; border-bottom: 1px dashed blue;" target={tgt} phx-click='focus' target={@myself} phx-value-id={@id} focusid={@focusid}>
-      <%= @data %>
+    <span style="cursor: pointer; border-bottom: 1px dashed blue;" phx-click='focus' target={@myself} phx-value-id={@id}>
+      <%= @ple_data %>
     </span>
     """
   end
 
   def render(%{type: "text", mode: "focus"} = assigns) do
-    IO.inspect(assigns, label: "UNDERSTANDXXX")
-    # stateful has a component target
     tgt = if assigns[:scope] == "component", do: assigns[:myself], else: nil
     ~H"""
     <form phx-submit={@submit} style="display: inline;">

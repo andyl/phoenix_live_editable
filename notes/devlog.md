@@ -132,7 +132,81 @@ Mix Package Publishing and Umbrellas:
 - [x] LiveEditable config scoped to Phoenix App
 - [x] Update documentation 
 
+## 2022 Jun 08 Wed
+
+Refactor: 
+- single approach - use only stateful components 
+- state stored in components 
+
+Simple approach: `<.live_editable id="myid"/>`
+- quick and fast
+- changes stored in memory
+
+Full approach: `<.live_editable ple-data="HelloWorld" ple-style="popup"/>`
+
+Elements: 
+- in view: `use Phoenix.LiveEditable` 
+- in handler: `use Phoenix.LiveEditableHandler`
+
+Handlers:
+- only write event handlers to persist data
+- UI and workflow supplied by `LiveEditable`
+
+LiveEditable struct:
+
+    # editable data - can be nil
+    ple_data: nil,
+    # form type: <text | select | multi-select | radio | ...>
+    ple_type: "text",
+    # render mode: <anchor | focus>
+    ple_mode: "anchor",
+    # display style: <inline | popup>
+    ple_style: "inline",
+    # submit action: anything
+    ple_action: "save",
+    # extra data storage
+    ple_store: %{}, 
+    # handler module - can reset in view or tag
+    ple_handler: Phoenix.LiveEditable.Handler.Default,
+    # interface module: see Phoenix.LiveEditable.Interface.*
+    ple_interface: Phoenix.LiveEditable.Interface.Milligram,
+
+- default values 
+- over ride: struct -> config -> view -> tag -> handler 
+
+Learnings:
+- can only pass strings and ints in HEEX tags 
+- every LV has a unique socket ID
+- every LV runs in a unique process (until page reload) 
+- need Agent attached to LV
+
+## 2022 Jun 09 Thu 
+
+- agents need :via name 
+- via requires registry 
+- add registry (Phoenix.LiveEditable.Registry) to `live_editable/application.ex` 
+- create ViewCache module
+
+## 2022 Jun 10 Fri
+
+- [x] Create a LiveEditable registry for Agents
+- [x] Attach an agent to the LiveView 
+- [x] Write an Agent module (ViewCache) 
+
 ## NextSteps
+
+Design: 
+- `on_mount`: create ViewCache & load config values 
+- view module: ability to setup ViewCache values in `mount` and `update`
+- tag: set values in tag 
+- handler module: use `on_mount` to init values prior to rendering component (optional)
+- interface: 
+
+- [ ] 
+- [ ] Validate Agent destruction when LiveView dies 
+
+- [ ] Get milligram working with anchor and focus 
+- [ ] Remove old code and test pages 
 
 - [ ] Add edit example to milligram page 
 
@@ -165,6 +239,8 @@ Mix Package Publishing and Umbrellas:
 - [ ] ExUnit Unit Specs with LV test helpers
 
 - [ ] Find one or two mentors 
+
+- [ ] Add livebook interface 
 
 - [ ] Add Bootstrap5
 - [ ] Add Bulma

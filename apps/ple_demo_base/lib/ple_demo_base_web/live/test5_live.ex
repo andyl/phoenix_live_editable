@@ -1,7 +1,7 @@
 defmodule PleDemoBaseWeb.Test5Live do
 
   use PleDemoBaseWeb, :live_view
-  use Phoenix.LvEditable
+  use Phoenix.LvEditableView
 
   # ----- lifecycle callbacks -----
 
@@ -14,13 +14,6 @@ defmodule PleDemoBaseWeb.Test5Live do
   end
 
   # ----- event handlers -----
-
-  def handle_event("save", %{"data" => data}, socket) do
-    id = socket.assigns.focusid
-    newdata = socket.assigns.data |> Map.merge(%{id => data})
-    new_socket = assign(socket, data: newdata, focusid: "NONE")
-    {:noreply, new_socket}
-  end
 
   # ----- helpers -----
 

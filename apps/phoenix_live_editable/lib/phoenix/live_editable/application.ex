@@ -7,10 +7,8 @@ defmodule Phoenix.LiveEditable.Application do
 
   def start(_type, _args) do
     children = [
-      # Start the PubSub system
-      {Phoenix.PubSub, name: Phoenix.LiveEditable.PubSub}
-      # Start a worker by calling: LiveEditable.Worker.start_link(arg)
-      # {LiveEditable.Worker, arg}
+      {Phoenix.PubSub, name: Phoenix.LiveEditable.PubSub},
+      {Registry, keys: :unique, name: Phoenix.LiveEditable.Registry}
     ]
 
     Supervisor.start_link(children, strategy: :one_for_one, name: Phoenix.LiveEditable.Supervisor)

@@ -1,4 +1,4 @@
-defmodule Phoenix.LiveEditableMixin do
+defmodule Phoenix.OldLiveEditableMixin do
 
   @moduledoc """
   Mixin for LiveEditable stateful components.any()

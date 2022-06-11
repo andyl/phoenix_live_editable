@@ -1,4 +1,4 @@
-defmodule Phoenix.LvEditableView do
+defmodule Phoenix.LiveEditableView do
 
   @moduledoc """
 
@@ -6,7 +6,7 @@ defmodule Phoenix.LvEditableView do
 
       defmodule MyView do
         use MyAppWeb, :live_view
-        use Phoenix.LvEditableView
+        use Phoenix.LiveEditableView
 
         ...
 
@@ -65,7 +65,7 @@ defmodule Phoenix.LvEditableView do
   defmacro __using__(_opts) do
     quote do
 
-      on_mount Phoenix.LvEditableView
+      on_mount Phoenix.LiveEditableView
 
     end
   end

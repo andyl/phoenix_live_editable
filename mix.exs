@@ -7,7 +7,7 @@ defmodule LiveEditable.Umbrella.MixProject do
       version: "0.0.1",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      xref: [exclude: [Phoenix.HTML, Phoenix.LiveEditable, Phoenix.LvEditable]],
+      xref: [exclude: [Phoenix.HTML, Phoenix.LiveEditableView, Phoenix.LiveEditableComponent]],
       aliases: aliases(),
       releases: releases()
     ]

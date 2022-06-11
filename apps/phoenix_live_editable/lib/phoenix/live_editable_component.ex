@@ -1,9 +1,9 @@
-defmodule Phoenix.LvEditableComponent do
+defmodule Phoenix.LiveEditableComponent do
   @moduledoc """
   Support for LiveEditable Component Event Handlers
 
       defmodule MyEditableHandler do
-        use Phoenix.LvEditable.Component
+        use Phoenix.LiveEditable.Component
 
         # --- DO NOT DEFINE LIFECYCLE CALLBACKS!!! (mount, update, render)
         # --- DO NOT DEFINE VIEW HELPERS!!!
@@ -56,36 +56,17 @@ defmodule Phoenix.LvEditableComponent do
     quote do
       use Phoenix.LiveComponent
 
-      on_mount(Phoenix.LvEditableHooks)
+      on_mount(Phoenix.LiveEditableView)
 
-      alias Phoenix.LvEditableComponent, as: Helper
+      alias Phoenix.LiveEditableComponent, as: Helper
 
       # ----- USING lifecycle callbacks -----
 
-      # def mount(socket) do
-      #   {:ok, socket}
-      # end
-      #
-      # def update(assigns, socket) do
-      #   attrs = [
-      #     id: assigns[:id],
-      #     zzz_data: "UPDATE #{Helper.ple_time_now()}"
-      #   ]
-      #
-      #   {:ok, assign(socket, attrs)}
-      # end
-      #
-      # def render(assigns) do
-      #   Phoenix.LvEditableComponent.render(assigns)
-      # end
-
       def mount(socket) do
-        IO.puts "SOCKETOI"
         {:ok, socket}
       end
 
       def update(assigns, socket) do
-        IO.puts "UPDATEOI"
         newassigns = assigns
                      |> atomify_keys
                      |> Map.put(:socketid, socket.id)
@@ -95,7 +76,6 @@ defmodule Phoenix.LvEditableComponent do
       end
 
       def render(assigns) do
-        IO.puts "RENDEROI"
         module = interface_module(assigns)
         assigns |> module.render()
       end
@@ -103,7 +83,6 @@ defmodule Phoenix.LvEditableComponent do
       # ----- USING event handlers -----
 
       def handle_event("ple-blur", %{"id" => id}, socket) do
-        IO.puts("COMPONENT1 FOCUS")
         new_socket = assign(socket, :focusid, id)
         {:noreply, new_socket}
       end

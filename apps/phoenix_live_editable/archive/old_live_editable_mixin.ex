@@ -1,6 +1,6 @@
-defmodule Phoenix.OldLiveEditableMixin do
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
-  @moduledoc """
+vvvvvvvvvvvvvvvv
   Mixin for LiveEditable stateful components.any()
 
   Usage:

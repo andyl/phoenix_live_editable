@@ -8,7 +8,6 @@ defmodule Phoenix.LiveEditable.Interface.Milligram do
   use Phoenix.Component
 
   def render(%{ple_type: "text"} = assigns) do
-    IO.inspect(assigns, label: "MILRENDER")
     ~H"""
     <span style="cursor: pointer; border-bottom: 1px dashed blue;" phx-click='focus' target={@myself} phx-value-id={@id}>
       <%= @ple_data %>

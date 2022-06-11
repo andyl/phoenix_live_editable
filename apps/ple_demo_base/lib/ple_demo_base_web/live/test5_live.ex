@@ -1,7 +1,7 @@
 defmodule PleDemoBaseWeb.Test5Live do
 
   use PleDemoBaseWeb, :live_view
-  use Phoenix.LvEditableView
+  use Phoenix.LiveEditableView
 
   # ----- lifecycle callbacks -----
 
@@ -15,6 +15,6 @@ defmodule PleDemoBaseWeb.Test5Live do
 
   # ----- event handlers -----
 
-  # ----- helpers -----
+  # ----- view helpers -----
 
 end

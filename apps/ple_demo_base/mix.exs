@@ -55,7 +55,7 @@ defmodule PleDemoBase.MixProject do
 
   defp xref do
     [
-      exclude: [Phoenix.LiveEditableHooks, Phoenix.LiveEditableView, Phoenix.LiveEditableComponent]
+      exclude: [Phoenix.LiveEditableHooks, Phoenix.LiveEditable.Helpers, Phoenix.LiveEditableView, Phoenix.LiveEditableComponent]
     ]
   end
 

@@ -1,7 +1,6 @@
 defmodule Phoenix.LiveEditableView do
 
   @moduledoc """
-
   View-Level LiveEditable Utiltities
 
       defmodule MyView do
@@ -26,6 +25,7 @@ defmodule Phoenix.LiveEditableView do
     # setup a ViewCache and load config data
     vc_new(socket)
     vc_putval(socket, :ple_appname, appname(socket))
+    vc_putval(socket, :ple_viewpid, self())
     vc_merge(socket, ple_config_map(socket))
 
     {:cont, socket}
@@ -66,6 +66,8 @@ defmodule Phoenix.LiveEditableView do
     quote do
 
       on_mount Phoenix.LiveEditableView
+
+      import Phoenix.LiveEditable.Helpers
 
     end
   end

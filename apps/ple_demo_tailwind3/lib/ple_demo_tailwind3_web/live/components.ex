@@ -1,11 +1,11 @@
-defmodule PleDemoBase.Components do
+defmodule PleDemoTailwind3.Components do
 
   use Phoenix.Component
 
   @doc """
   Headline Component
 
-  in the LiveView: `import PleDemoBase.Components`
+  in the LiveView: `import PleDemoTailwind3.Components`
 
   in the HEEX template: `<.headline text="mytext"/>`
   """
@@ -18,7 +18,7 @@ defmodule PleDemoBase.Components do
   end
 
   def test_menu(assigns) do
-    items = ~w(Home Test1 Test2 Test3 Test4 Test5)
+    items = ~w(Home Test1)
     ~H"""
     <div>
       <%= navbar(items, assigns[:title]) %>

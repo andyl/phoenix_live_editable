@@ -1,19 +1,14 @@
 defmodule PleDemoBaseWeb.PageLive do
   use PleDemoBaseWeb, :live_view
-  use Phoenix.LiveEditable
+  use Phoenix.LiveEditableView
 
   alias Phx.Demo.Helpers
+  alias PleDemoBaseWeb.PageHandler
 
   # ----- lifecycle callbacks -----
 
   def mount(_params, _session, socket) do
-    newsocket =
-      socket
-      |> assign(:id, "IdOne")
-      |> assign(:data, "CLICK ME TO EDIT")
-      |> assign(:focusid, "--NONE--")
-
-    {:ok, newsocket}
+    {:ok, assign(socket, :viewdata, "CLICK ME TO EDIT")}
   end
 
   def handle_params(_params, url, socket) do
@@ -22,9 +17,12 @@ defmodule PleDemoBaseWeb.PageLive do
 
   # ----- event handlers -----
 
-  def handle_event("save", %{"data" => data}, socket) do
-    new_socket = assign(socket, data: data, focusid: "NONE")
-    {:noreply, new_socket}
+  def handle_event(_tag, _data, socket) do
+    {:noreply, socket}
+  end
+
+  def handle_info({:viewupdate, %{"data" => newdata}}, socket) do
+    {:noreply, assign(socket, :viewdata, newdata)}
   end
 
   # ----- helpers -----

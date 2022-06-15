@@ -193,26 +193,38 @@ Learnings:
 - [x] Attach an agent to the LiveView 
 - [x] Write an Agent module (ViewCache) 
 
-## NextSteps
-
 Design: 
 - `on_mount`: create ViewCache & load config values 
 - view module: ability to setup ViewCache values in `mount` and `update`
 - tag: set values in tag 
 - handler module: use `on_mount` to init values prior to rendering component (optional)
-- interface: 
 
-- [ ] 
-- [ ] Validate Agent destruction when LiveView dies 
+- [x] create helper methods (`.live_editable`, `.ple`)
+- [x] make helper methods render interfaces 
 
-- [ ] Get milligram working with anchor and focus 
-- [ ] Remove old code and test pages 
+## 2022 Jun 11 Sat
 
-- [ ] Add edit example to milligram page 
+- [x] Get milligram working with anchor and focus 
+- [x] handle nil data values 
+- [x] Get form submit working 
 
-- [ ] Get live-editable working on tailwind demo
+## 2022 Jun 14 Tue
+
+- [x] Get home-page example working 
+- [x] Remove old code and test pages 
+
+## 2022 Jun 15 Wed
+
+- [x] Finish testpage navbar 
+- [x] Fix home page
+- [x] Add edit example to milligram page 
+- [x] Write interface for tailwind3
 
 # TBD
+
+- [ ] Fix tailwind3 styling
+
+- [ ] Validate Agent destruction when LiveView dies 
 
 - [ ] Update ple-util (ETS datastore) 
 - [ ] Datastore organized by IP address

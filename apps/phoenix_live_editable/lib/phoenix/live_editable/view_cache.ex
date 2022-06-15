@@ -38,9 +38,13 @@ defmodule Phoenix.LiveEditable.ViewCache do
     # storage for misc config attributes
     ple_store: %{},
     # submit action: anything
-    ple_action: "save",
+    ple_action: "ple-default-save",
     # appname: for looking up config settings
     ple_appname: nil,
+    # target: pid of view
+    ple_viewpid: nil,
+    # data source: place where state is managed <component | view>
+    ple_datasrc: "component",
     # handler module - can reset in view or tag
     ple_handler: Phoenix.LiveEditable.ComponentHandler.Default,
     # interface module: see Phoenix.LiveEditable.Interface.*

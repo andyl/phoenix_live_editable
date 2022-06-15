@@ -1,12 +1,12 @@
 # Phoenix.LiveEditable 
 
-LiveView Components for in-place editing. 
+LiveView components for in-place editing. 
 
 LiveEditable provides helpers for your LiveView/HEEX templates.
 
 Example HEEX tag:
 
-    <%= live_editable(assigns, "MyText", id: "textfield", type: "text", on_submit: "save" %>
+    <.live_editable id="MyField" ple_data="Click me to Edit" ple_action="save"/>
 
 Add a handler to your LiveView:
 
@@ -16,10 +16,10 @@ Add a handler to your LiveView:
 
 See the [online demo][ld] for running examples.
 
-LiveEditable is for admin interfaces and apps that want basic inline editing.
-It supports many CSS frameworks (Tailwind, Milligram, etc.) and field types
-(Text, Select, etc.).  LiveEditable is inspired by [Vitaliy Potapov's][vp]
-[X-Editable][xe]. 
+LiveEditable is for admin interfaces to provide basic inline editing. It
+supports many CSS frameworks (Tailwind, Milligram, etc.) and field types (Text,
+Select, etc.).  LiveEditable is inspired by [Vitaliy Potapov's][vp]
+[X-Editable][xe], and is designed to be extensible.
 
 LiveEditable is pre-alpha - not ready for production use.
 
@@ -109,7 +109,7 @@ After that:
 Next add LiveEditable configuartion to your `config/config.exs`:
 
     config :<your_phoenix_app>, <your endpoint>, [
-      live_editable: [interface: <YOUR_CSS_FRAMEWORK_MODULE>]
+      live_editable: [ple_interface: <YOUR_CSS_FRAMEWORK_MODULE>]
     ]
 
 Valid Framework Modules include:

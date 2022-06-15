@@ -6,7 +6,7 @@ CONTENT TBD
 - using a GitHub dependency 
 - using a path dependency 
 
-- using `live_edit` function & the `use LiveEditable` expression
+- using `live_editable` component & the `use LiveEditable` expression
 - writing a handler 
 
 ASSIGNS

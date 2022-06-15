@@ -4,7 +4,7 @@ defmodule Phoenix.LiveEditable.Handler.Default do
 
   # ----- event handlers -----
 
-  def handle_event(_all, _data, socket) do
+  def handle_event(_any, _data, socket) do
     {:noreply, socket}
   end
 end

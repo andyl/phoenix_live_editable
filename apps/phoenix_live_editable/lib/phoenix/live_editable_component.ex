@@ -25,21 +25,6 @@ defmodule Phoenix.LiveEditableComponent do
       end
   """
 
-  # ----- lifecycle callback helpers
-
-  # use Phoenix.LiveComponent
-  #
-  # def render(assigns) do
-  #   IO.inspect(assigns, label: "ASDFASDF")
-  #   ~H"""
-  #   <span style={ple_linkstyle()} phx-click="ple-focus" phx-target={@myself} id={@id}>
-  #     <%= @id %> |
-  #   <%# @zzz_data %>
-  #       HELLO WORLD
-  #   </span>
-  #   """
-  # end
-
   # ----- view helpers -----
 
   def ple_time_now do
@@ -55,8 +40,6 @@ defmodule Phoenix.LiveEditableComponent do
   defmacro __using__(_opts) do
     quote do
       use Phoenix.LiveComponent
-
-      on_mount(Phoenix.LiveEditableView)
 
       alias Phoenix.LiveEditableComponent, as: Helper
 
@@ -82,14 +65,16 @@ defmodule Phoenix.LiveEditableComponent do
 
       # ----- USING event handlers -----
 
-      def handle_event("ple-blur", %{"id" => id}, socket) do
-        new_socket = assign(socket, :focusid, id)
-        {:noreply, new_socket}
+      def handle_event("ple-blur", data, socket) do
+        {:noreply, assign(socket, :ple_mode, "anchor")}
       end
 
-      def handle_event("ple-focus", _data, socket) do
-        data = "NEWDATA #{Helper.ple_time_now()}"
-        {:noreply, assign(socket, :data, data)}
+      def handle_event("ple-focus", data, socket) do
+        {:noreply, assign(socket, :ple_mode, "focus")}
+      end
+
+      def handle_event("ple-default-save", data, socket) do
+        {:noreply, assign(socket, ple_data: data["data"], ple_mode: "anchor")}
       end
 
       # ----- USING view helpers -----

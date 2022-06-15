@@ -1,6 +1,9 @@
 defmodule PleDemoBaseWeb.Test3Live do
 
   use PleDemoBaseWeb, :live_view
+  use Phoenix.LiveEditableView
+
+  import PleDemoBase.Components
 
   # ----- lifecycle callbacks -----
 

@@ -19,6 +19,10 @@ For every push of the master branch:
 
     vim apps/phoenix_live_editable/CHANGELOG.md 
 
+- test the Dockerfile
+
+    docker build . -t ple_test
+
 - add a git tag 
 
     git tag                 # list tags 
@@ -29,19 +33,27 @@ For every push of the master branch:
 
     git push 
 
+- browser check - `https://github.com/andyl/phoenix_live_editable`
+
 - push `phoenix_live_editable` to Hex.pm
 
+    cd apps/phoenix_live_editable
     mix hex.publish
+
+- browser check - `https://hex.pm/packages/phoenix_live_editable`
 
 - build a docker image 
 
     docker build . -t andyldk/phoenix_live_editable:v0.0.1
 
-- push umbrella to Fly.io 
-
-    fly deploy
+- browser check - `https://hub.docker.com/r/andyldk/phoenix_live_editable`
 
 - push umbrella to DockerHub
 
     docker push andyldk/phoenix_live_editable 
 
+- push umbrella to Fly.io 
+
+    fly deploy
+
+- browser check - `https://phoenix-live-editable.fly.dev`

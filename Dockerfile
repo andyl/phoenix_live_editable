@@ -34,6 +34,8 @@ RUN mix local.hex --force && \
 
 # set build ENV
 ENV MIX_ENV="prod"
+ENV HEX_HTTP_CONCURRENCY=1
+ENV HEX_HTTP_TIMEOUT=120
 
 # install mix dependencies
 COPY mix.exs mix.lock ./
@@ -41,6 +43,7 @@ COPY apps/phoenix_live_editable/mix.exs ./apps/phoenix_live_editable/mix.exs
 COPY apps/ple_demo_base/mix.exs ./apps/ple_demo_base/mix.exs
 COPY apps/ple_demo_milligram/mix.exs ./apps/ple_demo_milligram/mix.exs
 COPY apps/ple_demo_tailwind3/mix.exs ./apps/ple_demo_tailwind3/mix.exs 
+COPY apps/ple_util/mix.exs ./apps/ple_util/mix.exs 
 RUN mix deps.get --only $MIX_ENV
 RUN mkdir config
 
@@ -57,7 +60,7 @@ COPY apps/ple_demo_tailwind3/priv ./apps/ple_demo_tailwind3
 COPY apps/phoenix_live_editable/lib ./apps/phoenix_live_editable/lib
 COPY apps/ple_demo_base/lib ./apps/ple_demo_base/lib
 COPY apps/ple_demo_milligram/lib ./apps/ple_demo_milligram/lib
-COPY apps/ple_demo_tailwind3/lib ./apps/ple_demo_tailwind3/lib 
+COPY apps/ple_util/lib ./apps/ple_util/lib 
 
 COPY apps/phoenix_live_editable/assets ./apps/phoenix_live_editable/assets
 COPY apps/ple_demo_base/assets ./apps/ple_demo_base/assets

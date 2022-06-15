@@ -1,0 +1,13 @@
+<div>
+
+  <h1>Phx Live Editable</h1>
+
+  <.test_menu title="Test4"/>
+
+  <br/>
+
+  <%= for {cid, data} <- @data do %>
+    | <%= cid %>: <.ple id={cid} ple_data={data}/> <br/>
+  <% end %>
+
+</div>

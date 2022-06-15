@@ -1,4 +1,4 @@
-defmodule PleDemoBaseWeb.Test1Live do
+defmodule PleDemoBaseWeb.Test3Live do
 
   use PleDemoBaseWeb, :live_view
   use Phoenix.LiveEditableView
@@ -8,13 +8,7 @@ defmodule PleDemoBaseWeb.Test1Live do
   # ----- lifecycle callbacks -----
 
   def mount(_params, _session, socket) do
-    data = %{
-      "id1" => "MyData1",
-      "id2" => "MyData2",
-      "id3" => "MyData3",
-      "id4" => "MyData4"
-    }
-    {:ok, assign(socket, :data, data)}
+    {:ok, socket}
   end
 
   def handle_params(_params, _url, socket) do

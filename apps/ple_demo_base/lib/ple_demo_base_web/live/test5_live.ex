@@ -1,9 +1,14 @@
-defmodule PleDemoBaseWeb.PageLive do
+defmodule PleDemoBaseWeb.Test5Live do
+
+  @moduledoc """
+  A demo page that shows various LiveEditable components.
+  """
+
   use PleDemoBaseWeb, :live_view
   use Phoenix.LiveEditableView
 
-  alias Phx.Demo.Helpers
-  alias PleDemoBaseWeb.PageHandler
+  alias PleDemoBaseWeb.Test5Handler, as: T5Handler
+  import PleDemoBase.Components
 
   # ----- lifecycle callbacks -----
 
@@ -11,8 +16,8 @@ defmodule PleDemoBaseWeb.PageLive do
     {:ok, assign(socket, :viewdata, "CLICK ME TO EDIT")}
   end
 
-  def handle_params(_params, url, socket) do
-    {:noreply, assign(socket, :url, url)}
+  def handle_params(_params, _url, socket) do
+    {:noreply, socket}
   end
 
   # ----- event handlers -----
@@ -25,6 +30,6 @@ defmodule PleDemoBaseWeb.PageLive do
     {:noreply, assign(socket, :viewdata, newdata)}
   end
 
-  # ----- helpers -----
+  # ----- view helpers -----
 
 end

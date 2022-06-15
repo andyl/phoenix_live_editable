@@ -18,12 +18,6 @@ Reference:
     app_name = Application.get_application(__MODULE__)
     interface = Application.fetch_env(app_name, :css_framework) 
 
-## Simplification 
-
-- [x] Remove "@focusid" from LiveView mount function (using `on_mount`)
-- [ ] Remove "@interface" from LiveView (using data in `on_mount` socket)
-- [ ] Remove "@focusid" from component params (using pubsub)
-
 ## Page Coordination
 
 Options: 
@@ -42,3 +36,10 @@ PubSub:
 
 - AutoGenerate Directory of supported and 3rd party interfaces 
 - AutoGenerate working demo examples
+
+## Password Config 
+
+- Hidden input with 'show me' button 
+- Length validation 
+- Content validation 
+

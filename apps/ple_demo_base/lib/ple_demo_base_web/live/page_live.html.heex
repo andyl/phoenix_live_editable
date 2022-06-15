@@ -26,7 +26,7 @@
           </td>
           <td>
             <code>
-              <%= "<.live_editable id: 'txt1', type: 'text', data: 'Click me to edit', on_submit: 'save')" %>
+              <%= "<.live_editable id='txt1' ple_data='Click me to edit' ple_action='save')" %>
             </code>
           </td>
         </tr>
@@ -50,10 +50,10 @@
             Try it!
           </td>
           <td>
-            <.live_component module={Phoenix.LiveEditable} focusid={@focusid} type="text" id={@id} submit="save" data={@data}/> <br/>
+            <.ple ple_handler={PageHandler} ple_data={@viewdata} ple_action="save-view" id="zing"/> 
           </td>
           <td>
-            RESULT: <%= @data %>
+            RESULT: <%= @viewdata %>
           </td>
         </tr>
       </tbody>

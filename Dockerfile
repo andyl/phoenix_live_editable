@@ -60,6 +60,7 @@ COPY apps/ple_demo_tailwind3/priv ./apps/ple_demo_tailwind3
 COPY apps/phoenix_live_editable/lib ./apps/phoenix_live_editable/lib
 COPY apps/ple_demo_base/lib ./apps/ple_demo_base/lib
 COPY apps/ple_demo_milligram/lib ./apps/ple_demo_milligram/lib
+COPY apps/ple_demo_tailwind3/lib ./apps/ple_demo_tailwind3/lib
 COPY apps/ple_util/lib ./apps/ple_util/lib 
 
 COPY apps/phoenix_live_editable/assets ./apps/phoenix_live_editable/assets

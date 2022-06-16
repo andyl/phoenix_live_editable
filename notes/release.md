@@ -19,9 +19,10 @@ For every push of the master branch:
 
     vim apps/phoenix_live_editable/CHANGELOG.md 
 
-- test the Dockerfile
+- Dockerfile test build and run
 
     docker build . -t ple_test
+    docker run -p 8080-8082:8080-8082 ple_test
 
 - add a git tag 
 

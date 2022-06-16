@@ -19,6 +19,7 @@ defmodule PleDemoTailwind3Web.Router do
 
     live "/", PageLive
     live "/home", PageLive
+    live "/test", Test1Live
     live "/test1", Test1Live
   end
 

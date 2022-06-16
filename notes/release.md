@@ -10,7 +10,7 @@ For every push of the master branch:
     vim apps/phoenix_live_editable/Guides
     cp README.md apps/phoenix_live_editable
 
-- increment versions (both are to be the same)
+- increment versions (umbrella and package are to be the same)
 
     vim mix.exs
     vim apps/phoenix_live_editable/mix.exs 
@@ -36,13 +36,6 @@ For every push of the master branch:
 
 - browser check - `https://github.com/andyl/phoenix_live_editable`
 
-- push `phoenix_live_editable` to Hex.pm
-
-    cd apps/phoenix_live_editable
-    mix hex.publish
-
-- browser check - `https://hex.pm/packages/phoenix_live_editable`
-
 - build a docker image 
 
     docker build . -t andyldk/phoenix_live_editable:v0.0.1
@@ -58,3 +51,11 @@ For every push of the master branch:
     fly deploy
 
 - browser check - `https://phoenix-live-editable.fly.dev`
+
+- push `phoenix_live_editable` to Hex.pm
+
+    cd apps/phoenix_live_editable
+    mix hex.publish
+
+- browser check - `https://hex.pm/packages/phoenix_live_editable`
+

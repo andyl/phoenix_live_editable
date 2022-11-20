@@ -21,7 +21,7 @@ supports many CSS frameworks (Tailwind, Milligram, etc.) and field types (Text,
 Select, etc.).  LiveEditable is inspired by [Vitaliy Potapov's][vp]
 [X-Editable][xe], and is designed to be extensible.
 
-LiveEditable is pre-alpha - not ready for production use.
+LiveEditable is pre-alpha - not ready for demo or production use.
 
 [xe]: http://vitalets.github.io/x-editable
 [ld]: http://phoenix-live-editable.fly.dev

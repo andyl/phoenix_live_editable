@@ -221,40 +221,61 @@ Design:
 - [x] Add edit example to milligram page 
 - [x] Write interface for tailwind3
 
+## 2022 Nov 22 Tue
+
+Learning: `phx_live_storybook` supports multiple CSS frameworks... 
+
 # TBD
 
-- [ ] Fix tailwind3 styling
-
+Bugs 
 - [ ] Validate Agent destruction when LiveView dies 
 
+Demo Store 
 - [ ] Update ple-util (ETS datastore) 
 - [ ] Datastore organized by IP address
 
-- [ ] Add type=select
+Metrics 
+- [ ] Create monitoring strategy for demo sites 
+- [ ] Integrate plausible.io? 
 
-- [ ] Get modals working
-
-- [ ] Design monitoring strategy 
-- [ ] Integrate plausible.io 
-
+Housekeeping 
 - [ ] Add changelog 
 - [ ] Write tests 
+- [ ] ExUnit Shared Examples for Milligram and Tailwind 
 - [ ] Add CI 
-- [ ] Auto-update docker on push-to-master
-- [ ] Auto-update fly.io on push-to-master
+- [ ] Auto-update docker on push-to-master 
+- [ ] Auto-update fly.io on push-to-master 
 
-- [ ] ExUnit Shared Examples for Milligram and Tailwind
-
-- [ ] Get Validations Working
+Features 
+- [ ] Validations
 - [ ] Add RadioButton, DatePickers, etc.
+- [ ] ExUnit Unit Specs with LV test helpers for developers
 
-- [ ] Create 'Coverage' Chart (red/yellow/green)
-- [ ] ExUnit Unit Specs with LV test helpers
-
-- [ ] Find one or two mentors 
-
+Integrations 
+- [ ] Add `phx_live_storybook` implementation 
 - [ ] Add livebook interface 
 
+CSS Frameworks 
 - [ ] Add Bootstrap5
-- [ ] Add Bulma
+- [ ] Add Bulma 
+
+Validations 
+- accept value or changeset 
+- UI display properly
+
+Function Components 
+- wrap live components in function components 
+- .editable_text
+- .editable_select
+- ...
+
+Next Steps 
+- [ ] Fix current PLE for tailwind (text and select) 
+- [ ] Make work in Feedex 
+- [ ] Add github action to auto-update Fly.io 
+- [ ] Add github action to auto-update Docker Hub 
+- [ ] Add modal with JS commands 
+- [ ] Learn `phx_live_storybook` 
+- [ ] Design for function components 
+- [ ] Refactor 
 

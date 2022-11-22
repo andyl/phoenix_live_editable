@@ -1,5 +1,12 @@
 # Phoenix Live Editable - Design Notes
 
+## Phx 1.7 - Things to Explore 
+
+- use PhxLiveStorybook? 
+- best way to incorporate slots, attributes, JS calls?
+- one component per type?  or use pattern matching?
+- how to make it extensible by the developer?
+
 ## Scoping Interface Config to Phoenix App
 
 Config Scope: 

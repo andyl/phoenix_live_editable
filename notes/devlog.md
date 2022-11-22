@@ -32,7 +32,7 @@ Multiple Ports - Pros:
 
 Multiple Ports - Cons:
 - awkward to host on VPS
-- impossible to host on Heroku or Gigalixer
+- impossible to host on Heroku or Gigalixer 
 
 Multiple Phoenix Apps - Alternatives:
 - using the 'forward' statement in the routes file: couldn't get websockets working
@@ -62,9 +62,10 @@ Multiple Phoenix Apps - Alternatives:
 ## 2022 May 28 Sat
 
 Improved tech:
-- LV: function components, slots, JS Commands
+- LV: function components 
+- LV: attributes, slots, JS Commands in development 
 - Phx Asset: esbuild, tailwind, dartsass
-- Phx Release: mix release / docker 
+- Phx Release: mix release / docker
 - Fly.io: multi-port containers
 
 Mix Package Publishing and Umbrellas: 

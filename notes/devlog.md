@@ -225,6 +225,12 @@ Design:
 
 Learning: `phx_live_storybook` supports multiple CSS frameworks... 
 
+## 2022 Nov 23 Wed
+
+Design 
+- One live-component - retains state 
+- Multiple function components - interface
+
 # TBD
 
 Bugs 

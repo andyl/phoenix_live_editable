@@ -18,15 +18,19 @@ defmodule PleDemoBase.Components do
   end
 
   def test_menu(assigns) do
-    items = ~w(Home Test1 Test2 Test3 Test4 Test5)
     ~H"""
     <div>
-      <%= navbar(items, assigns[:title]) %>
+      <%= testnav(assigns[:title]) %>
     </div>
     """
   end
 
   # ----- helpers -----
+
+  defp testnav(title) do
+    ~w(Home Test1 Test2 Test3 Test4 Test5)
+    |> navbar(title)
+  end
 
   defp navbar(items, title) do
     items

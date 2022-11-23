@@ -38,7 +38,7 @@ defmodule Phoenix.LiveEditable.MixProject do
       {:ex_doc, "~> 0.28", only: :dev, runtime: false},
       {:phoenix_pubsub, "~> 2.1"},
       {:phoenix_html, "~> 3.2"},
-      {:phoenix_live_view, "~> 0.17"}
+      {:phoenix_live_view, "~> 0.18"}
     ]
   end
 

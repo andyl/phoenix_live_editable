@@ -44,7 +44,7 @@ defmodule PleDemoMilligramWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {PleDemoMilligramWeb.LayoutView, "live.html"}
+        layout: {PleDemoMilligramWeb.LayoutView, :live}
 
       unquote(view_helpers())
     end

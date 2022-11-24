@@ -8,7 +8,8 @@ config :ple_demo_base, PleDemoBaseWeb.Endpoint,
   code_reloader: true,
   check_origin: false,
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:ple_demo_base, ~w(--sourcemap=inline --watch)]}
+    esbuild: {Esbuild, :install_and_run, [:ple_demo_base, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:ple_demo_base, ~w(--watch)]}
   ]
 
 config :ple_demo_base, PleDemoBaseWeb.Endpoint,
@@ -29,7 +30,8 @@ config :ple_demo_milligram, PleDemoMilligramWeb.Endpoint,
   code_reloader: true,
   check_origin: false,
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:ple_demo_milligram, ~w(--sourcemap=inline --watch)]}
+    esbuild: {Esbuild, :install_and_run, [:ple_demo_milligram, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:ple_demo_milligram, ~w(--watch)]}
   ]
 
 config :ple_demo_milligram, PleDemoMilligramWeb.Endpoint,

@@ -1,5 +1,49 @@
 # Phoenix Live Editable - DevLog
 
+# TBD
+
+Bugs 
+- [ ] Validate Agent destruction when LiveView dies 
+
+Demo Store 
+- [ ] Update ple-util (ETS datastore) 
+- [ ] Datastore organized by IP address
+
+Metrics 
+- [ ] Create monitoring strategy for demo sites 
+- [ ] Integrate plausible.io? 
+
+Housekeeping 
+- [ ] Add changelog 
+- [ ] Write tests 
+- [ ] ExUnit Shared Examples for Milligram and Tailwind 
+- [ ] Add CI 
+- [ ] Auto-update docker on push-to-master 
+- [ ] Auto-update fly.io on push-to-master 
+
+Features 
+- [ ] Validations
+- [ ] Add RadioButton, DatePickers, etc.
+- [ ] ExUnit Unit Specs with LV test helpers for developers
+
+Integrations 
+- [ ] Add `phx_live_storybook` implementation 
+- [ ] Add livebook interface 
+
+CSS Frameworks 
+- [ ] Add Bootstrap5
+- [ ] Add Bulma 
+
+Validations 
+- accept value or changeset 
+- UI display properly
+
+Function Components 
+- wrap live components in function components 
+- .editable_text
+- .editable_select
+- ...
+
 # 2019 Sep 23 Mon
 
 - [x] Initial Checkin
@@ -231,52 +275,15 @@ Design
 - One live-component - retains state 
 - Multiple function components - interface
 
-# TBD
+## 2022 Nov 24 Thu
 
-Bugs 
-- [ ] Validate Agent destruction when LiveView dies 
-
-Demo Store 
-- [ ] Update ple-util (ETS datastore) 
-- [ ] Datastore organized by IP address
-
-Metrics 
-- [ ] Create monitoring strategy for demo sites 
-- [ ] Integrate plausible.io? 
-
-Housekeeping 
-- [ ] Add changelog 
-- [ ] Write tests 
-- [ ] ExUnit Shared Examples for Milligram and Tailwind 
-- [ ] Add CI 
-- [ ] Auto-update docker on push-to-master 
-- [ ] Auto-update fly.io on push-to-master 
-
-Features 
-- [ ] Validations
-- [ ] Add RadioButton, DatePickers, etc.
-- [ ] ExUnit Unit Specs with LV test helpers for developers
-
-Integrations 
-- [ ] Add `phx_live_storybook` implementation 
-- [ ] Add livebook interface 
-
-CSS Frameworks 
-- [ ] Add Bootstrap5
-- [ ] Add Bulma 
-
-Validations 
-- accept value or changeset 
-- UI display properly
-
-Function Components 
-- wrap live components in function components 
-- .editable_text
-- .editable_select
-- ...
+- [x] Make new demo sites 
+- [x] Update content for new demo sites 
 
 Next Steps 
+- [ ] Style new demo sites 
 - [ ] Fix current PLE for tailwind (text and select) 
+- [ ] Create milligram demo site 
 - [ ] Make work in Feedex 
 - [ ] Add github action to auto-update Fly.io 
 - [ ] Add github action to auto-update Docker Hub 

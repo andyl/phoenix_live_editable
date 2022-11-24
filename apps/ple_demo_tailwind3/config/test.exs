@@ -4,11 +4,11 @@ import Config
 # you can enable the server option below.
 config :ple_demo_tailwind3, PleDemoTailwind3Web.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "CJ+koUc8vFe0DgCnCBH1YaEdsP40eTx+H3dWSmK3WKfVAh4e/H7XqLzLYh3cdup6",
+  secret_key_base: "HQEJ/ywNhc8w5IfJxlgs6sj67QF+HoVlMryp3akoynGaeraW6QYHQJVk+zPYXWs/",
   server: false
 
 # Print only warnings and errors during test
-config :logger, level: :warn
+config :logger, level: :warning
 
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime

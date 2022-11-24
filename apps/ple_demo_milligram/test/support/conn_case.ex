@@ -19,15 +19,15 @@ defmodule PleDemoMilligramWeb.ConnCase do
 
   using do
     quote do
+      # The default endpoint for testing
+      @endpoint PleDemoMilligramWeb.Endpoint
+
+      use PleDemoMilligramWeb, :verified_routes
+
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
       import PleDemoMilligramWeb.ConnCase
-
-      alias PleDemoMilligramWeb.Router.Helpers, as: Routes
-
-      # The default endpoint for testing
-      @endpoint PleDemoMilligramWeb.Endpoint
     end
   end
 

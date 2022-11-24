@@ -1,0 +1,54 @@
+<div>
+
+  <h1>Phx Live Editable</h1>
+
+  <.test_menu title="Test5"/>
+
+  <table>
+    <tr>
+      <td>
+        <b>Item1:</b><br/>using the `live_component` helper.
+      </td>
+      <td>
+        <.live_component module={Phoenix.LiveEditable.Handler.Default} ple_data="xxx" id="asdf" /> 
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Item2:</b><br/>using the `.ple` helper with null data. 
+      </td>
+      <td>
+        <.ple id="azzz"/><br/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Item3:</b><br/>using the `.ple` helper with specific data.
+      </td>
+      <td>
+        <.ple ple_data="yyy" id="zzzz"/> 
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Item4:</b><br/>using the `live_editable` helper.
+      </td>
+      <td>
+        <.live_editable ple_data="sss" id="zxzz"/> 
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Item5:</b><br/>
+          - datasrc in the view instead<br/>
+          - using a defined handler (T5Handler)
+      </td>
+      <td>
+        <.ple ple_handler={T5Handler} ple_data={@viewdata} ple_action="save-view" id="zing"/> 
+        <br/>
+        <%= @viewdata %>
+      </td>
+    </tr>
+  </table>
+
+</div>

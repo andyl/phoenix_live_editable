@@ -1,0 +1,13 @@
+<div>
+
+  <h1>Phx Live Editable</h1>
+
+  <.test_menu title="Test1"/>
+
+  <br/>
+
+  <%= for {lcl_id, data} <- @data do %>
+    | <%= lcl_id %>: <.ple type="text" id={lcl_id} ple-data={data}/> <br/>
+  <% end %>
+
+</div>

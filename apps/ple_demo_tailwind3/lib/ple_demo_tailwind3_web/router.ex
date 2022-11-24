@@ -17,11 +17,6 @@ defmodule PleDemoTailwind3Web.Router do
   scope "/", PleDemoTailwind3Web do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", PageLive
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", PleDemoTailwind3Web do
-  #   pipe_through :api
-  # end
 end

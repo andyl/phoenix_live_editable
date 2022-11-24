@@ -17,11 +17,6 @@ defmodule PleDemoMilligramWeb.Router do
   scope "/", PleDemoMilligramWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", PageLive
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", PleDemoMilligramWeb do
-  #   pipe_through :api
-  # end
 end

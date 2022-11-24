@@ -1,0 +1,81 @@
+<div style='text-align: center;'>
+  <h1>Phoenix Live Editable</h1>
+
+  <div>
+    In-line editing components for 
+    <a href="https://github.com/phoenixframework/phoenix_live_view" target="_blank">Phoenix Live View</a> 
+    inspired by <a href="http://vitalets.github.io/x-editable/" target="_blank">X-editable</a>.
+  </div>
+
+  <div style="padding: 15px;">
+    <small>
+    <a href="https://github.com/andyl/phoenix_live_editable" target="_blank">Source</a>
+    </small>
+  </div>
+
+  <div style="padding-bottom: 10px;">
+    <%= raw Helpers.navlinks(@url) %> 
+  </div>
+
+  <div class="p-10 overflow-hidden rounded-t-xl bg-gradient-to-r from-emerald-50 to-teal-100">
+    <table class="table-auto">
+      <tbody>
+        <tr>
+          <td width="100px">
+            Add a HEEX tag
+          </td>
+          <td>
+            <code>
+              <%= "<.live_editable id='txt1' ple_data='Click me to edit' ple_action='save')" %>
+            </code>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Add a LiveView Handler
+          </td>
+          <td>
+            <code>
+              def handle_event("save", value, socket) do 
+              end
+            </code>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table>
+      <tbody>
+        <tr>
+          <td width="100px">
+            Try it!
+          </td>
+          <td>
+            <.ple ple_handler={PageHandler} ple_data={@viewdata} ple_action="save-view" id="zing"/> 
+          </td>
+          <td>
+            RESULT: <%= @viewdata %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  Live Editable is pre-alpha. Pull requests welcome!  Here's the current status:
+
+  <div class="p-10">
+  <table class='table-auto'>
+
+    <thead>
+      <tr><th>CSS Framework</th><th>text</th><th>select</th><th>radio</th><th>textarea</th><th>calendar</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><%= raw Helpers.demolink(@url, :milligram, " Demo") %></td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+      <tr><td><%= raw Helpers.demolink(@url, :tailwind3, " Demo") %></td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+      <tr><td>Bootstrap5</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+      <tr><td>Bulma</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+    </tbody>
+
+  </table>
+  </div>
+
+</div>

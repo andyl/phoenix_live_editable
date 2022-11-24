@@ -5,7 +5,7 @@ defmodule PleDemoTailwind3Web.Router do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, {PleDemoTailwind3Web.LayoutView, :root}
+    plug :put_root_layout, {PleDemoTailwind3Web.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -17,10 +17,11 @@ defmodule PleDemoTailwind3Web.Router do
   scope "/", PleDemoTailwind3Web do
     pipe_through :browser
 
-    live "/", PageLive
-    live "/home", PageLive
-    live "/test", Test1Live
-    live "/test1", Test1Live
+    get "/", PageController, :home
   end
 
+  # Other scopes may use custom stacks.
+  # scope "/api", PleDemoTailwind3Web do
+  #   pipe_through :api
+  # end
 end

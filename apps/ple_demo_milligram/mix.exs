@@ -11,7 +11,6 @@ defmodule PleDemoMilligram.MixProject do
       lockfile: "../../mix.lock",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps()
@@ -37,16 +36,17 @@ defmodule PleDemoMilligram.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix_live_editable, in_umbrella: true},
-      {:ple_util, in_umbrella: true},
-      {:phoenix, "~> 1.6"},
+      {:phoenix, "~> 1.7.0-rc.0", override: true},
       {:phoenix_html, "~> 3.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_view, "~> 0.18"},
-      {:floki, "~> 0.30", only: :test},
-      {:esbuild, "~> 0.4", runtime: Mix.env() == :dev},
+      {:phoenix_live_view, "~> 0.18.3"},
+      {:heroicons, "~> 0.5"},
+      {:floki, ">= 0.30.0", only: :test},
+      {:esbuild, "~> 0.5", runtime: Mix.env() == :dev},
+      {:tailwind, "~> 0.1.8", runtime: Mix.env() == :dev},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
+      {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"}
     ]
@@ -61,7 +61,7 @@ defmodule PleDemoMilligram.MixProject do
   defp aliases do
     [
       setup: ["deps.get"],
-      "assets.deploy": ["esbuild default --minify", "phx.digest"]
+      "assets.deploy": ["tailwind default --minify", "esbuild default --minify", "phx.digest"]
     ]
   end
 end

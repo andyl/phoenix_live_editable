@@ -5,7 +5,7 @@ defmodule PleDemoBaseWeb.Router do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, {PleDemoBaseWeb.LayoutView, :root}
+    plug :put_root_layout, {PleDemoBaseWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -17,13 +17,11 @@ defmodule PleDemoBaseWeb.Router do
   scope "/", PleDemoBaseWeb do
     pipe_through :browser
 
-    live "/", PageLive
-    live "/home", PageLive
-    live "/test", Test1Live
-    live "/test1", Test1Live
-    live "/test2", Test2Live
-    live "/test3", Test3Live
-    live "/test4", Test4Live
-    live "/test5", Test5Live
+    get "/", PageController, :home
   end
+
+  # Other scopes may use custom stacks.
+  # scope "/api", PleDemoBaseWeb do
+  #   pipe_through :api
+  # end
 end

@@ -16,7 +16,7 @@ config :ple_demo_base, PleDemoBaseWeb.Endpoint,
   render_errors: [view: PleDemoBaseWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: PleDemoBase.PubSub,
   live_view: [signing_salt: "rRioLeCG"],
-  live_editable: [ple_interface: Phoenix.LiveEditable.Interface.Milligram]
+  live_editable: [ple_interface: Phoenix.LiveEditable.Interface.Tailwind3]
 
 # ----- PLE_DEMO_MILLIGRAM
 
@@ -26,7 +26,7 @@ config :ple_demo_milligram, PleDemoMilligramWeb.Endpoint,
   render_errors: [view: PleDemoMilligramWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: PleDemoMilligram.PubSub,
   live_view: [signing_salt: "nxJkew8n"],
-  live_editable: [ple_interface: Phoenix.LiveEditable.Interface.Milligram]
+  live_editable: [ple_interface: Phoenix.LiveEditable.Interface.Tailwind3]
 
 # ----- PLE_DEMO_TAILWIND3
 
@@ -65,6 +65,22 @@ config :esbuild,
 
 config :tailwind,
   version: "3.0.24",
+  ple_demo_base: [
+    args: ~w(
+      --config=tailwind.config.js
+      --input=css/app.css
+      --output=../priv/static/assets/app.css
+    ),
+    cd: Path.expand("../apps/ple_demo_base/assets", __DIR__)
+  ],
+  ple_demo_milligram: [
+    args: ~w(
+      --config=tailwind.config.js
+      --input=css/app.css
+      --output=../priv/static/assets/app.css
+    ),
+    cd: Path.expand("../apps/ple_demo_milligram/assets", __DIR__)
+  ],
   ple_demo_tailwind3: [
     args: ~w(
       --config=tailwind.config.js

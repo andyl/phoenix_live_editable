@@ -130,3 +130,20 @@ Instructions on how to tweak LiveEditable CSS TBD.
 
 Instruction on how to create new LiveEditable modules TBD.
 
+## Contributing
+
+The scope here is to cover all HTML5 input types, common form controls and basic features.
+
+Form controls: 
+- textarea  
+- select
+- multiselect
+
+Basic Features: 
+- validation 
+- autocompletion
+
+https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types
+
+https://developer.mozilla.org/en-US/docs/Learn/Forms/Other_form_controls
+

@@ -4,6 +4,9 @@ defmodule PleDemoTailwind3Web.PageLive do
 
   alias Phx.Demo.Helpers
 
+  # alias Phx.Demo.Components.Tailwind3
+  import Xcomp.Tailwind3
+
   # ----- lifecycle callbacks -----
 
   def mount(_params, _session, socket) do

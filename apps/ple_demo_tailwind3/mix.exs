@@ -36,10 +36,13 @@ defmodule PleDemoTailwind3.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:phoenix_live_editable, in_umbrella: true},
+      {:ple_util, in_umbrella: true},
+      {:xcomp, path: "~/lib/xcomp"},
       {:phoenix, "~> 1.7.0-rc.0", override: true},
       {:phoenix_html, "~> 3.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_view, "~> 0.18.3"},
+      {:phoenix_live_view, "~> 0.18"},
       {:heroicons, "~> 0.5"},
       {:floki, ">= 0.30.0", only: :test},
       {:esbuild, "~> 0.5", runtime: Mix.env() == :dev},

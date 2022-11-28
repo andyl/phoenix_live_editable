@@ -36,6 +36,8 @@ defmodule PleDemoMilligram.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:phoenix_live_editable, in_umbrella: true},
+      {:ple_util, in_umbrella: true},
       {:phoenix, "~> 1.7.0-rc.0", override: true},
       {:phoenix_html, "~> 3.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},

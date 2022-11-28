@@ -18,10 +18,9 @@ defmodule PleDemoTailwind3.Components do
   end
 
   def test_menu(assigns) do
-    items = ~w(Home Test1)
     ~H"""
     <div>
-      <%= navbar(items, assigns[:title]) %>
+      <%= navbar(~w(Home Test1), assigns[:title]) %>
     </div>
     """
   end

@@ -8,7 +8,7 @@ module.exports = {
     "./js/**/*.js",
     "../lib/*_web.ex",
     "../lib/*_web/**/*.*ex", 
-    "/home/aleak/lib/xcomp/lib/xcomp/tailwind3.ex", 
+    "/home/aleak/lib/xcomponents/lib/xcomponents/tailwind3.ex", 
   ],
   theme: {
     extend: {

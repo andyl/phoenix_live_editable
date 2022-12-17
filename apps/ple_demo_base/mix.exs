@@ -38,7 +38,7 @@ defmodule PleDemoBase.MixProject do
     [
       {:phoenix_live_editable, in_umbrella: true},
       {:ple_util, in_umbrella: true},
-      {:xcomp, path: "~/lib/xcomp"},
+      # {:xcomponents, path: "~/lib/xcomponents"},
       {:phoenix, "~> 1.7.0-rc.0", override: true},
       {:phoenix_html, "~> 3.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},

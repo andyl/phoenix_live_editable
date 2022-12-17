@@ -38,7 +38,7 @@ defmodule PleDemoTailwind3.MixProject do
     [
       {:phoenix_live_editable, in_umbrella: true},
       {:ple_util, in_umbrella: true},
-      {:xcomp, path: "~/lib/xcomp"},
+      # {:xcomponents, path: "~/lib/xcomponents"},
       {:phoenix, "~> 1.7.0-rc.0", override: true},
       {:phoenix_html, "~> 3.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
@@ -56,7 +56,7 @@ defmodule PleDemoTailwind3.MixProject do
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
-  # For example, to install project dependencies and perform other setup tasks, run:
+  # For example, to install project dependencies and perfonentsorm other setup tasks, run:
   #
   #     $ mix setup
   #

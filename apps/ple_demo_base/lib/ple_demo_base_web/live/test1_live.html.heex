@@ -6,6 +6,8 @@
 
   <br/>
 
+  <p class="mt-5 mb-5 font-bold">Text Fields</p>
+
   <%= for {lcl_id, data} <- @data do %>
     | <%= lcl_id %>: <.ple type="text" id={lcl_id} ple-data={data}/> <br/>
   <% end %>

@@ -5,7 +5,7 @@ defmodule PleDemoBaseWeb.PageLive do
   alias Phx.Demo.Helpers
   alias PleDemoBaseWeb.PageHandler
 
-  alias Phx.Demo.Components.Tailwind3
+  # alias Phx.Demo.Components.Tailwind3
 
   # ----- lifecycle callbacks -----
 

@@ -17,14 +17,14 @@ Add a handler to your LiveView:
 See the [online demo][ld] for running examples.
 
 LiveEditable is for admin interfaces to provide basic inline editing. It
-supports many CSS frameworks (Tailwind, Milligram, etc.) and field types (Text,
-Select, etc.).  LiveEditable is inspired by [Vitaliy Potapov's][vp]
-[X-Editable][xe], and is designed to be extensible.
+supports many CSS frameworks (Tailwind3, Milligram, Bootstrap5, Bulma) and
+field types (Text, Select, etc.).  LiveEditable is inspired by [Vitaliy
+Potapov's][vp] [X-Editable][xe], and is designed to be extensible.
 
 LiveEditable is pre-alpha - not ready for demo or production use.
 
-[xe]: http://vitalets.github.io/x-editable
 [ld]: http://phoenix-live-editable.fly.dev
+[xe]: http://vitalets.github.io/x-editable
 [vp]: https://github.com/vitalets
 
 ## Demonstration 
@@ -122,13 +122,15 @@ Now you can use LiveEditable in your LiveViews and LiveComponents:
     defmodule MyApp.Live.Asdf do
     end
 
-## Customizing LiveEditable
+## Customizing and Extending LiveEditable
 
-Instructions on how to tweak LiveEditable CSS TBD.
+** Renderer Modules **
 
-## Extending LiveEditable
+Content TBD
 
-Instruction on how to create new LiveEditable modules TBD.
+** Handler Modules **
+
+Content TBD
 
 ## Contributing
 

@@ -34,7 +34,7 @@ defmodule LiveEditable.Umbrella.MixProject do
       "apps/phoenix_live_editable/README.md",
       "apps/phoenix_live_editable/guides/installing.md",
       "apps/phoenix_live_editable/guides/using.md",
-      "apps/phoenix_live_editable/guides/adapters.md",
+      "apps/phoenix_live_editable/guides/renderers.md",
       "apps/phoenix_live_editable/guides/handlers.md"
     ]
   end

@@ -56,7 +56,7 @@ defmodule Phoenix.LiveEditable.MixProject do
       "README.md",
       "guides/installing.md",
       "guides/using.md",
-      "guides/adapters.md",
+      "guides/renderers.md",
       "guides/handlers.md"
     ]
   end

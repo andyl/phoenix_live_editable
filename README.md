@@ -109,13 +109,13 @@ After that:
 Next add LiveEditable configuartion to your `config/config.exs`:
 
     config :<your_phoenix_app>, <your endpoint>, [
-      live_editable: [ple_interface: <YOUR_CSS_FRAMEWORK_MODULE>]
+      live_editable: [ple_renderer: <YOUR_CSS_FRAMEWORK_MODULE>]
     ]
 
 Valid Framework Modules include:
 
-    - Phoenix.Editable.Interface.Milligram
-    - Phoenix.Editable.Interface.Tailwind3 
+    - Phoenix.Editable.Renderer.Milligram
+    - Phoenix.Editable.Renderer.Tailwind3 
 
 Now you can use LiveEditable in your LiveViews and LiveComponents:
 

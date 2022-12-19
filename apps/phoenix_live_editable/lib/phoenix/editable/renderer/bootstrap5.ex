@@ -1,7 +1,7 @@
-defmodule Phoenix.Editable.Interface.Tailwind3 do
+defmodule Phoenix.Editable.Renderer.Bootstrap5 do
 
   @moduledoc """
-  Render methods for the Tailwind3 CSS framework.
+  Render methods for the Bootstrap5 CSS framework.
   """
 
   require Phoenix.LiveEditable.Svg

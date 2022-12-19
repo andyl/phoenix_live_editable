@@ -2,11 +2,9 @@
 
 LiveView components for in-place editing. 
 
-LiveEditable provides helpers for your LiveView/HEEX templates.
-
 Example HEEX tag:
 
-    <.live_editable id="MyField" ple_data="Click me to Edit" ple_action="save"/>
+    <Phoenix.Editable.text value="Click me to Edit" ple_action="save"/>
 
 Add a handler to your LiveView:
 
@@ -23,8 +21,8 @@ Select, etc.).  LiveEditable is inspired by [Vitaliy Potapov's][vp]
 
 LiveEditable is pre-alpha - not ready for production use.
 
-[xe]: http://vitalets.github.io/x-editable
 [ld]: http://phoenix-live-editable.fly.dev
+[xe]: http://vitalets.github.io/x-editable
 [vp]: https://github.com/vitalets
 
 ## Demonstration 
@@ -109,13 +107,13 @@ After that:
 Next add LiveEditable configuartion to your `config/config.exs`:
 
     config :<your_phoenix_app>, <your endpoint>, [
-      live_editable: [ple_interface: <YOUR_CSS_FRAMEWORK_MODULE>]
+      live_editable: [ple_renderer: <YOUR_CSS_FRAMEWORK_MODULE>]
     ]
 
 Valid Framework Modules include:
 
-    - Phoenix.Editable.Interface.Milligram
-    - Phoenix.Editable.Interface.Tailwind3 
+    - Phoenix.Editable.Renderer.Milligram
+    - Phoenix.Editable.Renderer.Tailwind3 
 
 Now you can use LiveEditable in your LiveViews and LiveComponents:
 

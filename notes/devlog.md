@@ -9,12 +9,17 @@ Next Steps
 - [ ] Style tailwind interface 
 - [ ] Style new demo sites 
 - [ ] Fix current PLE for tailwind (text and select) 
-- [ ] Create milligram demo site 
+- [ ] Create milligram demo site (text and select)
 - [ ] Validate Agent destruction when LiveView dies 
 - [ ] Add github action to auto-update Fly.io 
 - [ ] Add github action to auto-update Docker Hub 
 - [ ] Add modal with JS commands 
 - [ ] Learn `phx_live_storybook` 
+
+Tooling 
+- [ ] Vim Autocomplete for tailwind classes 
+- [ ] Get ElixirLS working from `ex` 
+- [ ] Get ElixirLS working from `heex` 
 
 Demo Store 
 - [ ] Update ple-util (ETS datastore) 
@@ -49,12 +54,6 @@ CSS Frameworks
 Validations 
 - accept value or changeset 
 - UI display properly
-
-Function Components 
-- wrap live components in function components 
-- .editable_text
-- .editable_select
-- ...
 
 # 2019 Sep 23 Mon
 
@@ -225,14 +224,14 @@ LiveEditable struct:
     ple_store: %{}, 
     # handler module - can reset in view or tag
     ple_handler: Phoenix.LiveEditable.Handler.Default,
-    # interface module: see Phoenix.Editable.Interface.*
-    ple_interface: Phoenix.Editable.Interface.Milligram,
+    # interface module: see Phoenix.Editable.Renderer.*
+    ple_renderer: Phoenix.Editable.Renderer.Milligram,
 
 - default values 
 - over ride: struct -> config -> view -> tag -> handler 
 
 Learnings:
-- can only pass strings and ints in HEEX tags 
+- can only pass strings and ints in HEEX tags - Elixir data surrounded by {}
 - every LV has a unique socket ID
 - every LV runs in a unique process (until page reload) 
 - need Agent attached to LV
@@ -279,7 +278,7 @@ Design:
 
 ## 2022 Nov 22 Tue
 
-Learning: `phx_live_storybook` supports multiple CSS frameworks... 
+Learning: `phx_live_storybook` says it supports multiple CSS frameworks... 
 
 ## 2022 Nov 23 Wed
 
@@ -299,10 +298,7 @@ Refactoring:
 - git rid of "using" macros
 - function components assign default value for ID
 
-- [ ] Vim Autocomplete for tailwind classes 
-- [ ] Render Phoenix.Editable.Base standalone 
-- [ ] Get ElixirLS working from `ex` 
-- [ ] Get ElixirLS working from `heex` 
+- [x] Render Phoenix.Editable.Base standalone 
 
 Next Steps 
 - [x] Design for function components 
@@ -339,12 +335,12 @@ Solution
 - state can still be held in component or view 
 
 Next steps: 
-- [ ] Get rid of live_editable_component
-- [ ] Move handler to editable 
-- [ ] Move interface to editable 
-- [ ] Move live_editable_view 
+- [x] Get rid of live_editable_component
+- [x] Move handler to editable 
+- [x] Move interface to editable 
+- [x] Move live_editable_view 
 
 At this point the core seems stable:
-- extensible CSS interfaces (tailwind3, bootstrap, milligram, bulma) using `config ple_interface`
+- extensible CSS interfaces (tailwind3, bootstrap, milligram, bulma) using `config ple_renderer`
 - extensible event handlers with overlays (handle_event("mytag", data, socket)) via `use <handler>`
 

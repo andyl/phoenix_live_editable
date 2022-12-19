@@ -1,4 +1,4 @@
-defmodule Phoenix.Editable.Interface.Milligram do
+defmodule Phoenix.Editable.Renderer.Milligram do
 
   @moduledoc """
   Render methods for the Milligram CSS framework.

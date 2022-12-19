@@ -36,7 +36,12 @@ defmodule Phoenix.Editable do
 
   def text(assigns) do
     ~H"""
-    <.live_component module={Phoenix.Editable.Base} id={@id || random_id()} type="text" ple-data={@value}/>
+    <.live_component
+      module={Phoenix.Editable.Base}
+      id={@id || random_id()}
+      type="text"
+      ple-data={@value}
+    />
     """
   end
 
@@ -54,29 +59,15 @@ defmodule Phoenix.Editable do
   attr :options, :list, doc: "List of options"
 
   def select(assigns) do
+    ~H"""
+    <.live_component
+      module={Phoenix.Editable.Base}
+      id={@id || random_id()}
+      type="select"
+      ple-data={@value}
+      ple-options={@options}
+    />
+    """
   end
-
-  # use Phoenix.Component
-  #
-  # # alias Phoenix.LiveView.JS
-  #
-  # alias Phoenix.LiveEditable.Util
-  #
-  # @doc """
-  # Editable Text
-  #
-  # Examples
-  #
-  #
-  # """
-  #
-  # attr :id, "string", default: Util.random_id(), doc: "Component ID"
-  # attr :data, "string", required: true, doc: "Initial data value"
-  #
-  # def editable_text(assigns) do
-  #   ~H"""
-  #   <div>HELLO</div>
-  #   """
-  # end
 
 end

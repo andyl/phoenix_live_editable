@@ -70,8 +70,6 @@ defmodule Phoenix.LiveEditable.ViewUtil do
 
       on_mount Phoenix.LiveEditable.ViewUtil
 
-      import Phoenix.LiveEditable.Helpers
-
     end
   end
 end

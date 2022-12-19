@@ -8,7 +8,7 @@ ENV:
 
 | Field     | Options            | Default                              |
 |-----------|--------------------|--------------------------------------|
-| interface | <interface module> | Phoenix.Editable.Interface.Milligram |
+| interface | <interface module> | Phoenix.Editable.Renderer.Milligram |
 | type      | text, select, ...  | text                                 |
 | mode      | inline, popup      | inline                               |
 | id        | <unique string>    | Required                             |
@@ -34,8 +34,8 @@ CONFIGURATION:
     # target: pid of view
     ple_viewpid: nil,
     ple_datasrc: "component",
-    # interface module: see Phoenix.Editable.Interface.*
-    ple_interface: Phoenix.Editable.Interface.Milligram,
+    # interface module: see Phoenix.Editable.Renderer.*
+    ple_renderer: Phoenix.Editable.Renderer.Milligram,
 
 HANDLERS:
 

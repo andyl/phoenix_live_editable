@@ -29,11 +29,11 @@ defmodule Phoenix.Editable.Base do
 
   # ----- event handlers -----
 
-  def handle_event("ple-blur", data, socket) do
+  def handle_event("ple-blur", _data, socket) do
     {:noreply, assign(socket, :ple_mode, "anchor")}
   end
 
-  def handle_event("ple-focus", data, socket) do
+  def handle_event("ple-focus", _data, socket) do
     {:noreply, assign(socket, :ple_mode, "focus")}
   end
 
@@ -75,6 +75,6 @@ defmodule Phoenix.Editable.Base do
   defp interface_module(assigns) do
     assigns
     |> Map.get(:socketid)
-    |> vc_get(:ple_interface)
+    |> vc_get(:ple_renderer)
   end
 end

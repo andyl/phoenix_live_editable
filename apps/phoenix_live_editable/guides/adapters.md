@@ -1,6 +1,6 @@
-# Phoenix.Editable Interfaces
+# Phoenix.Editable.Renderers
 
-Editable Interfaces are modules that render anchor and focus mode.
+Editable.Renderers are modules that render anchor and focus mode.
 
 Interfaces are modules that contain a collection of render functions.
 
@@ -12,7 +12,7 @@ Extend for:
 - behavior or style that you don't like 
 
 Writing and using a new interface is simple!
-- extend the base module `Phoenix.Editable.Interface.Base`
+- extend the base module `Phoenix.Editable.Renderer.Base`
 - use your new class in config
 
 Coding Guidelines:

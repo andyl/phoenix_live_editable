@@ -7,7 +7,9 @@ defmodule LiveEditable.Umbrella.MixProject do
       version: "0.0.1-alpha.2",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      name: "PhoenixLiveEditable"
+      name: "Phoenix.LiveEditable",
+      description: "LiveView components for inline editing",
+      docs: docs()
       # xref: [exclude: [Phoenix.HTML, Phoenix.LiveEditable.ViewUtil, Phoenix.LiveEditableComponent]],
       # aliases: aliases(),
       # releases: releases()
@@ -16,6 +18,24 @@ defmodule LiveEditable.Umbrella.MixProject do
 
   defp deps do
     [
+    ]
+  end
+
+  defp docs do
+    [
+      main: "readme",
+      extra_section: "GUIDES",
+      extras: extras()
+    ]
+  end
+
+  defp extras do
+    [
+      "apps/phoenix_live_editable/README.md",
+      "apps/phoenix_live_editable/guides/installing.md",
+      "apps/phoenix_live_editable/guides/using.md",
+      "apps/phoenix_live_editable/guides/adapters.md",
+      "apps/phoenix_live_editable/guides/handlers.md"
     ]
   end
 

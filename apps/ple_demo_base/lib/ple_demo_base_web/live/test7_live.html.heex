@@ -1,0 +1,27 @@
+<div>
+
+  <h1>Phx Live Editable</h1>
+
+  <.test_menu title="Test7"/>
+
+  <div class="mt-5 mb-5 font-bold">
+    Phoenix.Editable.Base type=select
+  </div>
+
+  <div class="mt-5 mb-5">
+    start
+  </div>
+
+  <div class="mt-5 mb-5">
+    <.live_component module={Phoenix.Editable.Base} 
+      id="one" ple-type="select" 
+      ple-data="zingbob" 
+      ple-options={~w(tanglark zingbob qwer ginorg)}
+    />
+  </div>
+
+  <div class="mt-5 mb-5">
+    end
+  </div>
+
+</div>

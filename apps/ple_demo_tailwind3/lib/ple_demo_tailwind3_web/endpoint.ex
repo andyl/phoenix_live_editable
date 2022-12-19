@@ -7,7 +7,8 @@ defmodule PleDemoTailwind3Web.Endpoint do
   @session_options [
     store: :cookie,
     key: "_ple_demo_tailwind3_key",
-    signing_salt: "D9PkXBRN"
+    signing_salt: "Kmk0XRjx",
+    same_site: "Lax"
   ]
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
@@ -20,7 +21,7 @@ defmodule PleDemoTailwind3Web.Endpoint do
     at: "/",
     from: :ple_demo_tailwind3,
     gzip: false,
-    only: ~w(assets fonts images favicon.ico robots.txt)
+    only: PleDemoTailwind3Web.static_paths()
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

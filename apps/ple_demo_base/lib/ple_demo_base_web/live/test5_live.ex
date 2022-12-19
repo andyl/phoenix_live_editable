@@ -5,9 +5,7 @@ defmodule PleDemoBaseWeb.Test5Live do
   """
 
   use PleDemoBaseWeb, :live_view
-  use Phoenix.LiveEditableView
-
-  alias PleDemoBaseWeb.Test5Handler, as: T5Handler
+  use Phoenix.LiveEditable.ViewUtil
   import PleDemoBase.Components
 
   # ----- lifecycle callbacks -----

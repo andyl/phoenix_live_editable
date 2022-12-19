@@ -9,13 +9,13 @@ defmodule Phoenix.LiveEditable.MixProject do
       config_path: "../../config/config.exs",
       deps_path: "../../deps",
       lockfile: "../../mix.lock",
-      elixir: "~> 1.13",
+      elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       source_url: "https://github.com/andyl/phoenix_live_editable",
       homepage_url: "https://phoenix-live-editable.fly.dev",
       name: "Phoenix.LiveEditable",
-      description: "Simple LiveView components for inline editing",
+      description: "LiveView components for inline editing",
       aliases: aliases(),
       package: package(),
       deps: deps(),
@@ -35,16 +35,17 @@ defmodule Phoenix.LiveEditable.MixProject do
 
   defp deps do
     [
-      {:ex_doc, "~> 0.28", only: :dev, runtime: false},
+      {:phoenix, "~> 1.7.0-rc.0", override: true},
+      {:ex_doc, "~> 0.29", only: :dev, runtime: false},
       {:phoenix_pubsub, "~> 2.1"},
       {:phoenix_html, "~> 3.2"},
-      {:phoenix_live_view, "~> 0.17"}
+      {:phoenix_live_view, "~> 0.18"},
     ]
   end
 
   defp docs do
     [
-      main: "Phoenix.LiveEditable",
+      main: "readme",
       extra_section: "GUIDES",
       extras: extras()
     ]
@@ -55,7 +56,8 @@ defmodule Phoenix.LiveEditable.MixProject do
       "README.md",
       "guides/installing.md",
       "guides/using.md",
-      "guides/interfaces.md"
+      "guides/renderers.md",
+      "guides/handlers.md"
     ]
   end
 

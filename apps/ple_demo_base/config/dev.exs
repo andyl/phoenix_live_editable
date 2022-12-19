@@ -13,10 +13,10 @@ config :ple_demo_base, PleDemoBaseWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "QnadPUaBka615FNM9bjlxwZNmFOP4o4gJRZqeniOTXA9x7kZ9Szug7D4vnHiPGnm",
+  secret_key_base: "mma9FzpybfhYXPG297etj9LrMjFnokjjCa994j4o8TxHTdOBZ7+p9S87p6SDFj2F",
   watchers: [
-    # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
   ]
 
 # ## SSL Support
@@ -27,7 +27,6 @@ config :ple_demo_base, PleDemoBaseWeb.Endpoint,
 #
 #     mix phx.gen.cert
 #
-# Note that this task requires Erlang/OTP 20 or later.
 # Run `mix help phx.gen.cert` for more information.
 #
 # The `http:` config above can be replaced with:
@@ -48,10 +47,14 @@ config :ple_demo_base, PleDemoBaseWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
+      ~r"priv/gettext/.*(po)$",
       ~r"lib/ple_demo_base_web/(live|views)/.*(ex)$",
       ~r"lib/ple_demo_base_web/templates/.*(eex)$"
     ]
   ]
+
+# Enable dev routes for dashboard and mailbox
+config :ple_demo_base, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

@@ -7,6 +7,38 @@
 - one component per type?  or use pattern matching?
 - how to make it extensible by the developer?
 
+## Live Components and Function Components 
+
+** Phoenix.LiveEditable ** 
+
+Just one LiveEditable for all types.
+
+```
+<.live_component module={Phoenix.LiveEditable} ...
+```
+
+** Phoenix.Editable ** 
+
+A separate function component for each type.  Each function component calls the
+`Phoenix.LiveEditable`.
+
+```
+<Editable.text @data="asdf" ple-save="qwer">HELLO</Editable.text>
+<Editable.select @data="asdf" ple-save="qwer">HELLO</Editable.text>
+```
+
+Components:
+- Editable.base
+- Editable.text
+- Editable.select
+- Editable.calendar
+- Editable.radio
+- Editable.multiselect
+- Editable.textarea
+- Editable.color
+- Editable.email
+- Editable.number
+
 ## Scoping Interface Config to Phoenix App
 
 Config Scope: 

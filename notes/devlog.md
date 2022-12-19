@@ -1,5 +1,59 @@
 # Phoenix Live Editable - DevLog
 
+# TBD
+
+Next Steps 
+- [x] Cleanup docs 
+- [x] Cleanup demo 
+- [ ] Make work in Feedex 
+- [ ] Style tailwind interface 
+- [ ] Fix current PLE for tailwind (text and select) 
+- [ ] Create milligram demo site (text and select) 
+- [ ] Add github action to auto-update Fly.io 
+- [ ] Add github action to auto-update Docker Hub 
+- [ ] Add modal with JS commands 
+- [ ] Learn `phx_live_storybook` 
+
+Tooling 
+- [ ] Vim Autocomplete for tailwind classes 
+- [ ] Get ElixirLS working from `ex` 
+- [ ] Get ElixirLS working from `heex` 
+
+Demo Store 
+- [ ] Update ple-util (ETS datastore) 
+- [ ] Datastore organized by IP address 
+- [ ] Use ASH?
+
+Metrics 
+- [ ] Create monitoring strategy for demo sites 
+- [ ] Integrate plausible.io? 
+
+Housekeeping 
+- [ ] Add changelog 
+- [ ] Write tests 
+- [ ] ExUnit Shared Examples for Milligram and Tailwind 
+- [ ] Add CI 
+- [ ] Auto-update docker on push-to-master 
+- [ ] Auto-update fly.io on push-to-master 
+
+Features 
+- [ ] Validations
+- [ ] Add RadioButton, DatePickers, etc.
+- [ ] ExUnit Unit Specs with LV test helpers for developers
+
+Integrations 
+- [ ] Add `phx_live_storybook` implementation 
+- [ ] Add livebook interface 
+
+CSS Frameworks 
+- [ ] Add Bootstrap5
+- [ ] Add Milligram 
+- [ ] Add Bulma 
+
+Validations 
+- accept value or changeset 
+- UI display properly
+
 # 2019 Sep 23 Mon
 
 - [x] Initial Checkin
@@ -169,14 +223,14 @@ LiveEditable struct:
     ple_store: %{}, 
     # handler module - can reset in view or tag
     ple_handler: Phoenix.LiveEditable.Handler.Default,
-    # interface module: see Phoenix.LiveEditable.Interface.*
-    ple_interface: Phoenix.LiveEditable.Interface.Milligram,
+    # interface module: see Phoenix.Editable.Renderer.*
+    ple_renderer: Phoenix.Editable.Renderer.Milligram,
 
 - default values 
 - over ride: struct -> config -> view -> tag -> handler 
 
 Learnings:
-- can only pass strings and ints in HEEX tags 
+- can only pass strings and ints in HEEX tags - Elixir data surrounded by {}
 - every LV has a unique socket ID
 - every LV runs in a unique process (until page reload) 
 - need Agent attached to LV
@@ -221,40 +275,76 @@ Design:
 - [x] Add edit example to milligram page 
 - [x] Write interface for tailwind3
 
-# TBD
+## 2022 Nov 22 Tue
 
-- [ ] Fix tailwind3 styling
+Learning: `phx_live_storybook` says it supports multiple CSS frameworks... 
 
-- [ ] Validate Agent destruction when LiveView dies 
+## 2022 Nov 23 Wed
 
-- [ ] Update ple-util (ETS datastore) 
-- [ ] Datastore organized by IP address
+Design 
+- One live-component - retains state 
+- Multiple function components - interface
 
-- [ ] Add type=select
+## 2022 Nov 24 Thu
 
-- [ ] Get modals working
+- [x] Make new demo sites 
+- [x] Update content for new demo sites 
 
-- [ ] Design monitoring strategy 
-- [ ] Integrate plausible.io 
+## 2022 Dec 18 Sun
 
-- [ ] Add changelog 
-- [ ] Write tests 
-- [ ] Add CI 
-- [ ] Auto-update docker on push-to-master
-- [ ] Auto-update fly.io on push-to-master
+Refactoring:
+- function components call to `Phoenix.Editable.Base` 
+- git rid of "using" macros
+- function components assign default value for ID
 
-- [ ] ExUnit Shared Examples for Milligram and Tailwind
+- [x] Render Phoenix.Editable.Base standalone 
 
-- [ ] Get Validations Working
-- [ ] Add RadioButton, DatePickers, etc.
+Next Steps 
+- [x] Design for function components 
+- [x] Refactor 
 
-- [ ] Create 'Coverage' Chart (red/yellow/green)
-- [ ] ExUnit Unit Specs with LV test helpers
+Learnings 
+- cannot layer imports 
+- func/arity can only come from one module...
+- can defdelegate to event_handlers in another module...
+- cannot layer event_handlers
 
-- [ ] Find one or two mentors 
+Phase 1 -
+- use defdelegate for handlers 
+- get rid of ple_handler in view_cache
+- single layer only - no overlays
+- this will require writing/copying a ton of code for views
+- usable for internal
+- also: copy/paste method will work, or write handlers from scratch  
 
-- [ ] Add livebook interface 
+Phase 2 -
+- create a macro to pull in handlers 
+- two-layer - base with overrides
+- needed for public MVP
 
-- [ ] Add Bootstrap5
-- [ ] Add Bulma
+Solution 
+- put handlers in __using__ macro 
+- use Phoenix.Editable.Handlers.Default
+- supports overlays (different targets)
+- reusable default handlers
+- can have multiple custom handlers
+- works in views
+- works in live-component
+- extensible
+- state can still be held in component or view 
+
+Next steps: 
+- [x] Get rid of live_editable_component
+- [x] Move handler to editable 
+- [x] Move interface to editable 
+- [x] Move live_editable_view 
+
+At this point the core seems stable:
+- extensible CSS interfaces (tailwind3, bootstrap, milligram, bulma) using `config ple_renderer`
+- extensible event handlers with overlays (handle_event("mytag", data, socket)) via `use <handler>`
+
+## 2022 Dec 19 Mon
+
+- [x] Update docs 
+- [x] Renamed interface to renderer 
 

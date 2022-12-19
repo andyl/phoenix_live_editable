@@ -1,5 +1,9 @@
 <div style='text-align: center;'>
-  <h1>Phoenix Live Editable</h1>
+  <div class="text-2xl mb-5">Phoenix Live Editable</div>
+
+  <div class="mb-5">
+    <.link href="/" class="underline hover:text-blue-600">Tangobob</.link>
+  </div>
 
   <div>
     In-line editing components for 
@@ -14,7 +18,7 @@
   </div>
 
   <div style="padding-bottom: 10px;">
-    <%= raw Helpers.navlinks(@url) %> 
+    <%# raw Helpers.navlinks(@url) %> 
   </div>
 
   <div class="p-10 overflow-hidden rounded-t-xl bg-gradient-to-r from-emerald-50 to-teal-100">
@@ -50,7 +54,6 @@
             Try it!
           </td>
           <td>
-            <.ple ple_handler={PageHandler} ple_data={@viewdata} ple_action="save-view" id="zing"/> 
           </td>
           <td>
             RESULT: <%= @viewdata %>
@@ -69,8 +72,8 @@
       <tr><th>CSS Framework</th><th>text</th><th>select</th><th>radio</th><th>textarea</th><th>calendar</th></tr>
     </thead>
     <tbody>
-      <tr><td><%= raw Helpers.demolink(@url, :milligram, " Demo") %></td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
-      <tr><td><%= raw Helpers.demolink(@url, :tailwind3, " Demo") %></td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+      <tr><td><%# raw Helpers.demolink(@url, :milligram, " Demo") %></td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+      <tr><td><%# raw Helpers.demolink(@url, :tailwind3, " Demo") %></td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
       <tr><td>Bootstrap5</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
       <tr><td>Bulma</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
     </tbody>

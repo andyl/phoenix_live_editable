@@ -9,13 +9,11 @@ defmodule PleDemoBase.MixProject do
       config_path: "../../config/config.exs",
       deps_path: "../../deps",
       lockfile: "../../mix.lock",
-      elixir: "~> 1.12",
+      elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps(),
-      xref: xref()
+      deps: deps()
     ]
   end
 
@@ -40,23 +38,20 @@ defmodule PleDemoBase.MixProject do
     [
       {:phoenix_live_editable, in_umbrella: true},
       {:ple_util, in_umbrella: true},
-      {:phoenix, "~> 1.6.9"},
+      # {:xcomponents, path: "~/lib/xcomponents"},
+      {:phoenix, "~> 1.7.0-rc.0", override: true},
       {:phoenix_html, "~> 3.0"},
-      {:periscope, "~> 0.4", only: :dev},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_view, "~> 0.17.5"},
+      {:phoenix_live_view, "~> 0.18.3"},
+      {:heroicons, "~> 0.5"},
       {:floki, ">= 0.30.0", only: :test},
-      {:esbuild, "~> 0.4", runtime: Mix.env() == :dev},
+      {:esbuild, "~> 0.5", runtime: Mix.env() == :dev},
+      {:tailwind, "~> 0.1.8", runtime: Mix.env() == :dev},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
+      {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"}
-    ]
-  end
-
-  defp xref do
-    [
-      exclude: [Phoenix.LiveEditableHooks, Phoenix.LiveEditable.Helpers, Phoenix.LiveEditableView, Phoenix.LiveEditableComponent]
     ]
   end
 
@@ -69,7 +64,7 @@ defmodule PleDemoBase.MixProject do
   defp aliases do
     [
       setup: ["deps.get"],
-      "assets.deploy": ["esbuild default --minify", "phx.digest"]
+      "assets.deploy": ["tailwind default --minify", "esbuild default --minify", "phx.digest"]
     ]
   end
 end

@@ -10,7 +10,6 @@
         <b>Item1:</b><br/>using the `live_component` helper.
       </td>
       <td>
-        <.live_component module={Phoenix.LiveEditable.Handler.Default} ple_data="xxx" id="asdf" /> 
       </td>
     </tr>
     <tr>
@@ -18,7 +17,6 @@
         <b>Item2:</b><br/>using the `.ple` helper with null data. 
       </td>
       <td>
-        <.ple id="azzz"/><br/>
       </td>
     </tr>
     <tr>
@@ -26,7 +24,6 @@
         <b>Item3:</b><br/>using the `.ple` helper with specific data.
       </td>
       <td>
-        <.ple ple_data="yyy" id="zzzz"/> 
       </td>
     </tr>
     <tr>
@@ -34,7 +31,6 @@
         <b>Item4:</b><br/>using the `live_editable` helper.
       </td>
       <td>
-        <.live_editable ple_data="sss" id="zxzz"/> 
       </td>
     </tr>
     <tr>
@@ -44,7 +40,6 @@
           - using a defined handler (T5Handler)
       </td>
       <td>
-        <.ple ple_handler={T5Handler} ple_data={@viewdata} ple_action="save-view" id="zing"/> 
         <br/>
         <%= @viewdata %>
       </td>

@@ -19,15 +19,15 @@ defmodule PleDemoBaseWeb.ConnCase do
 
   using do
     quote do
+      # The default endpoint for testing
+      @endpoint PleDemoBaseWeb.Endpoint
+
+      use PleDemoBaseWeb, :verified_routes
+
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
       import PleDemoBaseWeb.ConnCase
-
-      alias PleDemoBaseWeb.Router.Helpers, as: Routes
-
-      # The default endpoint for testing
-      @endpoint PleDemoBaseWeb.Endpoint
     end
   end
 

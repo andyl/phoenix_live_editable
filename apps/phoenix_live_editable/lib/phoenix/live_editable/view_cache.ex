@@ -1,14 +1,16 @@
 defmodule Phoenix.LiveEditable.ViewCache do
 
   @moduledoc """
-  ViewCache
+  Agent tied to a LiveView used for storing config data.
 
   What it does:
-  - starts an agent, attached to the socket
+  - starts an agent, attached to the view socket
   - when the socket dies, the ViewCache is wiped out
 
   Purpose:
   - to cache config data
+  - one cache for the view
+  - can be over-ridden by the components
   - fast and simple config storage
 
   Rationale:
@@ -37,6 +39,8 @@ defmodule Phoenix.LiveEditable.ViewCache do
     ple_style: "inline",
     # storage for misc config attributes
     ple_store: %{},
+    # options for select, multi-select and radio - format %{"id1" => "value1", ...}
+    ple_options: %{},
     # submit action: anything
     ple_action: "ple-default-save",
     # appname: for looking up config settings
@@ -46,9 +50,9 @@ defmodule Phoenix.LiveEditable.ViewCache do
     # data source: place where state is managed <component | view>
     ple_datasrc: "component",
     # handler module - can reset in view or tag
-    ple_handler: Phoenix.LiveEditable.ComponentHandler.Default,
-    # interface module: see Phoenix.LiveEditable.Interface.*
-    ple_interface: Phoenix.LiveEditable.Interface.Milligram,
+    ple_handler: Phoenix.Editable.Handler.Default,
+    # interface module: see Phoenix.Editable.Renderer.*
+    ple_renderer: Phoenix.Editable.Renderer.Tailwind3,
   ]
 
   @doc """

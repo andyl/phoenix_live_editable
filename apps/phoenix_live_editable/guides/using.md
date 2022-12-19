@@ -6,12 +6,12 @@
 
 ENV:
 
-| Field     | Options            | Default                                  |
-|-----------|--------------------|------------------------------------------|
-| interface | <interface module> | Phoenix.LiveEditable.Interface.Milligram |
-| type      | text, select, ...  | text                                     |
-| mode      | inline, popup      | inline                                   |
-| id        | <unique string>    | Required                                 |
+| Field     | Options            | Default                              |
+|-----------|--------------------|--------------------------------------|
+| interface | <interface module> | Phoenix.Editable.Renderer.Milligram |
+| type      | text, select, ...  | text                                 |
+| mode      | inline, popup      | inline                               |
+| id        | <unique string>    | Required                             |
 
     <.live_editable env=@edit_env id="asdf" action="save">
 
@@ -34,10 +34,8 @@ CONFIGURATION:
     # target: pid of view
     ple_viewpid: nil,
     ple_datasrc: "component",
-    # handler module - can reset in view or tag
-    ple_handler: Phoenix.LiveEditable.ComponentHandler.Default,
-    # interface module: see Phoenix.LiveEditable.Interface.*
-    ple_interface: Phoenix.LiveEditable.Interface.Milligram,
+    # interface module: see Phoenix.Editable.Renderer.*
+    ple_renderer: Phoenix.Editable.Renderer.Milligram,
 
 HANDLERS:
 

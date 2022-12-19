@@ -1,0 +1,13 @@
+---
+ex_unit: 
+  clearscreen: true
+  active?: true
+  # prefs: "" 
+  prefs: "--stale" 
+rspec: 
+  command: "echo RSPEC"
+  clearscreen: true
+tango: 
+  desc: "THE DATE COMMAND"
+  command: "date"
+

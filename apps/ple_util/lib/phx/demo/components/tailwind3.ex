@@ -1,5 +1,9 @@
 defmodule Phx.Demo.Components.Tailwind3 do
 
+  @moduledoc """
+  Live Components used by Demo apps.
+  """
+
   use Phoenix.Component
 
   attr :href, :string, doc: "the link href"

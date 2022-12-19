@@ -1,7 +1,7 @@
 defmodule Phoenix.LiveEditable.Util do
 
   @moduledoc """
-  Utility methods for PhoenixLiveEditable.
+  Utility methods for Phoenix.LiveEditable.
   """
 
   @doc """

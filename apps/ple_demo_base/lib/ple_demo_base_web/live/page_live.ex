@@ -1,9 +1,9 @@
 defmodule PleDemoBaseWeb.PageLive do
   use PleDemoBaseWeb, :live_view
-  use Phoenix.LiveEditableView
+  # use Phoenix.LiveEditableView
 
-  alias Phx.Demo.Helpers
-  alias PleDemoBaseWeb.PageHandler
+  # alias Phx.Demo.Helpers
+  # alias PleDemoBaseWeb.PageHandler
 
   # alias Phx.Demo.Components.Tailwind3
 

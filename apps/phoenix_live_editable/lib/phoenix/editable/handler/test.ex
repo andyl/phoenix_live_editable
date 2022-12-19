@@ -1,4 +1,4 @@
-defmodule Phoenix.Editable.Handler.Tst do
+defmodule Phoenix.Editable.Handler.Test do
   @moduledoc """
   Prototype event-handler methods that can be used in LiveViews and
   LiveComponents.

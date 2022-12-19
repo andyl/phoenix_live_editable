@@ -1,17 +1,18 @@
 # Phoenix.Editable.Renderers
 
-Editable.Renderers are modules that render anchor and focus mode.
+Editable.Renderers are modules that render anchor and focus mode for a specific
+CSS framework.
 
-Interfaces are modules that contain a collection of render functions.
+Renderers are modules that contain a collection of render functions.
 
-The core activity of extending LiveEditable is to write new interface classes.
+The core activity of extending LiveEditable is to write new renderer classes.
 
 Extend for: 
 - Missing elements
 - Missing CSS frameworks 
 - behavior or style that you don't like 
 
-Writing and using a new interface is simple!
+Writing and using a new renderer is simple!
 - extend the base module `Phoenix.Editable.Renderer.Base`
 - use your new class in config
 

@@ -3,14 +3,12 @@
 # TBD
 
 Next Steps 
-- [ ] Cleanup docs 
-- [ ] Cleanup demo 
+- [x] Cleanup docs 
+- [x] Cleanup demo 
 - [ ] Make work in Feedex 
 - [ ] Style tailwind interface 
-- [ ] Style new demo sites 
 - [ ] Fix current PLE for tailwind (text and select) 
-- [ ] Create milligram demo site (text and select)
-- [ ] Validate Agent destruction when LiveView dies 
+- [ ] Create milligram demo site (text and select) 
 - [ ] Add github action to auto-update Fly.io 
 - [ ] Add github action to auto-update Docker Hub 
 - [ ] Add modal with JS commands 
@@ -49,6 +47,7 @@ Integrations
 
 CSS Frameworks 
 - [ ] Add Bootstrap5
+- [ ] Add Milligram 
 - [ ] Add Bulma 
 
 Validations 
@@ -343,4 +342,9 @@ Next steps:
 At this point the core seems stable:
 - extensible CSS interfaces (tailwind3, bootstrap, milligram, bulma) using `config ple_renderer`
 - extensible event handlers with overlays (handle_event("mytag", data, socket)) via `use <handler>`
+
+## 2022 Dec 19 Mon
+
+- [x] Update docs 
+- [x] Renamed interface to renderer 
 

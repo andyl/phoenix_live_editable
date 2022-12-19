@@ -213,8 +213,8 @@ LiveEditable struct:
     ple_store: %{}, 
     # handler module - can reset in view or tag
     ple_handler: Phoenix.LiveEditable.Handler.Default,
-    # interface module: see Phoenix.LiveEditable.Interface.*
-    ple_interface: Phoenix.LiveEditable.Interface.Milligram,
+    # interface module: see Phoenix.Editable.Interface.*
+    ple_interface: Phoenix.Editable.Interface.Milligram,
 
 - default values 
 - over ride: struct -> config -> view -> tag -> handler 
@@ -340,6 +340,6 @@ Solution
 
 Next steps: 
 - Get rid of live_editable_component
-- Get rid of live_editable_view
 - Move handler to editable
 - Move interface to editable
+- Move live_editable_view

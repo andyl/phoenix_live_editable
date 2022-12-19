@@ -114,8 +114,8 @@ Next add LiveEditable configuartion to your `config/config.exs`:
 
 Valid Framework Modules include:
 
-    - Phoenix.LiveEditable.Interface.Milligram
-    - Phoenix.LiveEditable.Interface.Tailwind3 
+    - Phoenix.Editable.Interface.Milligram
+    - Phoenix.Editable.Interface.Tailwind3 
 
 Now you can use LiveEditable in your LiveViews and LiveComponents:
 

@@ -33,5 +33,5 @@ CONFIGURATION
 config :your_app, YourAppWeb.Endpoint,
   pubsub_server: PleDemoBase.PubSub,
   ...
-  live_editable: [interface: Phoenix.LiveEditable.Interface.Milligram]
+  live_editable: [interface: Phoenix.Editable.Interface.Milligram]
 ```

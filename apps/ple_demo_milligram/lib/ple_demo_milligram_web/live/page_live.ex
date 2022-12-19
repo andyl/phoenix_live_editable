@@ -1,6 +1,6 @@
 defmodule PleDemoMilligramWeb.PageLive do
   use PleDemoMilligramWeb, :live_view
-  use Phoenix.LiveEditableView
+  use Phoenix.LiveEditable.ViewUtil
 
   alias Phx.Demo.Helpers
 

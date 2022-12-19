@@ -50,9 +50,9 @@ defmodule Phoenix.LiveEditable.ViewCache do
     # data source: place where state is managed <component | view>
     ple_datasrc: "component",
     # handler module - can reset in view or tag
-    ple_handler: Phoenix.LiveEditable.ComponentHandler.Default,
-    # interface module: see Phoenix.LiveEditable.Interface.*
-    ple_interface: Phoenix.LiveEditable.Interface.Milligram,
+    ple_handler: Phoenix.Editable.Handler.Default,
+    # interface module: see Phoenix.Editable.Interface.*
+    ple_interface: Phoenix.Editable.Interface.Milligram,
   ]
 
   @doc """

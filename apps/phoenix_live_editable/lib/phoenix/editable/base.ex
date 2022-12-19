@@ -2,7 +2,7 @@ defmodule Phoenix.Editable.Base do
   use Phoenix.LiveComponent
 
   @moduledoc """
-  Base LiveComponent for all live-editable data types.
+  Base LiveComponent used for all live-editable data types.
   """
 
   # ----- lifecycle callbacks -----

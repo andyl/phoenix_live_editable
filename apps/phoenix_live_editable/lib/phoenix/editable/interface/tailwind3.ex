@@ -1,5 +1,9 @@
 defmodule Phoenix.Editable.Interface.Tailwind3 do
 
+  @moduledoc """
+  Render methods for the Tailwind3 CSS framework.
+  """
+
   require Phoenix.LiveEditable.Svg
   alias Phoenix.LiveEditable.Svg
 

@@ -1,7 +1,9 @@
 defmodule Phoenix.Editable.Base do
   use Phoenix.LiveComponent
 
-  # alias Phoenix.LiveEditableComponent, as: Helper
+  @moduledoc """
+  Base LiveComponent for all live-editable data types.
+  """
 
   # ----- lifecycle callbacks -----
 

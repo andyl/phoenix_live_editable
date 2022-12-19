@@ -2,7 +2,7 @@ defmodule Phoenix.LiveEditable.ViewUtil do
 
   @moduledoc """
 
-  DEPRECATED - DO NOT USE
+  Access methods for the ViewCache.
 
   View-Level LiveEditable Utiltities
 

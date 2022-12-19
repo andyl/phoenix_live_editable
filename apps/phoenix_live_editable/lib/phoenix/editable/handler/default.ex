@@ -1,8 +1,12 @@
 defmodule Phoenix.Editable.Handler.Default do
   @moduledoc """
-  Default Handlers for Views and Phoenix.Editable.Base
+  Event-handler methods that can be used in LiveViews and
+  LiveComponents.
 
-  use Phoenix.LiveEditable.Handler.Default
+  Example:
+
+      use Phoenix.LiveEditable.Handler.Default
+
   """
 
   defmacro __using__(_opts) do

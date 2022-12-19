@@ -1,87 +1,100 @@
-# defmodule Phoenix.Editable.Interface.Bootstrap5 do
-#
-#   @moduledoc """
-#   TBD
-#   """
-#
-#   alias Phoenix.Editable.Interface
-#
-#   require Phoenix.LiveEditable.Svg
-#   alias Phoenix.LiveEditable.Svg
-#
-#   @behaviour Interface.Base
-#
-#   @doc """
-#   <%= live_edit(assigns, @register.name, type: "text", id: "name", on_submit: "rename") %>
-#   """
-#   @impl Interface.Base
-#   def text_focus(label, opts) do
-#     target = if opts[:target], do: "phx-target='#{opts[:target]}'", else: ""
-#     change = "phx-change='#{opts[:on_change]}'"
-#     submit = "phx-submit='#{opts[:on_submit]}'"
-#     """
-#     <form class="form-inline" #{change} #{submit} #{target}>
-#     <div class="mb-2 form-group">
-#       <input type="text" class="form-control" name="editable_text" value="#{label}">
-#     </div>
-#     <button class="btn btn-primary mb2 btn-ple" style='margin-left: 5px' type='submit'>
-#       #{ Svg.inline("SquareOk") }
-#     </button>
-#     <button class="btn btn-secondary mb2 btn-ple" style='margin-left: 5px' phx-click='cancel'>
-#       #{ Svg.inline("SquareCancel") }
-#     </button>
-#     </form>
-#     """
-#   end
-#
-#   @doc """
-#   <%= live_edit(assigns, @register.name, type: "text", id: "name", on_submit: "rename") %>
-#   """
-#   @impl Interface.Base
-#   def text_anchor(label, _opts) do
-#     # target = if opts[:target], do: "phx-target='#{opts[:target]}'", else: ""
-#     # change = "phx-change='#{opts[:on_change]}'"
-#     # submit = "phx-submit='#{opts[:on_submit]}'"
-#     """
-#     <span><#{ label }</span>
-#     """
-#   end
-#
-#   @doc """
-#   Options is a list of tuples {<id>, <label>}
-#   <%= live_edit(assigns, @folder.name, type: "select", options: @folders, id: "folder", on_submit: "refolder") %>
-#   """
-#   @impl Interface.Base
-#   def select_focus(label, opts) do
-#     Keyword.has_key?(opts, :options) || raise("Needs `:options` option")
-#     options = Enum.map(opts[:options], &("<option value='#{elem(&1,0)}'>#{elem(&1,1)}</option>"))
-#     target = if opts[:target], do: "phx-target='#{opts[:target]}'", else: ""
-#     submit = "phx-submit='#{opts[:on_submit]}'"
-#     """
-#     <form class="form-inline" #{target} #{submit}>
-#     <div class="form-group col-md-6">
-#       <select name="editable_select" class="form-control" value="#{label}">
-#       #{Enum.join(options, "")}
-#       </select>
-#     </div>
-#     <button class="btn btn-primary mb2 btn-ple" style='margin-left: 5px' type='submit'>
-#       #{ Svg.inline("SquareOk") }
-#     </button>
-#     <button class="btn btn-secondary mb2 btn-ple" style='margin-left: 5px' phx-click='cancel'>
-#       #{ Svg.inline("SquareCancel") }
-#     </button>
-#     </form>
-#     """
-#   end
-#
-#   @impl Interface.Base
-#   def select_anchor(label, _opts) do
-#     # target = if opts[:target], do: "phx-target='#{opts[:target]}'", else: ""
-#     # change = "phx-change='#{opts[:on_change]}'"
-#     # submit = "phx-submit='#{opts[:on_submit]}'"
-#     """
-#     <span><#{ label }</span>
-#     """
-#   end
-#
-# end
+defmodule Phoenix.Editable.Interface.Bootstrap5 do
+
+  @moduledoc """
+  Render methods for the Bootstrap5 CSS framework.
+  """
+
+  require Phoenix.LiveEditable.Svg
+  alias Phoenix.LiveEditable.Svg
+
+  import Phoenix.HTML
+
+  use Phoenix.Component
+
+  # ----- text -----
+
+  def render(%{ple_type: "text", ple_mode: "anchor", ple_data: nil} = assigns) do
+    ~H"""
+    <span style="cursor: pointer; border-bottom: 1px dashed blue;" phx-click='ple-focus' phx-target={@myself}>
+      <span style="color: red; font-style: italic;">Empty</span>
+    </span>
+    """
+  end
+
+  def render(%{ple_type: "text", ple_mode: "anchor"} = assigns) do
+    ~H"""
+    <span style="cursor: pointer; border-bottom: 1px dashed blue;" phx-click='ple-focus' phx-target={@myself}>
+      <%= @ple_data %>
+    </span>
+    """
+  end
+
+  def render(%{ple_type: "text", ple_mode: "focus"} = assigns) do
+    ~H"""
+    <div>
+      <form style="display: inline;" phx-submit={@ple_action} phx-target={@myself} phx-click-away='ple-blur'>
+        <input style="width: 100px;" type="text" name="data" target={@myself} value={@ple_data}/>
+        <button class="button" style='margin-left: 5px' type='submit'>
+          <%= raw Svg.inline("CircleOk") %>
+        </button>
+      </form>
+      <button class="button" style='margin-left: 5px'>
+        <%= raw Svg.inline("CircleCancel") %>
+      </button>
+    </div>
+    """
+  end
+
+  # ----- select -----
+
+  def render(%{ple_type: "select", ple_mode: "anchor", ple_data: nil} = assigns) do
+    ~H"""
+    <span style="cursor: pointer; border-bottom: 1px dashed blue;" phx-click='ple-focus' phx-target={@myself}>
+      <span style="color: red; font-style: italic;">Empty</span>
+    </span>
+    """
+  end
+
+  def render(%{ple_type: "select", ple_mode: "anchor"} = assigns) do
+    ~H"""
+    <span style="cursor: pointer; border-bottom: 1px dashed blue;" phx-click='ple-focus' phx-target={@myself}>
+      <%= @ple_data %>
+    </span>
+    """
+  end
+
+  def render(%{ple_type: "select", ple_mode: "focus"} = assigns) do
+    ~H"""
+    <div>
+      <form phx-change="ple-default-save" phx-target={@myself} phx-click-away="ple-blur">
+        <select name="data"
+          class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white
+                 bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out
+                 m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+        >
+        <option selected><%= @ple_data %></option>
+        <%= for option <- option_map(@ple_options) do %>
+          <option value={option.id}><%= option.value %></option>
+        <% end %>
+        </select>
+      </form>
+    </div>
+    """
+  end
+
+  # ----- helpers -----
+
+  # map in the form %{id1: val1, id2: val2, ...} => DATA=id
+  defp option_map(options) when is_map(options) do
+    options
+    |> Enum.map(&(&1))
+    |> Enum.map(&(%{id: elem(&1,0), value: elem(&1,1)}))
+  end
+
+  # list in the form ~w(word1, word2, word3, word4) => DATA=word
+  defp option_map(options) when is_list(options) do
+    options
+    |> Enum.map(&(%{id: &1, value: &1}))
+  end
+
+end

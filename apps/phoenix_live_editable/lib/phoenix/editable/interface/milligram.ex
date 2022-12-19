@@ -1,5 +1,9 @@
 defmodule Phoenix.Editable.Interface.Milligram do
 
+  @moduledoc """
+  Render methods for the Milligram CSS framework.
+  """
+
   require Phoenix.LiveEditable.Svg
   alias Phoenix.LiveEditable.Svg
 

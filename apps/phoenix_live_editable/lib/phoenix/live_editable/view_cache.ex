@@ -1,7 +1,7 @@
 defmodule Phoenix.LiveEditable.ViewCache do
 
   @moduledoc """
-  ViewCache
+  Agent tied to the LiveView which stores config data.
 
   What it does:
   - starts an agent, attached to the view socket

@@ -1,7 +1,7 @@
 defmodule Phoenix.Editable do
 
   @moduledoc """
-  Function components.
+  Function Components for live-editable data.
 
   Each of these function components calls the core LiveComponent - `Phoenix.Editable.Base`.
 

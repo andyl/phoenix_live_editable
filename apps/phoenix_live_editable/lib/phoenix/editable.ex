@@ -1,4 +1,16 @@
 defmodule Phoenix.Editable do
+
+  @moduledoc """
+  Function components.
+
+  Each of these function components calls the core LiveComponent - `Phoenix.Editable.Base`.
+
+  Example usages:
+
+      <Editable.text value="Hello World"/>
+      <Editable.select value="Default" options={~w(Opt1 Opt2 Opt3)}/>
+
+  """
   use Phoenix.LiveView
   import Phoenix.LiveEditable.Util
 
@@ -31,9 +43,9 @@ defmodule Phoenix.Editable do
   #
   # <.editable_text
   # id="my-id"
-  # data="asdf"
-  # phx_save="save"
-  # phx_change="validate" />
+  # value="asdf"
+  # ple_save="save"
+  # ple_change="validate" />
   #
   # """
   #

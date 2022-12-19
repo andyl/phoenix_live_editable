@@ -1,5 +1,9 @@
 defmodule Phoenix.LiveEditableComponent do
+
   @moduledoc """
+
+  DEPRECATED - DO NOT USE
+
   Support for LiveEditable Component Event Handlers
 
       defmodule MyEditableHandler do

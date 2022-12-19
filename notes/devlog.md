@@ -280,6 +280,22 @@ Design
 - [x] Make new demo sites 
 - [x] Update content for new demo sites 
 
+## 2022 Dec 18 Sun
+
+Refactoring:
+- function components call to `Phoenix.Editable.Base` 
+- git rid of "using" macros
+- function components assign default value for ID
+
+- [ ] Vim Autocomplete for tailwind classes 
+- [ ] Render Phoenix.Editable.Base standalone 
+- [ ] Get ElixirLS working from `ex` 
+- [ ] Get ElixirLS working from `heex` 
+
+PhoenixEditableBase/Text 
+
+PhoenixEditableBase/Select 
+
 Next Steps 
 - [ ] Style new demo sites 
 - [ ] Fix current PLE for tailwind (text and select) 
@@ -291,4 +307,7 @@ Next Steps
 - [ ] Learn `phx_live_storybook` 
 - [ ] Design for function components 
 - [ ] Refactor 
+
+HANDLER DESIGN 
+- [ ] 
 

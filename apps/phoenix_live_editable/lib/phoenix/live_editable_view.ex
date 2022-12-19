@@ -1,6 +1,9 @@
 defmodule Phoenix.LiveEditableView do
 
   @moduledoc """
+
+  DEPRECATED - DO NOT USE
+
   View-Level LiveEditable Utiltities
 
       defmodule MyView do

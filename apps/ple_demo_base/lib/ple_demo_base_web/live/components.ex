@@ -28,7 +28,7 @@ defmodule PleDemoBase.Components do
   # ----- helpers -----
 
   defp testnav(title) do
-    ~w(Home Test1 Test2 Test3 Test4 Test5)
+    ~w(Home Test1 Test2 Test3 Test4 Test5 Test6 Test7)
     |> navbar(title)
   end
 

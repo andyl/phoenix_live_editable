@@ -1,5 +1,11 @@
 defmodule Phoenix.LiveEditable.Helpers do
 
+  @moduledoc """
+
+  DEPRECATED - DO NOT USE
+
+  """
+
   def ple(assigns) when is_map(assigns) do
     id = assigns[:id]
     module = assigns[:ple_handler] || Phoenix.LiveEditable.Handler.Default

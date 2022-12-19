@@ -2,12 +2,24 @@
 
 # TBD
 
-Bugs 
+Next Steps 
+- [ ] Cleanup docs 
+- [ ] Cleanup demo 
+- [ ] Make work in Feedex 
+- [ ] Style tailwind interface 
+- [ ] Style new demo sites 
+- [ ] Fix current PLE for tailwind (text and select) 
+- [ ] Create milligram demo site 
 - [ ] Validate Agent destruction when LiveView dies 
+- [ ] Add github action to auto-update Fly.io 
+- [ ] Add github action to auto-update Docker Hub 
+- [ ] Add modal with JS commands 
+- [ ] Learn `phx_live_storybook` 
 
 Demo Store 
 - [ ] Update ple-util (ETS datastore) 
-- [ ] Datastore organized by IP address
+- [ ] Datastore organized by IP address 
+- [ ] Use ASH?
 
 Metrics 
 - [ ] Create monitoring strategy for demo sites 
@@ -292,21 +304,9 @@ Refactoring:
 - [ ] Get ElixirLS working from `ex` 
 - [ ] Get ElixirLS working from `heex` 
 
-PhoenixEditableBase/Text 
-
-PhoenixEditableBase/Select 
-
 Next Steps 
-- [ ] Style new demo sites 
-- [ ] Fix current PLE for tailwind (text and select) 
-- [ ] Create milligram demo site 
-- [ ] Make work in Feedex 
-- [ ] Add github action to auto-update Fly.io 
-- [ ] Add github action to auto-update Docker Hub 
-- [ ] Add modal with JS commands 
-- [ ] Learn `phx_live_storybook` 
-- [ ] Design for function components 
-- [ ] Refactor 
+- [x] Design for function components 
+- [x] Refactor 
 
 Learnings 
 - cannot layer imports 
@@ -339,7 +339,12 @@ Solution
 - state can still be held in component or view 
 
 Next steps: 
-- Get rid of live_editable_component
-- Move handler to editable
-- Move interface to editable
-- Move live_editable_view
+- [ ] Get rid of live_editable_component
+- [ ] Move handler to editable 
+- [ ] Move interface to editable 
+- [ ] Move live_editable_view 
+
+At this point the core seems stable:
+- extensible CSS interfaces (tailwind3, bootstrap, milligram, bulma) using `config ple_interface`
+- extensible event handlers with overlays (handle_event("mytag", data, socket)) via `use <handler>`
+

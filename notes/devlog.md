@@ -308,6 +308,38 @@ Next Steps
 - [ ] Design for function components 
 - [ ] Refactor 
 
-HANDLER DESIGN 
-- [ ] 
+Learnings 
+- cannot layer imports 
+- func/arity can only come from one module...
+- can defdelegate to event_handlers in another module...
+- cannot layer event_handlers
 
+Phase 1 -
+- use defdelegate for handlers 
+- get rid of ple_handler in view_cache
+- single layer only - no overlays
+- this will require writing/copying a ton of code for views
+- usable for internal
+- also: copy/paste method will work, or write handlers from scratch  
+
+Phase 2 -
+- create a macro to pull in handlers 
+- two-layer - base with overrides
+- needed for public MVP
+
+Solution 
+- put handlers in __using__ macro 
+- use Phoenix.Editable.Handlers.Default
+- supports overlays (different targets)
+- reusable default handlers
+- can have multiple custom handlers
+- works in views
+- works in live-component
+- extensible
+- state can still be held in component or view 
+
+Next steps: 
+- Get rid of live_editable_component
+- Get rid of live_editable_view
+- Move handler to editable
+- Move interface to editable

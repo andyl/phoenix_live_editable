@@ -5,7 +5,7 @@ defmodule PleDemoBaseWeb.Test6Live do
   """
 
   use PleDemoBaseWeb, :live_view
-  use Phoenix.LiveEditableView
+  # use Phoenix.LiveEditableView
 
   import PleDemoBase.Components
 

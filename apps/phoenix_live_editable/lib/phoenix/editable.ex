@@ -39,8 +39,8 @@ defmodule Phoenix.Editable do
     <.live_component
       module={Phoenix.Editable.Base}
       id={@id || random_id()}
-      type="text"
-      ple-data={@value}
+      ple-render-type="text"
+      ple-render-data={@value}
     />
     """
   end
@@ -63,9 +63,9 @@ defmodule Phoenix.Editable do
     <.live_component
       module={Phoenix.Editable.Base}
       id={@id || random_id()}
-      type="select"
-      ple-data={@value}
-      ple-options={@options}
+      ple-render-type="select"
+      ple-render-data={@value}
+      ple-render-options={@options}
     />
     """
   end

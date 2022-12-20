@@ -13,7 +13,7 @@ defmodule Phoenix.Editable.Renderer.Tailwind3 do
 
   # ----- text -----
 
-  def render(%{ple_type: "text", ple_mode: "anchor", ple_data: nil} = assigns) do
+  def render(%{ple_render_type: "text", ple_render_mode: "anchor", ple_render_data: nil} = assigns) do
     ~H"""
     <span style="cursor: pointer; border-bottom: 1px dashed blue;" phx-click='ple-focus' phx-target={@myself}>
       <span style="color: red; font-style: italic;">Empty</span>
@@ -21,19 +21,19 @@ defmodule Phoenix.Editable.Renderer.Tailwind3 do
     """
   end
 
-  def render(%{ple_type: "text", ple_mode: "anchor"} = assigns) do
+  def render(%{ple_render_type: "text", ple_render_mode: "anchor"} = assigns) do
     ~H"""
     <span style="cursor: pointer; border-bottom: 1px dashed blue;" phx-click='ple-focus' phx-target={@myself}>
-      <%= @ple_data %>
+      <%= @ple_render_data %>
     </span>
     """
   end
 
-  def render(%{ple_type: "text", ple_mode: "focus"} = assigns) do
+  def render(%{ple_render_type: "text", ple_render_mode: "focus"} = assigns) do
     ~H"""
     <div>
-      <form style="display: inline;" phx-submit={@ple_action} phx-target={@myself} phx-click-away='ple-blur'>
-        <input style="width: 100px;" type="text" name="data" target={@myself} value={@ple_data}/>
+      <form style="display: inline;" phx-submit={@phx_submit} phx-target={@myself} phx-click-away='ple-blur'>
+        <input style="width: 100px;" type="text" name="data" target={@myself} value={@ple_render_data}/>
         <button class="button" style='margin-left: 5px' type='submit'>
           <%= raw Svg.inline("CircleOk") %>
         </button>
@@ -47,7 +47,7 @@ defmodule Phoenix.Editable.Renderer.Tailwind3 do
 
   # ----- select -----
 
-  def render(%{ple_type: "select", ple_mode: "anchor", ple_data: nil} = assigns) do
+  def render(%{ple_render_type: "select", ple_render_mode: "anchor", ple_render_data: nil} = assigns) do
     ~H"""
     <span style="cursor: pointer; border-bottom: 1px dashed blue;" phx-click='ple-focus' phx-target={@myself}>
       <span style="color: red; font-style: italic;">Empty</span>
@@ -55,15 +55,15 @@ defmodule Phoenix.Editable.Renderer.Tailwind3 do
     """
   end
 
-  def render(%{ple_type: "select", ple_mode: "anchor"} = assigns) do
+  def render(%{ple_render_type: "select", ple_render_mode: "anchor"} = assigns) do
     ~H"""
     <span style="cursor: pointer; border-bottom: 1px dashed blue;" phx-click='ple-focus' phx-target={@myself}>
-      <%= @ple_data %>
+      <%= @ple_render_data %>
     </span>
     """
   end
 
-  def render(%{ple_type: "select", ple_mode: "focus"} = assigns) do
+  def render(%{ple_render_type: "select", ple_render_mode: "focus"} = assigns) do
     ~H"""
     <div>
       <form phx-change="ple-default-save" phx-target={@myself} phx-click-away="ple-blur">
@@ -72,8 +72,8 @@ defmodule Phoenix.Editable.Renderer.Tailwind3 do
                  bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out
                  m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
         >
-        <option selected><%= @ple_data %></option>
-        <%= for option <- option_map(@ple_options) do %>
+        <option selected><%= @ple_render_data %></option>
+        <%= for option <- option_map(@ple_render_options) do %>
           <option value={option.id}><%= option.value %></option>
         <% end %>
         </select>

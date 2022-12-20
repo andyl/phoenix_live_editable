@@ -5,6 +5,11 @@
 Next Steps 
 - [x] Cleanup docs 
 - [x] Cleanup demo 
+- [ ] Add settings 
+- [ ] Test settings 
+- [ ] Remove view cache 
+- [ ] Remove view util 
+- [ ] Add ability to set target 
 - [ ] Make work in Feedex 
 - [ ] Style tailwind interface 
 - [ ] Fix current PLE for tailwind (text and select) 

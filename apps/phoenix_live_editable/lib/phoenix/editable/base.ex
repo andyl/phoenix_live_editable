@@ -1,6 +1,8 @@
 defmodule Phoenix.Editable.Base do
   use Phoenix.LiveComponent
 
+  alias Phoenix.LiveEditable.Settings
+
   @moduledoc """
   Base LiveComponent used for all live-editable data types.
   """
@@ -12,19 +14,20 @@ defmodule Phoenix.Editable.Base do
   end
 
   def update(assigns, socket) do
-    newassigns =
-      assigns
-      |> atomify_keys
-      |> Map.put(:socketid, socket.id)
-      |> merge_cache()
-      |> Map.to_list()
+    normassigns = normalize(assigns)
+    IO.inspect(normassigns, label: "BYTEBYTE")
+    newassigns = socket
+                 |> Settings.new_from_socket()
+                 |> Settings.merge(normassigns)
+
+    IO.inspect(newassigns, label: "NOOVOO")
 
     {:ok, assign(socket, newassigns)}
   end
 
   def render(assigns) do
-    module = interface_module(assigns)
-    assigns |> module.render()
+    module = assigns.ple_render_module
+    module.render(assigns)
   end
 
   # ----- event handlers -----
@@ -43,7 +46,10 @@ defmodule Phoenix.Editable.Base do
 
   # ----- view helpers -----
 
-  import Phoenix.LiveEditable.ViewCache
+  defp normalize(map) do
+    map
+    |> atomify_keys()
+  end
 
   defp atomify_keys(map) do
     map
@@ -52,7 +58,7 @@ defmodule Phoenix.Editable.Base do
 
   defp atomify(key) when is_binary(key) do
     key
-    |> String.replace("ple-", "ple_")
+    |> String.replace("-", "_")
     |> String.to_atom()
   end
 
@@ -66,15 +72,4 @@ defmodule Phoenix.Editable.Base do
     key
   end
 
-  defp merge_cache(assigns) do
-    assigns[:socketid]
-    |> vc_get()
-    |> Map.merge(assigns)
-  end
-
-  defp interface_module(assigns) do
-    assigns
-    |> Map.get(:socketid)
-    |> vc_get(:ple_renderer)
-  end
 end

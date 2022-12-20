@@ -11,7 +11,7 @@
   <div class="mt-5 mb-5">
   <p>Phoenix.Editable.Base</p>
   <%= for {lcl_id, mydata} <- @data do %>
-    | <%= lcl_id %>: <.live_component id={"b_" <> lcl_id} module={Phoenix.Editable.Base} ple-data={mydata}/> <br/>
+    | <%= lcl_id %>: <.live_component id={"b_" <> lcl_id} module={Phoenix.Editable.Base} ple-render-data={mydata}/> <br/>
   <% end %>
   </div>
 

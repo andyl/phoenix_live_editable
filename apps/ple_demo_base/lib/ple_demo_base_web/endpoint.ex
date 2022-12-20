@@ -7,7 +7,8 @@ defmodule PleDemoBaseWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_ple_demo_base_key",
-    signing_salt: "bco/n++q"
+    signing_salt: "/ynHER3q",
+    same_site: "Lax"
   ]
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
@@ -20,7 +21,7 @@ defmodule PleDemoBaseWeb.Endpoint do
     at: "/",
     from: :ple_demo_base,
     gzip: false,
-    only: ~w(assets fonts images favicon.ico robots.txt)
+    only: PleDemoBaseWeb.static_paths()
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

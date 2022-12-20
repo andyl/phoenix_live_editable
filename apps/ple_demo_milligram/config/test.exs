@@ -4,11 +4,11 @@ import Config
 # you can enable the server option below.
 config :ple_demo_milligram, PleDemoMilligramWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "R/rC2QeDETAh0VsX1UST1ZXVjTFrSqtl8pwZCzdxl4j7xMAYy8VG87y7bhRskaZ2",
+  secret_key_base: "OeIxX9aSi2cm7GuGmORn+P6bmESoPMThyy/MbjM1jp0XwhviR53LCwCQnlRGwSwK",
   server: false
 
 # Print only warnings and errors during test
-config :logger, level: :warn
+config :logger, level: :warning
 
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime

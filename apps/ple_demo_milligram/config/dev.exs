@@ -13,10 +13,10 @@ config :ple_demo_milligram, PleDemoMilligramWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "W0z6j/HkrEBoKyHMu9UslHkj4hjL+ZI8nhBDEtnReU9zl3ttmgJM8ukQKzhZrdcI",
+  secret_key_base: "g5IU40yaIQWG6c6TjZgFrVa+O9uPnd10UFMaZJCWAOp2ymrP5ylBF/dhbr/Zesaw",
   watchers: [
-    # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
   ]
 
 # ## SSL Support
@@ -27,7 +27,6 @@ config :ple_demo_milligram, PleDemoMilligramWeb.Endpoint,
 #
 #     mix phx.gen.cert
 #
-# Note that this task requires Erlang/OTP 20 or later.
 # Run `mix help phx.gen.cert` for more information.
 #
 # The `http:` config above can be replaced with:
@@ -48,10 +47,14 @@ config :ple_demo_milligram, PleDemoMilligramWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
+      ~r"priv/gettext/.*(po)$",
       ~r"lib/ple_demo_milligram_web/(live|views)/.*(ex)$",
       ~r"lib/ple_demo_milligram_web/templates/.*(eex)$"
     ]
   ]
+
+# Enable dev routes for dashboard and mailbox
+config :ple_demo_milligram, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

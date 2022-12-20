@@ -6,8 +6,20 @@
 
   <br/>
 
-  <%= for {lcl_id, data} <- @data do %>
-    | <%= lcl_id %>: <.ple type="text" id={lcl_id} ple-data={data}/> <br/>
+  <p class="mt-5 mb-5 font-bold">Text Fields - Component Data Source</p>
+
+  <div class="mt-5 mb-5">
+  <p>Phoenix.Editable.Base</p>
+  <%= for {lcl_id, mydata} <- @data do %>
+    | <%= lcl_id %>: <.live_component id={"b_" <> lcl_id} module={Phoenix.Editable.Base} ple-render-data={mydata}/> <br/>
   <% end %>
+  </div>
+
+  <div class="mt-5 mb-5">
+  <p>Phoenix.Editable</p>
+  <%= for {lcl_id, mydata} <- @data do %>
+    | <%= lcl_id %>: <Phoenix.Editable.text value={mydata}/> <br/>
+  <% end %>
+  </div>
 
 </div>

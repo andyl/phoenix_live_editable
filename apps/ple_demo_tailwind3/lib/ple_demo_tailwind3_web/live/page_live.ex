@@ -1,8 +1,11 @@
 defmodule PleDemoTailwind3Web.PageLive do
   use PleDemoTailwind3Web, :live_view
-  use Phoenix.LiveEditableView
+  use Phoenix.LiveEditable.ViewUtil
 
   alias Phx.Demo.Helpers
+
+  # alias Phx.Demo.Components.Tailwind3
+  # import Xcomponents.Tailwind3
 
   # ----- lifecycle callbacks -----
 

@@ -1,75 +1,29 @@
 defmodule PleDemoBaseWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
-  as controllers, views, channels and so on.
+  as controllers, components, channels, and so on.
 
   This can be used in your application as:
 
       use PleDemoBaseWeb, :controller
-      use PleDemoBaseWeb, :view
+      use PleDemoBaseWeb, :html
 
-  The definitions below will be executed for every view,
-  controller, etc, so keep them short and clean, focused
+  The definitions below will be executed for every controller,
+  component, etc, so keep them short and clean, focused
   on imports, uses and aliases.
 
   Do NOT define functions inside the quoted expressions
-  below. Instead, define any helper function in modules
-  and import those modules here.
+  below. Instead, define additional modules and import
+  those modules here.
   """
 
-  def controller do
-    quote do
-      use Phoenix.Controller, namespace: PleDemoBaseWeb
-
-      import Plug.Conn
-      alias PleDemoBaseWeb.Router.Helpers, as: Routes
-    end
-  end
-
-  def view do
-    quote do
-      use Phoenix.View,
-        root: "lib/ple_demo_base_web/templates",
-        namespace: PleDemoBaseWeb
-
-      # Import convenience functions from controllers
-      import Phoenix.Controller,
-        only: [get_flash: 1, get_flash: 2, view_module: 1, view_template: 1]
-
-      # Include shared imports and aliases for views
-      unquote(view_helpers())
-    end
-  end
-
-  def live_view do
-    quote do
-      use Phoenix.LiveView,
-        layout: {PleDemoBaseWeb.LayoutView, "live.html"}
-
-      unquote(view_helpers())
-    end
-  end
-
-  def live_component do
-    quote do
-      use Phoenix.LiveComponent
-
-      unquote(view_helpers())
-    end
-  end
-
-  def component do
-    quote do
-      use Phoenix.Component
-
-      unquote(view_helpers())
-    end
-  end
+  def static_paths, do: ~w(assets fonts images favicon.ico robots.txt)
 
   def router do
     quote do
-      use Phoenix.Router
+      use Phoenix.Router, helpers: false
 
+      # Import common connection and controller functions to use in pipelines
       import Plug.Conn
       import Phoenix.Controller
       import Phoenix.LiveView.Router
@@ -82,19 +36,72 @@ defmodule PleDemoBaseWeb do
     end
   end
 
-  defp view_helpers do
+  def controller do
     quote do
-      # Use all HTML functionality (forms, tags, etc)
-      use Phoenix.HTML
+      use Phoenix.Controller,
+        namespace: PleDemoBaseWeb,
+        formats: [:html, :json],
+        layouts: [html: PleDemoBaseWeb.Layouts]
 
-      # Import LiveView and .heex helpers (live_render, live_patch, <.form>, etc)
-      import Phoenix.LiveView.Helpers
+      import Plug.Conn
+      import PleDemoBaseWeb.Gettext
 
-      # Import basic rendering functionality (render, render_layout, etc)
-      import Phoenix.View
+      unquote(verified_routes())
+    end
+  end
 
-      import PleDemoBaseWeb.ErrorHelpers
-      alias PleDemoBaseWeb.Router.Helpers, as: Routes
+  def live_view do
+    quote do
+      use Phoenix.LiveView,
+        layout: {PleDemoBaseWeb.Layouts, :app}
+
+      unquote(html_helpers())
+    end
+  end
+
+  def live_component do
+    quote do
+      use Phoenix.LiveComponent
+
+      unquote(html_helpers())
+    end
+  end
+
+  def html do
+    quote do
+      use Phoenix.Component
+
+      # Import convenience functions from controllers
+      import Phoenix.Controller,
+        only: [get_csrf_token: 0, view_module: 1, view_template: 1]
+
+      # Include general helpers for rendering HTML
+      unquote(html_helpers())
+    end
+  end
+
+  defp html_helpers do
+    quote do
+      # HTML escaping functionality
+      import Phoenix.HTML
+      # Core UI components and translation
+      import PleDemoBaseWeb.CoreComponents
+      import PleDemoBaseWeb.Gettext
+
+      # Shortcut for generating JS commands
+      alias Phoenix.LiveView.JS
+
+      # Routes generation with the ~p sigil
+      unquote(verified_routes())
+    end
+  end
+
+  def verified_routes do
+    quote do
+      use Phoenix.VerifiedRoutes,
+        endpoint: PleDemoBaseWeb.Endpoint,
+        router: PleDemoBaseWeb.Router,
+        statics: PleDemoBaseWeb.static_paths()
     end
   end
 

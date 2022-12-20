@@ -10,18 +10,33 @@ import Config
 # Configures the endpoint
 config :ple_demo_base, PleDemoBaseWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: PleDemoBaseWeb.ErrorView, accepts: ~w(html json), layout: false],
+  render_errors: [
+    formats: [html: PleDemoBaseWeb.ErrorHTML, json: PleDemoBaseWeb.ErrorJSON],
+    layout: false
+  ],
   pubsub_server: PleDemoBase.PubSub,
-  live_view: [signing_salt: "cb4Oh6GV"]
+  live_view: [signing_salt: "hDNx79TO"]
 
 # Configure esbuild (the version is required)
 config :esbuild,
-  version: "0.14.29",
+  version: "0.14.41",
   default: [
     args:
       ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
     cd: Path.expand("../assets", __DIR__),
     env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
+  ]
+
+# Configure tailwind (the version is required)
+config :tailwind,
+  version: "3.1.8",
+  default: [
+    args: ~w(
+      --config=tailwind.config.js
+      --input=css/app.css
+      --output=../priv/static/assets/app.css
+    ),
+    cd: Path.expand("../assets", __DIR__)
   ]
 
 # Configures Elixir's Logger

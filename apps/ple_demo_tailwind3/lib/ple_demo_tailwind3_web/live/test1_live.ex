@@ -1,7 +1,7 @@
 defmodule PleDemoTailwind3Web.Test1Live do
 
   use PleDemoTailwind3Web, :live_view
-  use Phoenix.LiveEditable.ViewUtil
+  # use Phoenix.LiveEditable.ViewUtil
 
   import PleDemoTailwind3.Components
 

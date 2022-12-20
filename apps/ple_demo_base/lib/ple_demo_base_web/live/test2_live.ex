@@ -1,7 +1,7 @@
 defmodule PleDemoBaseWeb.Test2Live do
 
   use PleDemoBaseWeb, :live_view
-  use Phoenix.LiveEditable.ViewUtil
+  # use Phoenix.LiveEditable.ViewUtil
 
   import PleDemoBase.Components
 

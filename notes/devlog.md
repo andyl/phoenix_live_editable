@@ -5,10 +5,11 @@
 Next Steps 
 - [x] Cleanup docs 
 - [x] Cleanup demo 
-- [ ] Add settings 
-- [ ] Test settings 
-- [ ] Remove view cache 
-- [ ] Remove view util 
+- [x] Add settings 
+- [x] Test settings 
+- [x] Remove view cache 
+- [x] Remove view util 
+- [ ] Get demo pages working 
 - [ ] Add ability to set target 
 - [ ] Make work in Feedex 
 - [ ] Style tailwind interface 

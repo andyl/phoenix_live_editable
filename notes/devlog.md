@@ -3,20 +3,23 @@
 # TBD
 
 Next Steps 
-- [x] Cleanup docs 
-- [x] Cleanup demo 
-- [x] Add settings 
-- [x] Test settings 
-- [x] Remove view cache 
-- [x] Remove view util 
-- [ ] Get demo pages working 
+- [ ] Demo pages working 
+- [ ] Demo pages with data in component 
+- [ ] Demo pages with data in view 
+- [ ] Demo pages using Editable.Base 
+- [ ] Demo pages using Editable.text() 
+- [ ] Demo pages using Editable.select() 
 - [ ] Add ability to set target 
+
 - [ ] Make work in Feedex 
+
 - [ ] Style tailwind interface 
 - [ ] Fix current PLE for tailwind (text and select) 
 - [ ] Create milligram demo site (text and select) 
+
 - [ ] Add github action to auto-update Fly.io 
 - [ ] Add github action to auto-update Docker Hub 
+
 - [ ] Add modal with JS commands 
 - [ ] Learn `phx_live_storybook` 
 
@@ -353,4 +356,13 @@ At this point the core seems stable:
 
 - [x] Update docs 
 - [x] Renamed interface to renderer 
+
+## 2022 Dec 20 Tue
+
+- [x] Cleanup docs 
+- [x] Cleanup demo 
+- [x] Add settings 
+- [x] Test settings 
+- [x] Remove view cache 
+- [x] Remove view util 
 

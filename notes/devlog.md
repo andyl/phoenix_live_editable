@@ -3,6 +3,10 @@
 # TBD
 
 Next Steps 
+- [ ] Get rid of struct namespaces
+- [ ] Follow phx example for documentation 
+- [ ] Use underscores instead of dashes 
+- [ ] Implement in Editable.Base
 - [-] Add ability to set target 
 - [ ] Demo pages working 
 - [ ] Demo pages with data in component 

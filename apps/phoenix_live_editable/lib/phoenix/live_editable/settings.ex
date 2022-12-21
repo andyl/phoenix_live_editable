@@ -3,7 +3,7 @@ defmodule Phoenix.LiveEditable.Settings do
   Configuration settings for the LiveEditable.Base component.
 
   | FIELD              | DESCRIPTION                                |
-  | ple_config_id      | component id                               |
+  | ple_component_id   | component id                               |
   | ple_config_store   | storage for misc config attributes         |
   | ple_event_change   | change target                              |
   | ple_event_submit   | submit target                              |
@@ -18,7 +18,7 @@ defmodule Phoenix.LiveEditable.Settings do
   """
 
   defstruct [
-    ple_config_id: nil,
+    ple_component_id: nil,
     ple_config_store: %{},
     ple_event_change: nil,
     ple_event_submit: "ple-default-save",

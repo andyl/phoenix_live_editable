@@ -2,33 +2,41 @@ defmodule Phoenix.LiveEditable.Settings do
   @moduledoc """
   Configuration settings for the LiveEditable.Base component.
 
-  | FIELD              | DESCRIPTION                                |
-  | ple_component_id   | component id                               |
-  | ple_config_store   | storage for misc config attributes         |
-  | ple_event_change   | change target                              |
-  | ple_event_submit   | submit target                              |
-  | ple_event_target   | event target pid                           |
-  | ple_render_data    | editable data - can be nil                 |
-  | ple_render_mode    | render mode: <anchor / focus>              |
-  | ple_render_module  | renderer module                            |
-  | ple_render_options | options for select, multi-select and radio |
-  | ple_render_style   | display style: <inline / popup>            |
-  | ple_render_type    | form type: <text / select / radio / ...>   |
+  | SETTING           | ATTRIBUTES                                                                   |
+  |-------------------|------------------------------------------------------------------------------|
+  | [Config](#config) | `ple_id`, `ple_store`                                                        |
+  | [Events](#events) | `ple_submit`, `ple_change`, `ple_target`                                     |
+  | [Render](#render) | `ple_data`, `ple_mode`, `ple_module`, `ple_module`,  `ple_style`, `ple_type` |
+
+  ## Config
+
+  Content TBD
+
+  ## Events
+
+  Content TBD
+
+  ## Render
+
+  Content TBD
 
   """
 
   defstruct [
-    ple_component_id: nil,
-    ple_config_store: %{},
-    ple_event_change: nil,
-    ple_event_submit: "ple-default-save",
-    ple_event_target: nil,
-    ple_render_data: nil,
-    ple_render_mode: "anchor",
-    ple_render_module: Phoenix.Editable.Renderer.Tailwind3,
-    ple_render_options: %{},
-    ple_render_style: "inline",
-    ple_render_type: "text",
+    # config
+    ple_id: nil,
+    ple_store: %{},
+    # events
+    ple_change: nil,
+    ple_submit: "ple-default-save",
+    ple_target: nil,
+    # render
+    ple_data: nil,
+    ple_mode: "anchor",
+    ple_module: Phoenix.Editable.Renderer.Tailwind3,
+    ple_options: %{},
+    ple_style: "inline",
+    ple_type: "text",
   ]
 
   alias Phoenix.LiveEditable.Settings

@@ -372,3 +372,9 @@ At this point the core seems stable:
 
 - [x] added support for targeting (RenderUtil.target/2)
 - [x] renamed settings fields 
+
+## 2022 Dec 21 Wed
+
+Notes
+- settings use underscores 
+- event targets use dashes

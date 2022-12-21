@@ -23,7 +23,7 @@ defmodule Phoenix.Editable.Base do
   end
 
   def render(assigns) do
-    module = assigns.ple_render_module
+    module = assigns.ple_module
     module.render(assigns)
   end
 
@@ -65,7 +65,6 @@ defmodule Phoenix.Editable.Base do
 
   defp atomify(key) when is_binary(key) do
     key
-    # |> String.replace("-", "_")
     |> String.to_atom()
   end
 

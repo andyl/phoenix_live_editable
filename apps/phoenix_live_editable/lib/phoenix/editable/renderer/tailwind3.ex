@@ -18,17 +18,16 @@ defmodule Phoenix.Editable.Renderer.Tailwind3 do
     ~H"""
     <span
       style="cursor: pointer; border-bottom: 1px dashed blue;"
-      phx-click={@ple_event_focus}
-      phx-value-id={@id}
-      phx-target={RenderUtil.target(@ple_event_target, @myself)}
-      phx-value-data={@ple_render_data}
+      phx-click={@ple_focus}
+      phx-value-id={@ple_id}
+      phx-target={RenderUtil.target(@ple_target, @myself)}
     >
-      <%= @ple_render_data %>
+      <%= @ple_data %>
     </span>
     """
   end
 
-  def render(%{ple_render_type: "text", ple_render_mode: "anchor", ple_render_data: nil} = assigns) do
+  def render(%{ple_type: "text", ple_mode: "anchor", ple_data: nil} = assigns) do
     ~H"""
     <span style="cursor: pointer; border-bottom: 1px dashed blue;" phx-click='ple-focus' phx-target={@myself}>
       <span style="color: red; font-style: italic;">Empty</span>
@@ -36,11 +35,11 @@ defmodule Phoenix.Editable.Renderer.Tailwind3 do
     """
   end
 
-  def render(%{ple_render_type: "text", ple_render_mode: "focus"} = assigns) do
+  def render(%{ple_type: "text", ple_mode: "focus"} = assigns) do
     ~H"""
     <div>
-      <form style="display: inline;" phx-submit={@phx_submit} phx-target={RenderUtil.target(@ple_event_target, @myself)} phx-click-away='ple-blur'>
-        <input style="width: 100px;" type="text" name="data" value={@ple_render_data}/>
+      <form style="display: inline;" phx-submit={@ple_submit} phx-target={RenderUtil.target(@ple_target, @myself)} phx-click-away='ple-blur'>
+        <input style="width: 100px;" type="text" name="data" value={@ple_data}/>
         <button class="button" style='margin-left: 5px' type='submit'>
           <%= raw Svg.inline("CircleOk") %>
         </button>

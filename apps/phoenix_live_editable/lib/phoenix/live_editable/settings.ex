@@ -1,14 +1,13 @@
 defmodule Phoenix.LiveEditable.Settings do
   @moduledoc """
-  Configuration settings for a LiveEditable component.
+  Configuration settings for the LiveEditable.Base component.
 
   | FIELD              | DESCRIPTION                                |
-  | id                 | component id                               |
-  | phx_change         | change target                              |
-  | phx_submit         | submit target                              |
-  | phx_target         | event target pid                           |
-  | ple_config_appname | appname - for looking up config settings   |
+  | ple_config_id      | component id                               |
   | ple_config_store   | storage for misc config attributes         |
+  | ple_event_change   | change target                              |
+  | ple_event_submit   | submit target                              |
+  | ple_event_target   | event target pid                           |
   | ple_render_data    | editable data - can be nil                 |
   | ple_render_mode    | render mode: <anchor / focus>              |
   | ple_render_module  | renderer module                            |
@@ -19,12 +18,11 @@ defmodule Phoenix.LiveEditable.Settings do
   """
 
   defstruct [
-    id: nil,
-    phx_change: nil,
-    phx_submit: "ple-default-save",
-    phx_target: nil,
-    ple_config_appname: nil,
+    ple_config_id: nil,
     ple_config_store: %{},
+    ple_event_change: nil,
+    ple_event_submit: "ple-default-save",
+    ple_event_target: nil,
     ple_render_data: nil,
     ple_render_mode: "anchor",
     ple_render_module: Phoenix.Editable.Renderer.Tailwind3,

@@ -6,12 +6,27 @@ defmodule Phoenix.Editable.Renderer.Tailwind3 do
 
   require Phoenix.LiveEditable.Svg
   alias Phoenix.LiveEditable.Svg
+  alias Phoenix.LiveEditable.RenderUtil
 
   import Phoenix.HTML
 
   use Phoenix.Component
 
   # ----- text -----
+
+  def render(%{ple_render_type: "text", ple_render_mode: "anchor"} = assigns) do
+    ~H"""
+    <span
+      style="cursor: pointer; border-bottom: 1px dashed blue;"
+      phx-click={@ple_event_focus}
+      phx-value-id={@id}
+      phx-target={RenderUtil.target(@ple_event_target, @myself)}
+      phx-value-data={@ple_render_data}
+    >
+      <%= @ple_render_data %>
+    </span>
+    """
+  end
 
   def render(%{ple_render_type: "text", ple_render_mode: "anchor", ple_render_data: nil} = assigns) do
     ~H"""
@@ -21,19 +36,11 @@ defmodule Phoenix.Editable.Renderer.Tailwind3 do
     """
   end
 
-  def render(%{ple_render_type: "text", ple_render_mode: "anchor"} = assigns) do
-    ~H"""
-    <span style="cursor: pointer; border-bottom: 1px dashed blue;" phx-click='ple-focus' phx-target={@myself}>
-      <%= @ple_render_data %>
-    </span>
-    """
-  end
-
   def render(%{ple_render_type: "text", ple_render_mode: "focus"} = assigns) do
     ~H"""
     <div>
-      <form style="display: inline;" phx-submit={@phx_submit} phx-target={@myself} phx-click-away='ple-blur'>
-        <input style="width: 100px;" type="text" name="data" target={@myself} value={@ple_render_data}/>
+      <form style="display: inline;" phx-submit={@phx_submit} phx-target={RenderUtil.target(@ple_event_target, @myself)} phx-click-away='ple-blur'>
+        <input style="width: 100px;" type="text" name="data" value={@ple_render_data}/>
         <button class="button" style='margin-left: 5px' type='submit'>
           <%= raw Svg.inline("CircleOk") %>
         </button>

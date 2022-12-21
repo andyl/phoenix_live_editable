@@ -10,15 +10,26 @@
 
   <div class="mt-5 mb-5">
   <p>Phoenix.Editable.Base</p>
-  <%= for {lcl_id, mydata} <- @data do %>
-    | <%= lcl_id %>: <.live_component id={"b_" <> lcl_id} module={Phoenix.Editable.Base} ple-render-data={mydata}/> <br/>
+  <%= for {gid, gdata} <- @data1 do %>
+    | <%= gid %>: <.live_component 
+                       id={gid} 
+                       module={Phoenix.Editable.Base} 
+                       ple-event-focus="focus1"
+                       ple-event-target={nil}
+                       ple-render-data={gdata}
+                     /> <br/>
   <% end %>
   </div>
 
   <div class="mt-5 mb-5">
   <p>Phoenix.Editable</p>
-  <%= for {lcl_id, mydata} <- @data do %>
-    | <%= lcl_id %>: <Phoenix.Editable.text value={mydata}/> <br/>
+  <%= for {gid, gdata} <- @data2 do %>
+    | <%= gid %>: <Phoenix.Editable.text 
+                    id={gid} 
+                    value={gdata}
+                    ple_event_focus="focus2"
+                   /> 
+    <br/>
   <% end %>
   </div>
 

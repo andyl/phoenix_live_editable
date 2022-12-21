@@ -3,13 +3,13 @@
 # TBD
 
 Next Steps 
+- [-] Add ability to set target 
 - [ ] Demo pages working 
 - [ ] Demo pages with data in component 
 - [ ] Demo pages with data in view 
 - [ ] Demo pages using Editable.Base 
 - [ ] Demo pages using Editable.text() 
 - [ ] Demo pages using Editable.select() 
-- [ ] Add ability to set target 
 
 - [ ] Make work in Feedex 
 
@@ -366,3 +366,5 @@ At this point the core seems stable:
 - [x] Remove view cache 
 - [x] Remove view util 
 
+- [x] added support for targeting (RenderUtil.target/2)
+- [x] renamed settings fields 

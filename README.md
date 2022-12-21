@@ -12,7 +12,7 @@ Add a handler to your LiveView:
        ... do something ...
     end
 
-See the [online demo][ld] for running examples.
+That's it.
 
 LiveEditable is for admin interfaces to provide basic inline editing. It
 supports many CSS frameworks (Tailwind3, Milligram, Bootstrap5, Bulma) and
@@ -48,7 +48,7 @@ Now open a browser and visit `http://localhost:4040`
 
 ## Installation
 
-PhoenixLiveEditable can be installed in your own LV application by adding
+PhoenixLiveEditable can be installed in your own LiveView application by adding
 `phoenix_live_editable` to your list of dependencies in `mix.exs`:
 
 Using the path option: 

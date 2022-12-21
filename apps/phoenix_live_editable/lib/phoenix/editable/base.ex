@@ -15,14 +15,11 @@ defmodule Phoenix.Editable.Base do
 
   def update(assigns, socket) do
     normassigns = normalize(assigns)
-    IO.inspect(normassigns, label: "BYTEBYTE")
-    newassigns = socket
-                 |> Settings.new_from_socket()
-                 |> Settings.merge(normassigns)
+    new_assigns = socket
+                  |> Settings.new_from_socket()
+                  |> Settings.merge(normassigns)
 
-    IO.inspect(newassigns, label: "NOOVOO")
-
-    {:ok, assign(socket, newassigns)}
+    {:ok, assign(socket, new_assigns)}
   end
 
   def render(assigns) do
@@ -36,12 +33,22 @@ defmodule Phoenix.Editable.Base do
     {:noreply, assign(socket, :ple_mode, "anchor")}
   end
 
-  def handle_event("ple-focus", _data, socket) do
+  def handle_event("ple-focus", data, socket) do
+    IO.puts "BASE"
+    IO.inspect("ple-focus", label: "RANGERBASE")
+    IO.inspect(data, label: "KIAZBASE")
     {:noreply, assign(socket, :ple_mode, "focus")}
   end
 
   def handle_event("ple-default-save", data, socket) do
     {:noreply, assign(socket, ple_data: data["data"], ple_mode: "anchor")}
+  end
+
+  def handle_event(target, data, socket) do
+    IO.puts "BASE"
+    IO.inspect(target, label: "RANGERBASE")
+    IO.inspect(data, label: "KIAZBASE")
+    {:noreply, socket}
   end
 
   # ----- view helpers -----
@@ -58,7 +65,7 @@ defmodule Phoenix.Editable.Base do
 
   defp atomify(key) when is_binary(key) do
     key
-    |> String.replace("-", "_")
+    # |> String.replace("-", "_")
     |> String.to_atom()
   end
 

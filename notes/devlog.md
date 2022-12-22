@@ -10,7 +10,7 @@ Next Steps
 - [x] AltModel: Handlers send messages to ple_target 
 - [x] AltModel: In ple_target, dev writes handle_info calls to persist state 
 - [ ] AltModel: Get rid of custom handlers (Handler.Default etc.)
-- [ ] AltModel: Get rid of RenderUtil 
+- [x] AltModel: Get rid of RenderUtil 
 - [ ] Get all demo pages working 
 - [ ] Single component 
 - [ ] List of components 

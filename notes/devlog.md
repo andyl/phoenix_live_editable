@@ -3,12 +3,20 @@
 # TBD
 
 Next Steps 
-- [ ] Get rid of struct namespaces
-- [ ] Follow phx example for documentation 
-- [ ] Use underscores instead of dashes 
-- [ ] Implement in Editable.Base
+- [x] Get rid of struct namespaces
+- [x] Use underscores instead of dashes 
+- [x] Design AltModel (send message to view to persist...) 
+- [x] AltModel: Handlers built-in to Editable.Base 
+- [x] AltModel: Handlers send messages to ple_target 
+- [x] AltModel: In ple_target, dev writes handle_info calls to persist state 
+- [ ] AltModel: Get rid of custom handlers (Handler.Default etc.)
+- [ ] AltModel: Get rid of RenderUtil 
+- [ ] Get all demo pages working 
+- [ ] Single component 
+- [ ] List of components 
+- [-] Follow phx example for documentation 
+- [-] Implement in Editable.Base 
 - [-] Add ability to set target 
-- [ ] Demo pages working 
 - [ ] Demo pages with data in component 
 - [ ] Demo pages with data in view 
 - [ ] Demo pages using Editable.Base 
@@ -26,6 +34,8 @@ Next Steps
 
 - [ ] Add modal with JS commands 
 - [ ] Learn `phx_live_storybook` 
+
+Alt Model 
 
 Tooling 
 - [ ] Vim Autocomplete for tailwind classes 

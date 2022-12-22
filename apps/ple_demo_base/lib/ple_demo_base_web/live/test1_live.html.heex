@@ -14,9 +14,9 @@
     | <%= gid %>: <.live_component 
                        id={gid} 
                        module={Phoenix.Editable.Base} 
-                       ple-event-focus="focus1"
-                       ple-event-target={nil}
-                       ple-render-data={gdata}
+                       ple_focus="focus1"
+                       ple_target={nil}
+                       ple_data={gdata}
                      /> <br/>
   <% end %>
   </div>
@@ -24,11 +24,11 @@
   <div class="mt-5 mb-5">
   <p>Phoenix.Editable</p>
   <%= for {gid, gdata} <- @data2 do %>
-    | <%= gid %>: <Phoenix.Editable.text 
+    | <%= gid %>: <%# <Phoenix.Editable.text 
                     id={gid} 
                     value={gdata}
-                    ple_event_focus="focus2"
-                   /> 
+                    ple_focus="focus2"
+                   />  %>
     <br/>
   <% end %>
   </div>

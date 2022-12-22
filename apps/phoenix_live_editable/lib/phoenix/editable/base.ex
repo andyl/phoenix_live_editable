@@ -18,6 +18,9 @@ defmodule Phoenix.Editable.Base do
     new_assigns = socket
                   |> Settings.new_from_socket()
                   |> Settings.merge(normassigns)
+    # IO.puts "UPDATE START <<<<<"
+    # IO.inspect(new_assigns)
+    # IO.puts "UPDATE END <<<<<"
 
     {:ok, assign(socket, new_assigns)}
   end
@@ -33,21 +36,32 @@ defmodule Phoenix.Editable.Base do
     {:noreply, assign(socket, :ple_mode, "anchor")}
   end
 
-  def handle_event("ple-focus", data, socket) do
-    IO.puts "BASE"
-    IO.inspect("ple-focus", label: "RANGERBASE")
-    IO.inspect(data, label: "KIAZBASE")
+  def handle_event("ple-focus", _data, socket) do
     {:noreply, assign(socket, :ple_mode, "focus")}
   end
 
-  def handle_event("ple-default-save", data, socket) do
+  def handle_event("ple-submit", data, socket) do
+    submit = socket.assigns.ple_submit
+
+    if submit, do: send(self(), {submit, data})
+
     {:noreply, assign(socket, ple_data: data["data"], ple_mode: "anchor")}
   end
 
+  def handle_event("ple-change", _data, socket) do
+    # IO.puts "<<<<< LiveEditable PleChange Start >>>>>"
+    # IO.inspect("ple-change", label: "LABEL")
+    # IO.inspect(data, label: "DATA")
+    # IO.puts "<<<<< LiveEditable PleChange End >>>>>"
+    # {:noreply, assign(socket, ple_data: data["data"], ple_mode: "anchor")}
+    {:noreply, socket}
+  end
+
   def handle_event(target, data, socket) do
-    IO.puts "BASE"
-    IO.inspect(target, label: "RANGERBASE")
-    IO.inspect(data, label: "KIAZBASE")
+    IO.puts "<<<<< LiveEditable Unhandled Event Start >>>>>"
+    IO.inspect(target, label: "LABEL")
+    IO.inspect(data, label: "DATA")
+    IO.puts "<<<<< LiveEditable Unhandled Event End >>>>>"
     {:noreply, socket}
   end
 

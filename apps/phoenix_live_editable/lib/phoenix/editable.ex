@@ -31,18 +31,18 @@ defmodule Phoenix.Editable do
   """
   attr :id, :string, default: nil, doc: "Unique ID"
   attr :value, :string, default: nil, doc: "Text value"
-  attr :ple_event_focus, :string, doc: "Target for focus handler"
-  attr :ple_event_save, :string, doc: "Target for save handler"
-  attr :ple_event_change, :string, doc: "Target for validation handler"
+  attr :ple_focus, :string, doc: "Target for focus handler"
+  attr :ple_save, :string, doc: "Target for save handler"
+  attr :ple_change, :string, doc: "Target for validation handler"
 
   def text(assigns) do
     ~H"""
     <.live_component
       module={Phoenix.Editable.Base}
       id={@id || random_id()}
-      ple-event-focus={@ple_event_focus}
-      ple-render-type="text"
-      ple-render-data={@value}
+      ple_focus={@ple_focus}
+      ple_type="text"
+      ple_data={@value}
     />
     """
   end

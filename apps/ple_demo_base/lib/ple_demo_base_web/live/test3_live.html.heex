@@ -9,18 +9,18 @@
   <div class="font-bold">ONE</div>
   <.live_component
     module={Phoenix.Editable.Base} 
-    id="one"
-    ple-event-focus="focus1" 
-    ple-render-data={@data1} 
+    id="data1"
+    ple_submit="text-submit"
+    ple_data={@data1} 
   />
 
   <div class="mt-10 font-bold">TWO</div>
-  <.live_component
+  <%# <.live_component
     module={Phoenix.Editable.Base} 
     id="two"
     ple-event-focus="focus2" 
     ple-render-data={@data2} 
-  />
+  /> %>
 
   <p></p>
 

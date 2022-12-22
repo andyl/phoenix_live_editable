@@ -2,17 +2,14 @@ defmodule Phoenix.LiveEditable.Settings do
   @moduledoc """
   Configuration settings for the LiveEditable.Base component.
 
-  | SETTING           | ATTRIBUTES                                                                   |
-  |-------------------|------------------------------------------------------------------------------|
-  | [Config](#config) | `ple_id`, `ple_store`                                                        |
-  | [Events](#events) | `ple_submit`, `ple_change`, `ple_target`                                     |
-  | [Render](#render) | `ple_data`, `ple_mode`, `ple_module`, `ple_module`,  `ple_style`, `ple_type` |
+  | SETTING               | ATTRIBUTES                                        |
+  |-----------------------|---------------------------------------------------|
+  | [Config](#config)     | `id`, `ple_store`                                 |
+  | [Render](#render)     | `ple_mode`, `ple_module`, `ple_style`, `ple_type` |
+  | [Data](#data)         | `ple_data`, `ple_changeset`, `ple_options`        |
+  | [Messages](#messages) | `ple_submit`, `ple_change`                        |
 
   ## Config
-
-  Content TBD
-
-  ## Events
 
   Content TBD
 
@@ -20,23 +17,32 @@ defmodule Phoenix.LiveEditable.Settings do
 
   Content TBD
 
+  ## Data
+
+  Content TBD
+
+  ## Messages
+
+  Content TBD
+
   """
 
   defstruct [
     # config
-    ple_id: nil,
+    id: nil,
     ple_store: %{},
-    # events
-    ple_change: nil,
-    ple_submit: "ple-default-save",
-    ple_target: nil,
     # render
-    ple_data: nil,
     ple_mode: "anchor",
     ple_module: Phoenix.Editable.Renderer.Tailwind3,
-    ple_options: %{},
     ple_style: "inline",
     ple_type: "text",
+    # data
+    ple_data: nil,
+    ple_changeset: nil,
+    ple_options: %{},
+    # messages
+    ple_submit: nil,
+    ple_change: nil,
   ]
 
   alias Phoenix.LiveEditable.Settings

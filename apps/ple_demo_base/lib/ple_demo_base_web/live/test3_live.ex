@@ -14,24 +14,22 @@ defmodule PleDemoBaseWeb.Test3Live do
     {:noreply, socket}
   end
 
-  # ----- event handlers -----
+  # ----- message handlers -----
 
-  def handle_event("focus1", data, socket) do
-    IO.puts "FOCUS1"
-    IO.inspect data, label: "FOCUS1"
-    {:noreply, assign(socket, data1: "XXX1")}
+  def handle_info({"text-submit", data}, socket) do
+    id = data["id"] |> String.to_atom()
+    # IO.puts "<<<<< LiveEditable TEXT-SUBMIT Message Start >>>>>"
+    # IO.inspect(data, label: "DATA")
+    # IO.inspect(socket, label: "SOCKET")
+    # IO.puts "<<<<< LiveEditable TEXT-SUBMIT Message End >>>>>"
+    {:noreply, assign(socket, id, data["data"])}
   end
 
-  def handle_event("focus2", data, socket) do
-    IO.puts "FOCUS2"
-    IO.inspect data, label: "FOCUS2"
-    {:noreply, assign(socket, data2: "XXX2")}
-  end
-
-  def handle_event(target, data, socket) do
-    IO.puts "UNKNOWN"
-    IO.inspect target, label: "UNKNOWN"
-    IO.inspect data, label: "UNKNOWN"
+  def handle_info(message, socket) do
+    IO.puts "<<<<< LiveEditable Unhandled Message Start >>>>>"
+    IO.inspect(message, label: "MESSAGE")
+    IO.puts "<<<<< LiveEditable Unhandled Message End >>>>>"
     {:noreply, socket}
   end
+
 end

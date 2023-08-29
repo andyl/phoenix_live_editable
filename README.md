@@ -144,7 +144,7 @@ A renderer module is selected in application configuration.
       live_view: [signing_salt: "rRioLeCG"],
       live_editable: [ple_renderer: Phoenix.Editable.Renderer.Tailwind3]
 
-You can fork a built-in renderer, or white a renderer from scratch for a new
+You can fork a built-in renderer, or write a renderer from scratch for a new
 CSS framework. 
 
 For more information, see the **Renderer Guide**.
@@ -169,7 +169,7 @@ A handler module is selected in a LiveView:
 
     end
 
-You can fork a built-in handler, or white a handler from scratch, or not use
+You can fork a built-in handler, or write a handler from scratch, or not use
 handlers, or use a combination of handler functions and custom functions.
 
 For more information, see the **Handler Guide**.
